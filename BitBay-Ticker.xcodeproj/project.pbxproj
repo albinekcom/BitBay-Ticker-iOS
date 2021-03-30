@@ -7,35 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		267BBC6323D9CC11000EF9AB /* TickerEmptyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267BBC6223D9CC11000EF9AB /* TickerEmptyList.swift */; };
-		267BBC6523D9CF66000EF9AB /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267BBC6423D9CF66000EF9AB /* Main.swift */; };
-		267BBC6723D9D5EF000EF9AB /* MainContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267BBC6623D9D5EF000EF9AB /* MainContent.swift */; };
-		267BBC6B23D9D6B8000EF9AB /* AdderButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267BBC6A23D9D6B8000EF9AB /* AdderButtonView.swift */; };
-		8C0192FC23E34730008693D8 /* CurrencyIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0192FB23E34730008693D8 /* CurrencyIcon.swift */; };
-		8C0192FE23E34977008693D8 /* TickerListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0192FD23E34977008693D8 /* TickerListRow.swift */; };
-		8C01930123E36238008693D8 /* AdderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C01930023E36238008693D8 /* AdderRow.swift */; };
-		8C01930323E3711E008693D8 /* DetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C01930223E3711E008693D8 /* DetailRow.swift */; };
-		8C05601723EDC4FD00CF43A7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC63023A7F84600084B7F /* libsqlite3.tbd */; };
-		8C05601923EDC64F00CF43A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C7F0D4D21CA242C002C6553 /* GoogleService-Info.plist */; };
-		8C0688AD23A4DE75003C45A3 /* SupportedTickersFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688AC23A4DE75003C45A3 /* SupportedTickersFetcher.swift */; };
-		8C0688B123A53D31003C45A3 /* TickerValuesAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688B023A53D31003C45A3 /* TickerValuesAPIResponse.swift */; };
-		8C0688B323A53D4F003C45A3 /* SupportedTickersAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688B223A53D4F003C45A3 /* SupportedTickersAPIResponse.swift */; };
-		8C0688B723A54930003C45A3 /* TickerStatisticsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688B623A54930003C45A3 /* TickerStatisticsAPIResponse.swift */; };
-		8C0688BB23A56994003C45A3 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688BA23A56994003C45A3 /* String+Extensions.swift */; };
-		8C0688BD23A57A78003C45A3 /* TickerDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688BC23A57A78003C45A3 /* TickerDetailViewModel.swift */; };
-		8C07E58F23EDA07500B6BF35 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F1D6C23A65A4000D25D99 /* AnalyticsService.swift */; };
-		8C07E59123EDA4BC00B6BF35 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC62023A7F4EA00084B7F /* FIRAnalyticsConnector.framework */; };
-		8C07E59323EDA4BC00B6BF35 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61D23A7F4EA00084B7F /* FirebaseAnalytics.framework */; };
-		8C07E59523EDA4BC00B6BF35 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61C23A7F4EA00084B7F /* FirebaseCore.framework */; };
-		8C07E59723EDA4BC00B6BF35 /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC62223A7F4EA00084B7F /* FirebaseCoreDiagnostics.framework */; };
-		8C07E59923EDA4BC00B6BF35 /* FirebaseInstallations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF438AF23DCDCCF00496367 /* FirebaseInstallations.framework */; };
-		8C07E59B23EDA4BD00B6BF35 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC62123A7F4EA00084B7F /* FirebaseInstanceID.framework */; };
-		8C07E59D23EDA4BD00B6BF35 /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61B23A7F4EA00084B7F /* GoogleAppMeasurement.framework */; };
-		8C07E59F23EDA4BD00B6BF35 /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61923A7F4EA00084B7F /* GoogleDataTransport.framework */; };
-		8C07E5A123EDA4BD00B6BF35 /* GoogleDataTransportCCTSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61A23A7F4EA00084B7F /* GoogleDataTransportCCTSupport.framework */; };
-		8C07E5A323EDA4BD00B6BF35 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61E23A7F4EA00084B7F /* GoogleUtilities.framework */; };
-		8C07E5A523EDA4BD00B6BF35 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61F23A7F4EA00084B7F /* nanopb.framework */; };
-		8C07E5A723EDA4BD00B6BF35 /* PromisesObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF438B023DCDCCF00496367 /* PromisesObjC.framework */; };
 		8C1512CA23DDB00A000CC2CE /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC62023A7F4EA00084B7F /* FIRAnalyticsConnector.framework */; };
 		8C1512CC23DDB00A000CC2CE /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61D23A7F4EA00084B7F /* FirebaseAnalytics.framework */; };
 		8C1512CE23DDB00A000CC2CE /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61C23A7F4EA00084B7F /* FirebaseCore.framework */; };
@@ -49,81 +20,91 @@
 		8C1512DE23DDB00B000CC2CE /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC61F23A7F4EA00084B7F /* nanopb.framework */; };
 		8C1512E023DDB00B000CC2CE /* PromisesObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF438B023DCDCCF00496367 /* PromisesObjC.framework */; };
 		8C1512E323DDB011000CC2CE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDBC63023A7F84600084B7F /* libsqlite3.tbd */; };
-		8C1F1D6023A62C5D00D25D99 /* PrettyValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F1D5F23A62C5D00D25D99 /* PrettyValueFormatter.swift */; };
 		8C1F1D6323A62F4A00D25D99 /* PrettyValueFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F1D6223A62F4A00D25D99 /* PrettyValueFormatterTests.swift */; };
-		8C1F1D6823A652FF00D25D99 /* Color+ApplicationColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F1D6723A652FF00D25D99 /* Color+ApplicationColors.swift */; };
-		8C1F1D6A23A658A100D25D99 /* AdaptsToSoftwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F1D6923A658A100D25D99 /* AdaptsToSoftwareKeyboard.swift */; };
-		8C1F1D6D23A65A4000D25D99 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F1D6C23A65A4000D25D99 /* AnalyticsService.swift */; };
-		8C3EA62E23A6888000A501CD /* MimimumTouchTargetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA62D23A6888000A501CD /* MimimumTouchTargetSize.swift */; };
-		8C4E5FB323ED5B9E0017E753 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
-		8C6FB62F23A2CCCA00724C86 /* TickerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB62E23A2CCCA00724C86 /* TickerList.swift */; };
 		8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */; };
 		8C7F0D4E21CA242C002C6553 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C7F0D4D21CA242C002C6553 /* GoogleService-Info.plist */; };
-		8C8CC5B123DDFBE5001CF17F /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8CC5B023DDFBE5001CF17F /* AppConfiguration.swift */; };
-		8C8CC5B323DE0029001CF17F /* Int+TimeIntervalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8CC5B223DE0029001CF17F /* Int+TimeIntervalExtensions.swift */; };
 		8C9146CB1F0915D300221180 /* TickersViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9146CA1F0915D300221180 /* TickersViewControllerUITests.swift */; };
-		8C9BA35623E597FF00ADA235 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFB35111F1808F900475DC1 /* NotificationCenter.framework */; };
-		8C9BA35923E597FF00ADA235 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BA35823E597FF00ADA235 /* TodayViewController.swift */; };
-		8C9BA35C23E597FF00ADA235 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C9BA35A23E597FF00ADA235 /* MainInterface.storyboard */; };
-		8C9BA36023E597FF00ADA235 /* BitBay-Ticker-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8C9BA35523E597FF00ADA235 /* BitBay-Ticker-Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		8CAE2E2C23EB4FA6005C53BC /* WidgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE2E2B23EB4FA6005C53BC /* WidgetTableViewCell.swift */; };
-		8CAE92A823DDF3070025539D /* TickerIdentifiersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE92A723DDF3070025539D /* TickerIdentifiersStore.swift */; };
-		8CB1450B23E37943002F5A6A /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB1450A23E37943002F5A6A /* Title.swift */; };
+		8CAD2B632613BB120055A58C /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2AFF2613BB110055A58C /* MainCoordinator.swift */; };
+		8CAD2B642613BB120055A58C /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B002613BB110055A58C /* SceneCoordinator.swift */; };
+		8CAD2B652613BB120055A58C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B012613BB110055A58C /* Coordinator.swift */; };
+		8CAD2B672613BB120055A58C /* TickersFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B062613BB110055A58C /* TickersFetcher.swift */; };
+		8CAD2B682613BB120055A58C /* TickerStatisticsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B092613BB110055A58C /* TickerStatisticsAPIResponse.swift */; };
+		8CAD2B692613BB120055A58C /* TickerStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B0A2613BB110055A58C /* TickerStatistics.swift */; };
+		8CAD2B6A2613BB120055A58C /* TickerPropertiesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B0B2613BB110055A58C /* TickerPropertiesFetcher.swift */; };
+		8CAD2B6B2613BB120055A58C /* TickerValuesAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B0D2613BB110055A58C /* TickerValuesAPIResponse.swift */; };
+		8CAD2B6C2613BB120055A58C /* TickerValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B0E2613BB110055A58C /* TickerValues.swift */; };
+		8CAD2B6D2613BB120055A58C /* TickerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B0F2613BB110055A58C /* TickerFetcher.swift */; };
+		8CAD2B6E2613BB120055A58C /* SupportedTickersAndCurrenciesNamesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B112613BB110055A58C /* SupportedTickersAndCurrenciesNamesFetcher.swift */; };
+		8CAD2B6F2613BB120055A58C /* SupportedTickersAndCurrenciesNamesFetcherAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B122613BB110055A58C /* SupportedTickersAndCurrenciesNamesFetcherAPIResponse.swift */; };
+		8CAD2B702613BB120055A58C /* SupportedTickersAndCurrenciesNamesFetcherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B132613BB110055A58C /* SupportedTickersAndCurrenciesNamesFetcherModel.swift */; };
+		8CAD2B712613BB120055A58C /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B152613BB110055A58C /* NetworkingService.swift */; };
+		8CAD2B722613BB120055A58C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B162613BB110055A58C /* Endpoint.swift */; };
+		8CAD2B732613BB120055A58C /* SupportedTicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B182613BB110055A58C /* SupportedTicker.swift */; };
+		8CAD2B742613BB120055A58C /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B192613BB110055A58C /* Currency.swift */; };
+		8CAD2B752613BB120055A58C /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B1A2613BB110055A58C /* Ticker.swift */; };
+		8CAD2B762613BB120055A58C /* MainLocalDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B1C2613BB110055A58C /* MainLocalDataRepository.swift */; };
+		8CAD2B772613BB120055A58C /* MainLocalDataSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B1D2613BB110055A58C /* MainLocalDataSaver.swift */; };
+		8CAD2B782613BB120055A58C /* MainLocalDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B1E2613BB110055A58C /* MainLocalDataModel.swift */; };
+		8CAD2B792613BB120055A58C /* MigratorFromV0ToV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B212613BB110055A58C /* MigratorFromV0ToV1.swift */; };
+		8CAD2B7A2613BB120055A58C /* Migrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B222613BB110055A58C /* Migrator.swift */; };
+		8CAD2B7B2613BB120055A58C /* MigratorFromV1ToV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B242613BB110055A58C /* MigratorFromV1ToV2.swift */; };
+		8CAD2B7C2613BB120055A58C /* MigratorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B252613BB110055A58C /* MigratorController.swift */; };
+		8CAD2B7D2613BB120055A58C /* TickerV0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B272613BB110055A58C /* TickerV0.swift */; };
+		8CAD2B7E2613BB120055A58C /* TickerV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B282613BB110055A58C /* TickerV1.swift */; };
+		8CAD2B7F2613BB120055A58C /* MainLocalDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B292613BB110055A58C /* MainLocalDataFetcher.swift */; };
+		8CAD2B802613BB120055A58C /* MainDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B2A2613BB110055A58C /* MainDataRepository.swift */; };
+		8CAD2B812613BB120055A58C /* TickersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B2C2613BB110055A58C /* TickersListViewController.swift */; };
+		8CAD2B822613BB120055A58C /* TickersListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B2D2613BB110055A58C /* TickersListModel.swift */; };
+		8CAD2B832613BB120055A58C /* TickersListDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B2E2613BB110055A58C /* TickersListDataRepository.swift */; };
+		8CAD2B842613BB120055A58C /* TickersListRowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B2F2613BB110055A58C /* TickersListRowData.swift */; };
+		8CAD2B852613BB120055A58C /* TickersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B302613BB110055A58C /* TickersListViewModel.swift */; };
+		8CAD2B862613BB120055A58C /* TickersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B312613BB110055A58C /* TickersListView.swift */; };
+		8CAD2B872613BB120055A58C /* TickersListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B332613BB110055A58C /* TickersListRowView.swift */; };
+		8CAD2B882613BB120055A58C /* ErrorBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B342613BB110055A58C /* ErrorBannerView.swift */; };
+		8CAD2B892613BB120055A58C /* TickersListFilledListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B352613BB110055A58C /* TickersListFilledListView.swift */; };
+		8CAD2B8A2613BB120055A58C /* TickersListEmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B362613BB110055A58C /* TickersListEmptyListView.swift */; };
+		8CAD2B8B2613BB120055A58C /* ReviewPopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B382613BB110055A58C /* ReviewPopUpController.swift */; };
+		8CAD2B8C2613BB120055A58C /* TickersAdderRowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B3A2613BB110055A58C /* TickersAdderRowData.swift */; };
+		8CAD2B8D2613BB120055A58C /* TickersAdderDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B3B2613BB110055A58C /* TickersAdderDataRepository.swift */; };
+		8CAD2B8E2613BB120055A58C /* TickersAdderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B3C2613BB110055A58C /* TickersAdderView.swift */; };
+		8CAD2B8F2613BB120055A58C /* TickersAdderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B3D2613BB110055A58C /* TickersAdderModel.swift */; };
+		8CAD2B902613BB120055A58C /* TickersAdderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B3E2613BB110055A58C /* TickersAdderViewModel.swift */; };
+		8CAD2B912613BB120055A58C /* TickersAdderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B3F2613BB110055A58C /* TickersAdderViewController.swift */; };
+		8CAD2B922613BB120055A58C /* TickersAdderRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B412613BB110055A58C /* TickersAdderRowView.swift */; };
+		8CAD2B932613BB120055A58C /* TickersAdderEmptyRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B422613BB110055A58C /* TickersAdderEmptyRowView.swift */; };
+		8CAD2B942613BB120055A58C /* AnalyticsParameterValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B442613BB120055A58C /* AnalyticsParameterValue.swift */; };
+		8CAD2B952613BB120055A58C /* ConsoleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B462613BB120055A58C /* ConsoleAnalytics.swift */; };
+		8CAD2B962613BB120055A58C /* AnalyticsParameterValue+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B482613BB120055A58C /* AnalyticsParameterValue+Firebase.swift */; };
+		8CAD2B972613BB120055A58C /* FirbaseAnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B492613BB120055A58C /* FirbaseAnalyticsService.swift */; };
+		8CAD2B992613BB120055A58C /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B4B2613BB120055A58C /* AnalyticsService.swift */; };
+		8CAD2B9A2613BB120055A58C /* AnalyticsFetchingSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B4C2613BB120055A58C /* AnalyticsFetchingSource.swift */; };
+		8CAD2B9B2613BB120055A58C /* Color+ApplicationColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B4E2613BB120055A58C /* Color+ApplicationColor.swift */; };
+		8CAD2B9C2613BB120055A58C /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B502613BB120055A58C /* ClearButton.swift */; };
+		8CAD2B9D2613BB120055A58C /* PrettyValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B512613BB120055A58C /* PrettyValueFormatter.swift */; };
+		8CAD2B9E2613BB120055A58C /* UIViewController+PrepareMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B522613BB120055A58C /* UIViewController+PrepareMainView.swift */; };
+		8CAD2B9F2613BB120055A58C /* ApplicationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B532613BB120055A58C /* ApplicationConfiguration.swift */; };
+		8CAD2BA02613BB120055A58C /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B552613BB120055A58C /* TitleView.swift */; };
+		8CAD2BA12613BB120055A58C /* CurrencyIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B562613BB120055A58C /* CurrencyIconView.swift */; };
+		8CAD2BA22613BB120055A58C /* CurrencyTemplateIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B572613BB120055A58C /* CurrencyTemplateIconView.swift */; };
+		8CAD2BA32613BB120055A58C /* UserDefaults+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B582613BB120055A58C /* UserDefaults+Shared.swift */; };
+		8CAD2BA42613BB120055A58C /* Double+OptionalString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B592613BB120055A58C /* Double+OptionalString.swift */; };
+		8CAD2BA52613BB120055A58C /* TickerDetailsRowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B5B2613BB120055A58C /* TickerDetailsRowData.swift */; };
+		8CAD2BA62613BB120055A58C /* TickerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B5C2613BB120055A58C /* TickerDetailsViewModel.swift */; };
+		8CAD2BA72613BB120055A58C /* TickerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B5D2613BB120055A58C /* TickerDetailsViewController.swift */; };
+		8CAD2BA82613BB120055A58C /* TickerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B5E2613BB120055A58C /* TickerDetailsView.swift */; };
+		8CAD2BA92613BB120055A58C /* TickerDetailsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B602613BB120055A58C /* TickerDetailsRowView.swift */; };
+		8CAD2BAA2613BB120055A58C /* TickerDetailsDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B612613BB120055A58C /* TickerDetailsDataRepository.swift */; };
+		8CAD2BAB2613BB120055A58C /* TickerDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B622613BB120055A58C /* TickerDetailsModel.swift */; };
 		8CBD947A1F0D7D1400CA4250 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
-		8CBDE31323DF36890097DBBF /* MigratorFromV0ToV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDE31223DF36890097DBBF /* MigratorFromV0ToV1.swift */; };
-		8CBDE31623DF4E720097DBBF /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDE31523DF4E720097DBBF /* DataStorage.swift */; };
-		8CBDE31823DF4E800097DBBF /* TickersDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDE31723DF4E800097DBBF /* TickersDataLoader.swift */; };
-		8CBDE31A23DF4E8E0097DBBF /* TickersDataSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDE31923DF4E8E0097DBBF /* TickersDataSaver.swift */; };
-		8CBF652423E409760081F719 /* CurrencyTemplateIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBF652323E409760081F719 /* CurrencyTemplateIcon.swift */; };
 		8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */; };
 		8CC185031EFE4CAC0083DA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185021EFE4CAC0083DA30 /* Assets.xcassets */; };
 		8CC185061EFE4CAC0083DA30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185041EFE4CAC0083DA30 /* LaunchScreen.storyboard */; };
-		8CCA6F2623A369220048B1B8 /* TickerAdder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F2523A369220048B1B8 /* TickerAdder.swift */; };
-		8CCA6F2823A369340048B1B8 /* TickerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F2723A369340048B1B8 /* TickerDetail.swift */; };
-		8CCA6F2E23A38EB60048B1B8 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F2D23A38EB60048B1B8 /* UserData.swift */; };
-		8CCA6F3223A3A8900048B1B8 /* TickerIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F3123A3A8900048B1B8 /* TickerIdentifier.swift */; };
 		8CCA6F3523A3A9AC0048B1B8 /* TickerIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F3423A3A9AC0048B1B8 /* TickerIdentifierTests.swift */; };
-		8CCE185623DB0F8D00738D32 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE185523DB0F8D00738D32 /* ClearButton.swift */; };
-		8CDBC63323A7F9A800084B7F /* AnalyticsParametersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDBC63223A7F9A800084B7F /* AnalyticsParametersFactory.swift */; };
 		8CDFD47D1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDFD47C1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift */; };
-		8CEB402523A94D75000928CE /* ReviewPopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB402423A94D75000928CE /* ReviewPopUpController.swift */; };
-		8CEB402723A95DC0000928CE /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB402623A95DC0000928CE /* UserDefaultsManager.swift */; };
-		8CEB402923A962C5000928CE /* ErrorBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB402823A962C5000928CE /* ErrorBanner.swift */; };
 		8CED93092083C4EA00A068BD /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED93082083C4EA00A068BD /* SnapshotHelper.swift */; };
-		8CEE9B5723A2DBB700D5B24B /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEE9B5623A2DBB700D5B24B /* Ticker.swift */; };
-		8CF387A423ED703300BE9349 /* TickerAdderContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF387A323ED703300BE9349 /* TickerAdderContent.swift */; };
-		8CF387A823ED705D00BE9349 /* TickerAdderEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF387A723ED705D00BE9349 /* TickerAdderEmpty.swift */; };
-		8CF9492823E5B95400625CA7 /* TickerListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0192FD23E34977008693D8 /* TickerListRow.swift */; };
-		8CF9492923E5B96200625CA7 /* CurrencyIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0192FB23E34730008693D8 /* CurrencyIcon.swift */; };
-		8CF9492A23E5B96600625CA7 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB1450A23E37943002F5A6A /* Title.swift */; };
-		8CF9492B23E5B97600625CA7 /* TickerIdentifiersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE92A723DDF3070025539D /* TickerIdentifiersStore.swift */; };
-		8CF9492C23E5B97C00625CA7 /* TickerIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F3123A3A8900048B1B8 /* TickerIdentifier.swift */; };
-		8CF9492D23E5B98700625CA7 /* PrettyValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F1D5F23A62C5D00D25D99 /* PrettyValueFormatter.swift */; };
-		8CF9492E23E5B9A800625CA7 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEE9B5623A2DBB700D5B24B /* Ticker.swift */; };
-		8CF9492F23E5BA1100625CA7 /* CurrencyTemplateIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBF652323E409760081F719 /* CurrencyTemplateIcon.swift */; };
-		8CF9493023E5BA1C00625CA7 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688BA23A56994003C45A3 /* String+Extensions.swift */; };
-		8CF9493123E5BA8800625CA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185021EFE4CAC0083DA30 /* Assets.xcassets */; };
-		8CF9493323E5C0DD00625CA7 /* WidgetConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF9493223E5C0DD00625CA7 /* WidgetConfiguration.swift */; };
-		8CF9493523E5C11E00625CA7 /* WidgetUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF9493423E5C11E00625CA7 /* WidgetUserData.swift */; };
-		8CF9493623E5C38900625CA7 /* TickersDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDE31723DF4E800097DBBF /* TickersDataLoader.swift */; };
-		8CF9493723E5C38C00625CA7 /* TickersDataSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDE31923DF4E8E0097DBBF /* TickersDataSaver.swift */; };
-		8CF9493823E5C3B300625CA7 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8CC5B023DDFBE5001CF17F /* AppConfiguration.swift */; };
-		8CF9493923E5C3BD00625CA7 /* Int+TimeIntervalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8CC5B223DE0029001CF17F /* Int+TimeIntervalExtensions.swift */; };
-		8CF9493F23E5D73A00625CA7 /* TickerValuesAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688B023A53D31003C45A3 /* TickerValuesAPIResponse.swift */; };
-		8CF9496523E5E2FE00625CA7 /* TickerStatisticsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0688B623A54930003C45A3 /* TickerStatisticsAPIResponse.swift */; };
-		8CFF6D7623E9FA7100C34B35 /* TickerPropertiesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFF6D7523E9FA7100C34B35 /* TickerPropertiesFetcher.swift */; };
-		8CFF6D7923EA0CFB00C34B35 /* TickerPropertiesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFF6D7523E9FA7100C34B35 /* TickerPropertiesFetcher.swift */; };
-		8CFF6D7A23EA1A3500C34B35 /* AnalyticsParametersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDBC63223A7F9A800084B7F /* AnalyticsParametersFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8C9BA35E23E597FF00ADA235 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8CC184F01EFE4CAC0083DA30 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8C9BA35423E597FF00ADA235;
-			remoteInfo = "BitBay-Ticker-Widget";
-		};
 		8CC1850D1EFE4CAC0083DA30 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8CC184F01EFE4CAC0083DA30 /* Project object */;
@@ -147,7 +128,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				8C9BA36023E597FF00ADA235 /* BitBay-Ticker-Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,22 +138,8 @@
 		0B815FDCDD2549AC1B530F3B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		0BBC3E3BB96755C9DFA32131 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		0C6FBCC098A756FF3056C13A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		267BBC6223D9CC11000EF9AB /* TickerEmptyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerEmptyList.swift; sourceTree = "<group>"; };
-		267BBC6423D9CF66000EF9AB /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
-		267BBC6623D9D5EF000EF9AB /* MainContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContent.swift; sourceTree = "<group>"; };
-		267BBC6A23D9D6B8000EF9AB /* AdderButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdderButtonView.swift; sourceTree = "<group>"; };
 		33A699178FC3E6814FE15A91 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		7E6DBCB5CEC98873275BFD9D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		8C0192FB23E34730008693D8 /* CurrencyIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyIcon.swift; sourceTree = "<group>"; };
-		8C0192FD23E34977008693D8 /* TickerListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerListRow.swift; sourceTree = "<group>"; };
-		8C01930023E36238008693D8 /* AdderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdderRow.swift; sourceTree = "<group>"; };
-		8C01930223E3711E008693D8 /* DetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRow.swift; sourceTree = "<group>"; };
-		8C0688AC23A4DE75003C45A3 /* SupportedTickersFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedTickersFetcher.swift; sourceTree = "<group>"; };
-		8C0688B023A53D31003C45A3 /* TickerValuesAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerValuesAPIResponse.swift; sourceTree = "<group>"; };
-		8C0688B223A53D4F003C45A3 /* SupportedTickersAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedTickersAPIResponse.swift; sourceTree = "<group>"; };
-		8C0688B623A54930003C45A3 /* TickerStatisticsAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerStatisticsAPIResponse.swift; sourceTree = "<group>"; };
-		8C0688BA23A56994003C45A3 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		8C0688BC23A57A78003C45A3 /* TickerDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerDetailViewModel.swift; sourceTree = "<group>"; };
 		8C0B9BF61F09066A002F0B5D /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		8C0B9BFA1F090843002F0B5D /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		8C1512A423DDAFCB000CC2CE /* FirebaseInstallations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstallations.framework; path = ../../../Downloads/Firebase/FirebaseAnalytics/FirebaseInstallations.framework; sourceTree = "<group>"; };
@@ -189,15 +155,9 @@
 		8C1512AE23DDAFCB000CC2CE /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransport.framework; path = ../../../Downloads/Firebase/FirebaseAnalytics/GoogleDataTransport.framework; sourceTree = "<group>"; };
 		8C1512AF23DDAFCB000CC2CE /* GoogleDataTransportCCTSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransportCCTSupport.framework; path = ../../../Downloads/Firebase/FirebaseAnalytics/GoogleDataTransportCCTSupport.framework; sourceTree = "<group>"; };
 		8C1CF6EA1F04275E00E6F0D4 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		8C1F1D5F23A62C5D00D25D99 /* PrettyValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyValueFormatter.swift; sourceTree = "<group>"; };
 		8C1F1D6223A62F4A00D25D99 /* PrettyValueFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyValueFormatterTests.swift; sourceTree = "<group>"; };
-		8C1F1D6723A652FF00D25D99 /* Color+ApplicationColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+ApplicationColors.swift"; sourceTree = "<group>"; };
-		8C1F1D6923A658A100D25D99 /* AdaptsToSoftwareKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsToSoftwareKeyboard.swift; sourceTree = "<group>"; };
-		8C1F1D6C23A65A4000D25D99 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		8C2F173E1F02A56E006FD66F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		8C3EA62D23A6888000A501CD /* MimimumTouchTargetSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimimumTouchTargetSize.swift; sourceTree = "<group>"; };
 		8C6FB62923A2CBD400724C86 /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransport.framework; path = Carthage/Build/iOS/GoogleDataTransport.framework; sourceTree = "<group>"; };
-		8C6FB62E23A2CCCA00724C86 /* TickerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerList.swift; sourceTree = "<group>"; };
 		8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8C7F0D3221CA23EE002C6553 /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = Carthage/Build/iOS/GoogleAppMeasurement.framework; sourceTree = "<group>"; };
 		8C7F0D3321CA23EE002C6553 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Carthage/Build/iOS/FirebaseInstanceID.framework; sourceTree = "<group>"; };
@@ -209,25 +169,82 @@
 		8C7F0D3921CA23EE002C6553 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Carthage/Build/iOS/FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		8C7F0D3A21CA23EE002C6553 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Carthage/Build/iOS/FirebaseCore.framework; sourceTree = "<group>"; };
 		8C7F0D4D21CA242C002C6553 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		8C8CC5B023DDFBE5001CF17F /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
-		8C8CC5B223DE0029001CF17F /* Int+TimeIntervalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+TimeIntervalExtensions.swift"; sourceTree = "<group>"; };
 		8C9146CA1F0915D300221180 /* TickersViewControllerUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersViewControllerUITests.swift; sourceTree = "<group>"; };
-		8C9BA35523E597FF00ADA235 /* BitBay-Ticker-Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BitBay-Ticker-Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C9BA35823E597FF00ADA235 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		8C9BA35B23E597FF00ADA235 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		8C9BA35D23E597FF00ADA235 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8CAE2E2B23EB4FA6005C53BC /* WidgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTableViewCell.swift; sourceTree = "<group>"; };
+		8CAD2AFF2613BB110055A58C /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		8CAD2B002613BB110055A58C /* SceneCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
+		8CAD2B012613BB110055A58C /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		8CAD2B062613BB110055A58C /* TickersFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersFetcher.swift; sourceTree = "<group>"; };
+		8CAD2B092613BB110055A58C /* TickerStatisticsAPIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerStatisticsAPIResponse.swift; sourceTree = "<group>"; };
+		8CAD2B0A2613BB110055A58C /* TickerStatistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerStatistics.swift; sourceTree = "<group>"; };
+		8CAD2B0B2613BB110055A58C /* TickerPropertiesFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerPropertiesFetcher.swift; sourceTree = "<group>"; };
+		8CAD2B0D2613BB110055A58C /* TickerValuesAPIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerValuesAPIResponse.swift; sourceTree = "<group>"; };
+		8CAD2B0E2613BB110055A58C /* TickerValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerValues.swift; sourceTree = "<group>"; };
+		8CAD2B0F2613BB110055A58C /* TickerFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerFetcher.swift; sourceTree = "<group>"; };
+		8CAD2B112613BB110055A58C /* SupportedTickersAndCurrenciesNamesFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportedTickersAndCurrenciesNamesFetcher.swift; sourceTree = "<group>"; };
+		8CAD2B122613BB110055A58C /* SupportedTickersAndCurrenciesNamesFetcherAPIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportedTickersAndCurrenciesNamesFetcherAPIResponse.swift; sourceTree = "<group>"; };
+		8CAD2B132613BB110055A58C /* SupportedTickersAndCurrenciesNamesFetcherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportedTickersAndCurrenciesNamesFetcherModel.swift; sourceTree = "<group>"; };
+		8CAD2B152613BB110055A58C /* NetworkingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		8CAD2B162613BB110055A58C /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		8CAD2B182613BB110055A58C /* SupportedTicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportedTicker.swift; sourceTree = "<group>"; };
+		8CAD2B192613BB110055A58C /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		8CAD2B1A2613BB110055A58C /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
+		8CAD2B1C2613BB110055A58C /* MainLocalDataRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLocalDataRepository.swift; sourceTree = "<group>"; };
+		8CAD2B1D2613BB110055A58C /* MainLocalDataSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLocalDataSaver.swift; sourceTree = "<group>"; };
+		8CAD2B1E2613BB110055A58C /* MainLocalDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLocalDataModel.swift; sourceTree = "<group>"; };
+		8CAD2B212613BB110055A58C /* MigratorFromV0ToV1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MigratorFromV0ToV1.swift; sourceTree = "<group>"; };
+		8CAD2B222613BB110055A58C /* Migrator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Migrator.swift; sourceTree = "<group>"; };
+		8CAD2B242613BB110055A58C /* MigratorFromV1ToV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MigratorFromV1ToV2.swift; sourceTree = "<group>"; };
+		8CAD2B252613BB110055A58C /* MigratorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MigratorController.swift; sourceTree = "<group>"; };
+		8CAD2B272613BB110055A58C /* TickerV0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerV0.swift; sourceTree = "<group>"; };
+		8CAD2B282613BB110055A58C /* TickerV1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerV1.swift; sourceTree = "<group>"; };
+		8CAD2B292613BB110055A58C /* MainLocalDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLocalDataFetcher.swift; sourceTree = "<group>"; };
+		8CAD2B2A2613BB110055A58C /* MainDataRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDataRepository.swift; sourceTree = "<group>"; };
+		8CAD2B2C2613BB110055A58C /* TickersListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersListViewController.swift; sourceTree = "<group>"; };
+		8CAD2B2D2613BB110055A58C /* TickersListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersListModel.swift; sourceTree = "<group>"; };
+		8CAD2B2E2613BB110055A58C /* TickersListDataRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersListDataRepository.swift; sourceTree = "<group>"; };
+		8CAD2B2F2613BB110055A58C /* TickersListRowData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersListRowData.swift; sourceTree = "<group>"; };
+		8CAD2B302613BB110055A58C /* TickersListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersListViewModel.swift; sourceTree = "<group>"; };
+		8CAD2B312613BB110055A58C /* TickersListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersListView.swift; sourceTree = "<group>"; };
+		8CAD2B332613BB110055A58C /* TickersListRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersListRowView.swift; sourceTree = "<group>"; };
+		8CAD2B342613BB110055A58C /* ErrorBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorBannerView.swift; sourceTree = "<group>"; };
+		8CAD2B352613BB110055A58C /* TickersListFilledListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersListFilledListView.swift; sourceTree = "<group>"; };
+		8CAD2B362613BB110055A58C /* TickersListEmptyListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersListEmptyListView.swift; sourceTree = "<group>"; };
+		8CAD2B382613BB110055A58C /* ReviewPopUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewPopUpController.swift; sourceTree = "<group>"; };
+		8CAD2B3A2613BB110055A58C /* TickersAdderRowData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersAdderRowData.swift; sourceTree = "<group>"; };
+		8CAD2B3B2613BB110055A58C /* TickersAdderDataRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersAdderDataRepository.swift; sourceTree = "<group>"; };
+		8CAD2B3C2613BB110055A58C /* TickersAdderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersAdderView.swift; sourceTree = "<group>"; };
+		8CAD2B3D2613BB110055A58C /* TickersAdderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersAdderModel.swift; sourceTree = "<group>"; };
+		8CAD2B3E2613BB110055A58C /* TickersAdderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersAdderViewModel.swift; sourceTree = "<group>"; };
+		8CAD2B3F2613BB110055A58C /* TickersAdderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersAdderViewController.swift; sourceTree = "<group>"; };
+		8CAD2B412613BB110055A58C /* TickersAdderRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersAdderRowView.swift; sourceTree = "<group>"; };
+		8CAD2B422613BB110055A58C /* TickersAdderEmptyRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersAdderEmptyRowView.swift; sourceTree = "<group>"; };
+		8CAD2B442613BB120055A58C /* AnalyticsParameterValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsParameterValue.swift; sourceTree = "<group>"; };
+		8CAD2B462613BB120055A58C /* ConsoleAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleAnalytics.swift; sourceTree = "<group>"; };
+		8CAD2B482613BB120055A58C /* AnalyticsParameterValue+Firebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnalyticsParameterValue+Firebase.swift"; sourceTree = "<group>"; };
+		8CAD2B492613BB120055A58C /* FirbaseAnalyticsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirbaseAnalyticsService.swift; sourceTree = "<group>"; };
+		8CAD2B4B2613BB120055A58C /* AnalyticsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
+		8CAD2B4C2613BB120055A58C /* AnalyticsFetchingSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsFetchingSource.swift; sourceTree = "<group>"; };
+		8CAD2B4E2613BB120055A58C /* Color+ApplicationColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+ApplicationColor.swift"; sourceTree = "<group>"; };
+		8CAD2B502613BB120055A58C /* ClearButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
+		8CAD2B512613BB120055A58C /* PrettyValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrettyValueFormatter.swift; sourceTree = "<group>"; };
+		8CAD2B522613BB120055A58C /* UIViewController+PrepareMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+PrepareMainView.swift"; sourceTree = "<group>"; };
+		8CAD2B532613BB120055A58C /* ApplicationConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationConfiguration.swift; sourceTree = "<group>"; };
+		8CAD2B552613BB120055A58C /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		8CAD2B562613BB120055A58C /* CurrencyIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyIconView.swift; sourceTree = "<group>"; };
+		8CAD2B572613BB120055A58C /* CurrencyTemplateIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTemplateIconView.swift; sourceTree = "<group>"; };
+		8CAD2B582613BB120055A58C /* UserDefaults+Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Shared.swift"; sourceTree = "<group>"; };
+		8CAD2B592613BB120055A58C /* Double+OptionalString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+OptionalString.swift"; sourceTree = "<group>"; };
+		8CAD2B5B2613BB120055A58C /* TickerDetailsRowData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerDetailsRowData.swift; sourceTree = "<group>"; };
+		8CAD2B5C2613BB120055A58C /* TickerDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerDetailsViewModel.swift; sourceTree = "<group>"; };
+		8CAD2B5D2613BB120055A58C /* TickerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerDetailsViewController.swift; sourceTree = "<group>"; };
+		8CAD2B5E2613BB120055A58C /* TickerDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerDetailsView.swift; sourceTree = "<group>"; };
+		8CAD2B602613BB120055A58C /* TickerDetailsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerDetailsRowView.swift; sourceTree = "<group>"; };
+		8CAD2B612613BB120055A58C /* TickerDetailsDataRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerDetailsDataRepository.swift; sourceTree = "<group>"; };
+		8CAD2B622613BB120055A58C /* TickerDetailsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerDetailsModel.swift; sourceTree = "<group>"; };
 		8CAE92A523DDC6150025539D /* Firebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
 		8CAE92A623DDC6150025539D /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
-		8CAE92A723DDF3070025539D /* TickerIdentifiersStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerIdentifiersStore.swift; sourceTree = "<group>"; };
-		8CB1450A23E37943002F5A6A /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		8CBD947B1F0D7D1400CA4250 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CBD947D1F0D7D2500CA4250 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		8CBDE31223DF36890097DBBF /* MigratorFromV0ToV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigratorFromV0ToV1.swift; sourceTree = "<group>"; };
-		8CBDE31523DF4E720097DBBF /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
-		8CBDE31723DF4E800097DBBF /* TickersDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersDataLoader.swift; sourceTree = "<group>"; };
-		8CBDE31923DF4E8E0097DBBF /* TickersDataSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersDataSaver.swift; sourceTree = "<group>"; };
-		8CBF652323E409760081F719 /* CurrencyTemplateIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTemplateIcon.swift; sourceTree = "<group>"; };
 		8CC184F81EFE4CAC0083DA30 /* BitBay-Ticker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BitBay-Ticker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CC185021EFE4CAC0083DA30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -235,12 +252,7 @@
 		8CC1850C1EFE4CAC0083DA30 /* BitBay-TickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BitBay-TickerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC185121EFE4CAC0083DA30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CC508D51FD2D59000F14AB2 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
-		8CCA6F2523A369220048B1B8 /* TickerAdder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerAdder.swift; sourceTree = "<group>"; };
-		8CCA6F2723A369340048B1B8 /* TickerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerDetail.swift; sourceTree = "<group>"; };
-		8CCA6F2D23A38EB60048B1B8 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		8CCA6F3123A3A8900048B1B8 /* TickerIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerIdentifier.swift; sourceTree = "<group>"; };
 		8CCA6F3423A3A9AC0048B1B8 /* TickerIdentifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerIdentifierTests.swift; sourceTree = "<group>"; };
-		8CCE185523DB0F8D00738D32 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		8CD60C561F5BD34200ABDB23 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CDBC61923A7F4EA00084B7F /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleDataTransport.framework; sourceTree = "<group>"; };
 		8CDBC61A23A7F4EA00084B7F /* GoogleDataTransportCCTSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleDataTransportCCTSupport.framework; sourceTree = "<group>"; };
@@ -254,53 +266,21 @@
 		8CDBC62223A7F4EA00084B7F /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
 		8CDBC62E23A7F82F00084B7F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		8CDBC63023A7F84600084B7F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		8CDBC63223A7F9A800084B7F /* AnalyticsParametersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsParametersFactory.swift; sourceTree = "<group>"; };
 		8CDFD4701F0786F9009F1E19 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		8CDFD47A1F084106009F1E19 /* BitBay-TickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BitBay-TickerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CDFD47C1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerDetailsViewControllerUITests.swift; sourceTree = "<group>"; };
 		8CDFD47E1F084106009F1E19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CE06BD61F061D1400EBD7B9 /* BitBay-Ticker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BitBay-Ticker.entitlements"; sourceTree = "<group>"; };
-		8CEB402423A94D75000928CE /* ReviewPopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPopUpController.swift; sourceTree = "<group>"; };
-		8CEB402623A95DC0000928CE /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
-		8CEB402823A962C5000928CE /* ErrorBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorBanner.swift; sourceTree = "<group>"; };
 		8CED93082083C4EA00A068BD /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
-		8CEE9B5623A2DBB700D5B24B /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
-		8CF387A323ED703300BE9349 /* TickerAdderContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerAdderContent.swift; sourceTree = "<group>"; };
-		8CF387A723ED705D00BE9349 /* TickerAdderEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerAdderEmpty.swift; sourceTree = "<group>"; };
 		8CF438AF23DCDCCF00496367 /* FirebaseInstallations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstallations.framework; path = "BitBay-Ticker/Frameworks/Firebase/Analytics/FirebaseInstallations.framework"; sourceTree = "<group>"; };
 		8CF438B023DCDCCF00496367 /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromisesObjC.framework; path = "BitBay-Ticker/Frameworks/Firebase/Analytics/PromisesObjC.framework"; sourceTree = "<group>"; };
-		8CF9493223E5C0DD00625CA7 /* WidgetConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetConfiguration.swift; sourceTree = "<group>"; };
-		8CF9493423E5C11E00625CA7 /* WidgetUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetUserData.swift; sourceTree = "<group>"; };
-		8CF9496823E6229600625CA7 /* BitBay Ticker Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BitBay Ticker Widget.entitlements"; sourceTree = "<group>"; };
 		8CFB35111F1808F900475DC1 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		8CFF6D7523E9FA7100C34B35 /* TickerPropertiesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerPropertiesFetcher.swift; sourceTree = "<group>"; };
 		91937493DCBCD003EA208242 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B087561A567A814D6F909055 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		BF13BF0B80336B95A6FA66B6 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8C9BA35223E597FF00ADA235 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8C07E5A723EDA4BD00B6BF35 /* PromisesObjC.framework in Frameworks */,
-				8C07E59523EDA4BC00B6BF35 /* FirebaseCore.framework in Frameworks */,
-				8C05601723EDC4FD00CF43A7 /* libsqlite3.tbd in Frameworks */,
-				8C9BA35623E597FF00ADA235 /* NotificationCenter.framework in Frameworks */,
-				8C07E59723EDA4BC00B6BF35 /* FirebaseCoreDiagnostics.framework in Frameworks */,
-				8C07E59123EDA4BC00B6BF35 /* FIRAnalyticsConnector.framework in Frameworks */,
-				8C07E59B23EDA4BD00B6BF35 /* FirebaseInstanceID.framework in Frameworks */,
-				8C07E59323EDA4BC00B6BF35 /* FirebaseAnalytics.framework in Frameworks */,
-				8C07E59F23EDA4BD00B6BF35 /* GoogleDataTransport.framework in Frameworks */,
-				8C07E59D23EDA4BD00B6BF35 /* GoogleAppMeasurement.framework in Frameworks */,
-				8C07E5A123EDA4BD00B6BF35 /* GoogleDataTransportCCTSupport.framework in Frameworks */,
-				8C07E59923EDA4BC00B6BF35 /* FirebaseInstallations.framework in Frameworks */,
-				8C07E5A523EDA4BD00B6BF35 /* nanopb.framework in Frameworks */,
-				8C07E5A323EDA4BD00B6BF35 /* GoogleUtilities.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8CC184F51EFE4CAC0083DA30 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -338,73 +318,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8C0192FF23E350E9008693D8 /* ViewModifiers */ = {
-			isa = PBXGroup;
-			children = (
-				8CCE185523DB0F8D00738D32 /* ClearButton.swift */,
-			);
-			path = ViewModifiers;
-			sourceTree = "<group>";
-		};
-		8C0688AB23A4DE5E003C45A3 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				8C1F1D6B23A65A2900D25D99 /* Analytics */,
-				8CF9496623E61F5F00625CA7 /* Networking */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		8C0688BE23A58131003C45A3 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				8CB1450A23E37943002F5A6A /* Title.swift */,
-				8CEB402823A962C5000928CE /* ErrorBanner.swift */,
-				8C0192FB23E34730008693D8 /* CurrencyIcon.swift */,
-				8CBF652323E409760081F719 /* CurrencyTemplateIcon.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		8C1F1D6123A62F3F00D25D99 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				8C1F1D6223A62F4A00D25D99 /* PrettyValueFormatterTests.swift */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		8C1F1D6423A63A7F00D25D99 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				8C0688BE23A58131003C45A3 /* Views */,
-				8C0192FF23E350E9008693D8 /* ViewModifiers */,
-				8CEB402423A94D75000928CE /* ReviewPopUpController.swift */,
-				8C1F1D5F23A62C5D00D25D99 /* PrettyValueFormatter.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		8C1F1D6B23A65A2900D25D99 /* Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				8C1F1D6C23A65A4000D25D99 /* AnalyticsService.swift */,
-				8CDBC63223A7F9A800084B7F /* AnalyticsParametersFactory.swift */,
-			);
-			path = Analytics;
-			sourceTree = "<group>";
-		};
-		8C6FB62D23A2CCBD00724C86 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				267BBC6423D9CF66000EF9AB /* Main.swift */,
-				267BBC6623D9D5EF000EF9AB /* MainContent.swift */,
-				8C6FB62E23A2CCCA00724C86 /* TickerList.swift */,
-				267BBC6223D9CC11000EF9AB /* TickerEmptyList.swift */,
-				8C0192FD23E34977008693D8 /* TickerListRow.swift */,
-				267BBC6A23D9D6B8000EF9AB /* AdderButtonView.swift */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		8C6FB63223A2CE2200724C86 /* Translations */ = {
@@ -415,18 +334,291 @@
 			path = Translations;
 			sourceTree = "<group>";
 		};
-		8C9BA35723E597FF00ADA235 /* BitBay-Ticker-Widget */ = {
+		8CAD2AFE2613BB110055A58C /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				8C9BA35823E597FF00ADA235 /* TodayViewController.swift */,
-				8CF9493423E5C11E00625CA7 /* WidgetUserData.swift */,
-				8CAE2E2B23EB4FA6005C53BC /* WidgetTableViewCell.swift */,
-				8CF9493223E5C0DD00625CA7 /* WidgetConfiguration.swift */,
-				8C9BA35A23E597FF00ADA235 /* MainInterface.storyboard */,
-				8CF9496823E6229600625CA7 /* BitBay Ticker Widget.entitlements */,
-				8C9BA35D23E597FF00ADA235 /* Info.plist */,
+				8CAD2AFF2613BB110055A58C /* MainCoordinator.swift */,
+				8CAD2B002613BB110055A58C /* SceneCoordinator.swift */,
+				8CAD2B012613BB110055A58C /* Coordinator.swift */,
 			);
-			path = "BitBay-Ticker-Widget";
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		8CAD2B022613BB110055A58C /* MainDataRepositories */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B042613BB110055A58C /* Fetchers */,
+				8CAD2B142613BB110055A58C /* Networking */,
+				8CAD2B172613BB110055A58C /* Models */,
+				8CAD2B1B2613BB110055A58C /* MainLocalDataRepository */,
+				8CAD2B2A2613BB110055A58C /* MainDataRepository.swift */,
+			);
+			path = MainDataRepositories;
+			sourceTree = "<group>";
+		};
+		8CAD2B042613BB110055A58C /* Fetchers */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B052613BB110055A58C /* TickersFetchers */,
+				8CAD2B102613BB110055A58C /* SupportedTickersAndCurrenciesNamesFetcher */,
+			);
+			path = Fetchers;
+			sourceTree = "<group>";
+		};
+		8CAD2B052613BB110055A58C /* TickersFetchers */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B062613BB110055A58C /* TickersFetcher.swift */,
+				8CAD2B072613BB110055A58C /* TickerFetcher */,
+			);
+			path = TickersFetchers;
+			sourceTree = "<group>";
+		};
+		8CAD2B072613BB110055A58C /* TickerFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B082613BB110055A58C /* Statistics */,
+				8CAD2B0B2613BB110055A58C /* TickerPropertiesFetcher.swift */,
+				8CAD2B0C2613BB110055A58C /* Values */,
+				8CAD2B0F2613BB110055A58C /* TickerFetcher.swift */,
+			);
+			path = TickerFetcher;
+			sourceTree = "<group>";
+		};
+		8CAD2B082613BB110055A58C /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B092613BB110055A58C /* TickerStatisticsAPIResponse.swift */,
+				8CAD2B0A2613BB110055A58C /* TickerStatistics.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		8CAD2B0C2613BB110055A58C /* Values */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B0D2613BB110055A58C /* TickerValuesAPIResponse.swift */,
+				8CAD2B0E2613BB110055A58C /* TickerValues.swift */,
+			);
+			path = Values;
+			sourceTree = "<group>";
+		};
+		8CAD2B102613BB110055A58C /* SupportedTickersAndCurrenciesNamesFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B112613BB110055A58C /* SupportedTickersAndCurrenciesNamesFetcher.swift */,
+				8CAD2B122613BB110055A58C /* SupportedTickersAndCurrenciesNamesFetcherAPIResponse.swift */,
+				8CAD2B132613BB110055A58C /* SupportedTickersAndCurrenciesNamesFetcherModel.swift */,
+			);
+			path = SupportedTickersAndCurrenciesNamesFetcher;
+			sourceTree = "<group>";
+		};
+		8CAD2B142613BB110055A58C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B152613BB110055A58C /* NetworkingService.swift */,
+				8CAD2B162613BB110055A58C /* Endpoint.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		8CAD2B172613BB110055A58C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B182613BB110055A58C /* SupportedTicker.swift */,
+				8CAD2B192613BB110055A58C /* Currency.swift */,
+				8CAD2B1A2613BB110055A58C /* Ticker.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8CAD2B1B2613BB110055A58C /* MainLocalDataRepository */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B1C2613BB110055A58C /* MainLocalDataRepository.swift */,
+				8CAD2B1D2613BB110055A58C /* MainLocalDataSaver.swift */,
+				8CAD2B1E2613BB110055A58C /* MainLocalDataModel.swift */,
+				8CAD2B1F2613BB110055A58C /* TickersMigrator */,
+				8CAD2B292613BB110055A58C /* MainLocalDataFetcher.swift */,
+			);
+			path = MainLocalDataRepository;
+			sourceTree = "<group>";
+		};
+		8CAD2B1F2613BB110055A58C /* TickersMigrator */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B202613BB110055A58C /* V0ToV2 */,
+				8CAD2B222613BB110055A58C /* Migrator.swift */,
+				8CAD2B232613BB110055A58C /* V1ToV2 */,
+				8CAD2B252613BB110055A58C /* MigratorController.swift */,
+				8CAD2B262613BB110055A58C /* Old Models */,
+			);
+			path = TickersMigrator;
+			sourceTree = "<group>";
+		};
+		8CAD2B202613BB110055A58C /* V0ToV2 */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B212613BB110055A58C /* MigratorFromV0ToV1.swift */,
+			);
+			path = V0ToV2;
+			sourceTree = "<group>";
+		};
+		8CAD2B232613BB110055A58C /* V1ToV2 */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B242613BB110055A58C /* MigratorFromV1ToV2.swift */,
+			);
+			path = V1ToV2;
+			sourceTree = "<group>";
+		};
+		8CAD2B262613BB110055A58C /* Old Models */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B272613BB110055A58C /* TickerV0.swift */,
+				8CAD2B282613BB110055A58C /* TickerV1.swift */,
+			);
+			path = "Old Models";
+			sourceTree = "<group>";
+		};
+		8CAD2B2B2613BB110055A58C /* TickersList */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B2C2613BB110055A58C /* TickersListViewController.swift */,
+				8CAD2B2D2613BB110055A58C /* TickersListModel.swift */,
+				8CAD2B2E2613BB110055A58C /* TickersListDataRepository.swift */,
+				8CAD2B2F2613BB110055A58C /* TickersListRowData.swift */,
+				8CAD2B302613BB110055A58C /* TickersListViewModel.swift */,
+				8CAD2B312613BB110055A58C /* TickersListView.swift */,
+				8CAD2B322613BB110055A58C /* Views */,
+			);
+			path = TickersList;
+			sourceTree = "<group>";
+		};
+		8CAD2B322613BB110055A58C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B332613BB110055A58C /* TickersListRowView.swift */,
+				8CAD2B342613BB110055A58C /* ErrorBannerView.swift */,
+				8CAD2B352613BB110055A58C /* TickersListFilledListView.swift */,
+				8CAD2B362613BB110055A58C /* TickersListEmptyListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8CAD2B372613BB110055A58C /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B382613BB110055A58C /* ReviewPopUpController.swift */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		8CAD2B392613BB110055A58C /* TickersAdder */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B3A2613BB110055A58C /* TickersAdderRowData.swift */,
+				8CAD2B3B2613BB110055A58C /* TickersAdderDataRepository.swift */,
+				8CAD2B3C2613BB110055A58C /* TickersAdderView.swift */,
+				8CAD2B3D2613BB110055A58C /* TickersAdderModel.swift */,
+				8CAD2B3E2613BB110055A58C /* TickersAdderViewModel.swift */,
+				8CAD2B3F2613BB110055A58C /* TickersAdderViewController.swift */,
+				8CAD2B402613BB110055A58C /* Views */,
+			);
+			path = TickersAdder;
+			sourceTree = "<group>";
+		};
+		8CAD2B402613BB110055A58C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B412613BB110055A58C /* TickersAdderRowView.swift */,
+				8CAD2B422613BB110055A58C /* TickersAdderEmptyRowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8CAD2B432613BB120055A58C /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B442613BB120055A58C /* AnalyticsParameterValue.swift */,
+				8CAD2B452613BB120055A58C /* ConsoleAnalytics */,
+				8CAD2B472613BB120055A58C /* Firebase */,
+				8CAD2B4B2613BB120055A58C /* AnalyticsService.swift */,
+				8CAD2B4C2613BB120055A58C /* AnalyticsFetchingSource.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		8CAD2B452613BB120055A58C /* ConsoleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B462613BB120055A58C /* ConsoleAnalytics.swift */,
+			);
+			path = ConsoleAnalytics;
+			sourceTree = "<group>";
+		};
+		8CAD2B472613BB120055A58C /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B482613BB120055A58C /* AnalyticsParameterValue+Firebase.swift */,
+				8CAD2B492613BB120055A58C /* FirbaseAnalyticsService.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		8CAD2B4D2613BB120055A58C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B4E2613BB120055A58C /* Color+ApplicationColor.swift */,
+				8CAD2B4F2613BB120055A58C /* VideModifier */,
+				8CAD2B512613BB120055A58C /* PrettyValueFormatter.swift */,
+				8CAD2B522613BB120055A58C /* UIViewController+PrepareMainView.swift */,
+				8CAD2B532613BB120055A58C /* ApplicationConfiguration.swift */,
+				8CAD2B542613BB120055A58C /* Views */,
+				8CAD2B582613BB120055A58C /* UserDefaults+Shared.swift */,
+				8CAD2B592613BB120055A58C /* Double+OptionalString.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8CAD2B4F2613BB120055A58C /* VideModifier */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B502613BB120055A58C /* ClearButton.swift */,
+			);
+			path = VideModifier;
+			sourceTree = "<group>";
+		};
+		8CAD2B542613BB120055A58C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B552613BB120055A58C /* TitleView.swift */,
+				8CAD2B562613BB120055A58C /* CurrencyIconView.swift */,
+				8CAD2B572613BB120055A58C /* CurrencyTemplateIconView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8CAD2B5A2613BB120055A58C /* TickerDetails */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B5B2613BB120055A58C /* TickerDetailsRowData.swift */,
+				8CAD2B5C2613BB120055A58C /* TickerDetailsViewModel.swift */,
+				8CAD2B5D2613BB120055A58C /* TickerDetailsViewController.swift */,
+				8CAD2B5E2613BB120055A58C /* TickerDetailsView.swift */,
+				8CAD2B5F2613BB120055A58C /* Views */,
+				8CAD2B612613BB120055A58C /* TickerDetailsDataRepository.swift */,
+				8CAD2B622613BB120055A58C /* TickerDetailsModel.swift */,
+			);
+			path = TickerDetails;
+			sourceTree = "<group>";
+		};
+		8CAD2B5F2613BB120055A58C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B602613BB120055A58C /* TickerDetailsRowView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8CAE92A423DDC6150025539D /* Headers */ = {
@@ -438,31 +630,12 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
-		8CBDE31123DF36660097DBBF /* Migrators */ = {
-			isa = PBXGroup;
-			children = (
-				8CBDE31223DF36890097DBBF /* MigratorFromV0ToV1.swift */,
-			);
-			path = Migrators;
-			sourceTree = "<group>";
-		};
-		8CBDE31423DF4E580097DBBF /* Storage */ = {
-			isa = PBXGroup;
-			children = (
-				8CBDE31523DF4E720097DBBF /* DataStorage.swift */,
-				8CBDE31723DF4E800097DBBF /* TickersDataLoader.swift */,
-				8CBDE31923DF4E8E0097DBBF /* TickersDataSaver.swift */,
-			);
-			path = Storage;
-			sourceTree = "<group>";
-		};
 		8CC184EF1EFE4CAC0083DA30 = {
 			isa = PBXGroup;
 			children = (
 				8CC184FA1EFE4CAC0083DA30 /* BitBay-Ticker */,
 				8CC1850F1EFE4CAC0083DA30 /* BitBay-TickerTests */,
 				8CDFD47B1F084106009F1E19 /* BitBay-TickerUITests */,
-				8C9BA35723E597FF00ADA235 /* BitBay-Ticker-Widget */,
 				8CC184F91EFE4CAC0083DA30 /* Products */,
 				C24AC6780E9338DA000950BE /* Frameworks */,
 			);
@@ -474,7 +647,6 @@
 				8CC184F81EFE4CAC0083DA30 /* BitBay-Ticker.app */,
 				8CC1850C1EFE4CAC0083DA30 /* BitBay-TickerTests.xctest */,
 				8CDFD47A1F084106009F1E19 /* BitBay-TickerUITests.xctest */,
-				8C9BA35523E597FF00ADA235 /* BitBay-Ticker-Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -482,14 +654,14 @@
 		8CC184FA1EFE4CAC0083DA30 /* BitBay-Ticker */ = {
 			isa = PBXGroup;
 			children = (
-				8CBDE31123DF36660097DBBF /* Migrators */,
-				8CEE9B5523A2DBAA00D5B24B /* Models */,
-				8C0688AB23A4DE5E003C45A3 /* Services */,
-				8C6FB62D23A2CCBD00724C86 /* Main */,
-				8CCA6F2423A368FF0048B1B8 /* Detail */,
-				8CCA6F2323A368F90048B1B8 /* Adder */,
-				8C1F1D6423A63A7F00D25D99 /* Common */,
-				8CD1D20E23A42D7D0045E60A /* Utilities */,
+				8CAD2B432613BB120055A58C /* Analytics */,
+				8CAD2B4D2613BB120055A58C /* Common */,
+				8CAD2AFE2613BB110055A58C /* Coordinators */,
+				8CAD2B022613BB110055A58C /* MainDataRepositories */,
+				8CAD2B372613BB110055A58C /* Review */,
+				8CAD2B5A2613BB120055A58C /* TickerDetails */,
+				8CAD2B392613BB110055A58C /* TickersAdder */,
+				8CAD2B2B2613BB110055A58C /* TickersList */,
 				8CC7DDA81EFFEDD500050A7F /* Supporting Files */,
 				8C6FB63223A2CE2200724C86 /* Translations */,
 				8CDBC61623A7F4D700084B7F /* Frameworks */,
@@ -513,7 +685,6 @@
 			children = (
 				8CAE92A423DDC6150025539D /* Headers */,
 				8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */,
-				8C8CC5B023DDFBE5001CF17F /* AppConfiguration.swift */,
 				8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */,
 				8CC185041EFE4CAC0083DA30 /* LaunchScreen.storyboard */,
 				8C7F0D4D21CA242C002C6553 /* GoogleService-Info.plist */,
@@ -522,46 +693,12 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8CCA6F2323A368F90048B1B8 /* Adder */ = {
-			isa = PBXGroup;
-			children = (
-				8CCA6F2523A369220048B1B8 /* TickerAdder.swift */,
-				8CF387A323ED703300BE9349 /* TickerAdderContent.swift */,
-				8CF387A723ED705D00BE9349 /* TickerAdderEmpty.swift */,
-				8C01930023E36238008693D8 /* AdderRow.swift */,
-			);
-			path = Adder;
-			sourceTree = "<group>";
-		};
-		8CCA6F2423A368FF0048B1B8 /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-				8C0688BC23A57A78003C45A3 /* TickerDetailViewModel.swift */,
-				8CCA6F2723A369340048B1B8 /* TickerDetail.swift */,
-				8C01930223E3711E008693D8 /* DetailRow.swift */,
-			);
-			path = Detail;
-			sourceTree = "<group>";
-		};
 		8CCA6F3323A3A9920048B1B8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				8CCA6F3423A3A9AC0048B1B8 /* TickerIdentifierTests.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		8CD1D20E23A42D7D0045E60A /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				8C0688BA23A56994003C45A3 /* String+Extensions.swift */,
-				8C1F1D6923A658A100D25D99 /* AdaptsToSoftwareKeyboard.swift */,
-				8C3EA62D23A6888000A501CD /* MimimumTouchTargetSize.swift */,
-				8CEB402623A95DC0000928CE /* UserDefaultsManager.swift */,
-				8C8CC5B223DE0029001CF17F /* Int+TimeIntervalExtensions.swift */,
-				8C1F1D6723A652FF00D25D99 /* Color+ApplicationColors.swift */,
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 		8CDBC61623A7F4D700084B7F /* Frameworks */ = {
@@ -606,38 +743,6 @@
 				8CDFD47E1F084106009F1E19 /* Info.plist */,
 			);
 			path = "BitBay-TickerUITests";
-			sourceTree = "<group>";
-		};
-		8CEE9B5523A2DBAA00D5B24B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				8CBDE31423DF4E580097DBBF /* Storage */,
-				8CCA6F3123A3A8900048B1B8 /* TickerIdentifier.swift */,
-				8CEE9B5623A2DBB700D5B24B /* Ticker.swift */,
-				8CCA6F2D23A38EB60048B1B8 /* UserData.swift */,
-				8CAE92A723DDF3070025539D /* TickerIdentifiersStore.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		8CF9496623E61F5F00625CA7 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				8CF9496723E61F7D00625CA7 /* Response */,
-				8C0688AC23A4DE75003C45A3 /* SupportedTickersFetcher.swift */,
-				8CFF6D7523E9FA7100C34B35 /* TickerPropertiesFetcher.swift */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
-		8CF9496723E61F7D00625CA7 /* Response */ = {
-			isa = PBXGroup;
-			children = (
-				8C0688B023A53D31003C45A3 /* TickerValuesAPIResponse.swift */,
-				8C0688B623A54930003C45A3 /* TickerStatisticsAPIResponse.swift */,
-				8C0688B223A53D4F003C45A3 /* SupportedTickersAPIResponse.swift */,
-			);
-			path = Response;
 			sourceTree = "<group>";
 		};
 		C24AC6780E9338DA000950BE /* Frameworks */ = {
@@ -691,23 +796,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8C9BA35423E597FF00ADA235 /* BitBay-Ticker-Widget */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8C9BA36323E597FF00ADA235 /* Build configuration list for PBXNativeTarget "BitBay-Ticker-Widget" */;
-			buildPhases = (
-				8C9BA35123E597FF00ADA235 /* Sources */,
-				8C9BA35223E597FF00ADA235 /* Frameworks */,
-				8C9BA35323E597FF00ADA235 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "BitBay-Ticker-Widget";
-			productName = "BitBay-Ticker-Widget";
-			productReference = 8C9BA35523E597FF00ADA235 /* BitBay-Ticker-Widget.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		8CC184F71EFE4CAC0083DA30 /* BitBay-Ticker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CC185151EFE4CAC0083DA30 /* Build configuration list for PBXNativeTarget "BitBay-Ticker" */;
@@ -720,7 +808,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				8C9BA35F23E597FF00ADA235 /* PBXTargetDependency */,
 			);
 			name = "BitBay-Ticker";
 			productName = "BitBay-Ticker";
@@ -773,11 +860,6 @@
 				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Albin Sadowski";
 				TargetAttributes = {
-					8C9BA35423E597FF00ADA235 = {
-						CreatedOnToolsVersion = 11.3.1;
-						DevelopmentTeam = AXTXBRU9S7;
-						ProvisioningStyle = Automatic;
-					};
 					8CC184F71EFE4CAC0083DA30 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = AXTXBRU9S7;
@@ -826,23 +908,11 @@
 				8CC184F71EFE4CAC0083DA30 /* BitBay-Ticker */,
 				8CC1850B1EFE4CAC0083DA30 /* BitBay-TickerTests */,
 				8CDFD4791F084106009F1E19 /* BitBay-TickerUITests */,
-				8C9BA35423E597FF00ADA235 /* BitBay-Ticker-Widget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8C9BA35323E597FF00ADA235 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8CF9493123E5BA8800625CA7 /* Assets.xcassets in Resources */,
-				8C05601923EDC64F00CF43A7 /* GoogleService-Info.plist in Resources */,
-				8C4E5FB323ED5B9E0017E753 /* Localizable.strings in Resources */,
-				8C9BA35C23E597FF00ADA235 /* MainInterface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8CC184F61EFE4CAC0083DA30 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -871,83 +941,83 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8C9BA35123E597FF00ADA235 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8CF9492B23E5B97600625CA7 /* TickerIdentifiersStore.swift in Sources */,
-				8CF9493023E5BA1C00625CA7 /* String+Extensions.swift in Sources */,
-				8CF9492A23E5B96600625CA7 /* Title.swift in Sources */,
-				8CF9493723E5C38C00625CA7 /* TickersDataSaver.swift in Sources */,
-				8CFF6D7A23EA1A3500C34B35 /* AnalyticsParametersFactory.swift in Sources */,
-				8CFF6D7923EA0CFB00C34B35 /* TickerPropertiesFetcher.swift in Sources */,
-				8CAE2E2C23EB4FA6005C53BC /* WidgetTableViewCell.swift in Sources */,
-				8CF9493323E5C0DD00625CA7 /* WidgetConfiguration.swift in Sources */,
-				8CF9493523E5C11E00625CA7 /* WidgetUserData.swift in Sources */,
-				8CF9492C23E5B97C00625CA7 /* TickerIdentifier.swift in Sources */,
-				8CF9496523E5E2FE00625CA7 /* TickerStatisticsAPIResponse.swift in Sources */,
-				8CF9492E23E5B9A800625CA7 /* Ticker.swift in Sources */,
-				8CF9493F23E5D73A00625CA7 /* TickerValuesAPIResponse.swift in Sources */,
-				8CF9493623E5C38900625CA7 /* TickersDataLoader.swift in Sources */,
-				8CF9493823E5C3B300625CA7 /* AppConfiguration.swift in Sources */,
-				8CF9493923E5C3BD00625CA7 /* Int+TimeIntervalExtensions.swift in Sources */,
-				8CF9492923E5B96200625CA7 /* CurrencyIcon.swift in Sources */,
-				8C9BA35923E597FF00ADA235 /* TodayViewController.swift in Sources */,
-				8C07E58F23EDA07500B6BF35 /* AnalyticsService.swift in Sources */,
-				8CF9492F23E5BA1100625CA7 /* CurrencyTemplateIcon.swift in Sources */,
-				8CF9492D23E5B98700625CA7 /* PrettyValueFormatter.swift in Sources */,
-				8CF9492823E5B95400625CA7 /* TickerListRow.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8CC184F41EFE4CAC0083DA30 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				267BBC6523D9CF66000EF9AB /* Main.swift in Sources */,
-				8C1F1D6D23A65A4000D25D99 /* AnalyticsService.swift in Sources */,
-				8CCE185623DB0F8D00738D32 /* ClearButton.swift in Sources */,
-				8C0688BD23A57A78003C45A3 /* TickerDetailViewModel.swift in Sources */,
-				8C0688BB23A56994003C45A3 /* String+Extensions.swift in Sources */,
-				8CFF6D7623E9FA7100C34B35 /* TickerPropertiesFetcher.swift in Sources */,
-				8CBDE31A23DF4E8E0097DBBF /* TickersDataSaver.swift in Sources */,
-				8C6FB62F23A2CCCA00724C86 /* TickerList.swift in Sources */,
-				8C1F1D6823A652FF00D25D99 /* Color+ApplicationColors.swift in Sources */,
-				8CBDE31823DF4E800097DBBF /* TickersDataLoader.swift in Sources */,
-				8CCA6F2623A369220048B1B8 /* TickerAdder.swift in Sources */,
-				8CB1450B23E37943002F5A6A /* Title.swift in Sources */,
-				8CBDE31623DF4E720097DBBF /* DataStorage.swift in Sources */,
-				267BBC6723D9D5EF000EF9AB /* MainContent.swift in Sources */,
-				8C0688B123A53D31003C45A3 /* TickerValuesAPIResponse.swift in Sources */,
-				8CAE92A823DDF3070025539D /* TickerIdentifiersStore.swift in Sources */,
-				8CBF652423E409760081F719 /* CurrencyTemplateIcon.swift in Sources */,
-				8CCA6F2823A369340048B1B8 /* TickerDetail.swift in Sources */,
-				8C0192FC23E34730008693D8 /* CurrencyIcon.swift in Sources */,
-				8CCA6F3223A3A8900048B1B8 /* TickerIdentifier.swift in Sources */,
-				8CEE9B5723A2DBB700D5B24B /* Ticker.swift in Sources */,
+				8CAD2BAB2613BB120055A58C /* TickerDetailsModel.swift in Sources */,
+				8CAD2B6B2613BB120055A58C /* TickerValuesAPIResponse.swift in Sources */,
+				8CAD2B652613BB120055A58C /* Coordinator.swift in Sources */,
+				8CAD2B872613BB120055A58C /* TickersListRowView.swift in Sources */,
+				8CAD2B8C2613BB120055A58C /* TickersAdderRowData.swift in Sources */,
+				8CAD2B822613BB120055A58C /* TickersListModel.swift in Sources */,
+				8CAD2B7D2613BB120055A58C /* TickerV0.swift in Sources */,
+				8CAD2B642613BB120055A58C /* SceneCoordinator.swift in Sources */,
+				8CAD2B9A2613BB120055A58C /* AnalyticsFetchingSource.swift in Sources */,
+				8CAD2B6F2613BB120055A58C /* SupportedTickersAndCurrenciesNamesFetcherAPIResponse.swift in Sources */,
+				8CAD2B862613BB120055A58C /* TickersListView.swift in Sources */,
+				8CAD2BA22613BB120055A58C /* CurrencyTemplateIconView.swift in Sources */,
+				8CAD2B772613BB120055A58C /* MainLocalDataSaver.swift in Sources */,
+				8CAD2BA42613BB120055A58C /* Double+OptionalString.swift in Sources */,
+				8CAD2B732613BB120055A58C /* SupportedTicker.swift in Sources */,
+				8CAD2B972613BB120055A58C /* FirbaseAnalyticsService.swift in Sources */,
+				8CAD2B7F2613BB120055A58C /* MainLocalDataFetcher.swift in Sources */,
+				8CAD2BA02613BB120055A58C /* TitleView.swift in Sources */,
+				8CAD2B962613BB120055A58C /* AnalyticsParameterValue+Firebase.swift in Sources */,
+				8CAD2B922613BB120055A58C /* TickersAdderRowView.swift in Sources */,
+				8CAD2B842613BB120055A58C /* TickersListRowData.swift in Sources */,
+				8CAD2B6A2613BB120055A58C /* TickerPropertiesFetcher.swift in Sources */,
+				8CAD2BA12613BB120055A58C /* CurrencyIconView.swift in Sources */,
+				8CAD2B992613BB120055A58C /* AnalyticsService.swift in Sources */,
+				8CAD2B8B2613BB120055A58C /* ReviewPopUpController.swift in Sources */,
+				8CAD2B9B2613BB120055A58C /* Color+ApplicationColor.swift in Sources */,
+				8CAD2BA52613BB120055A58C /* TickerDetailsRowData.swift in Sources */,
 				8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */,
-				8CBDE31323DF36890097DBBF /* MigratorFromV0ToV1.swift in Sources */,
-				8C0688AD23A4DE75003C45A3 /* SupportedTickersFetcher.swift in Sources */,
-				8C8CC5B323DE0029001CF17F /* Int+TimeIntervalExtensions.swift in Sources */,
-				8CF387A423ED703300BE9349 /* TickerAdderContent.swift in Sources */,
-				267BBC6B23D9D6B8000EF9AB /* AdderButtonView.swift in Sources */,
-				8C0192FE23E34977008693D8 /* TickerListRow.swift in Sources */,
-				8CDBC63323A7F9A800084B7F /* AnalyticsParametersFactory.swift in Sources */,
-				8C0688B723A54930003C45A3 /* TickerStatisticsAPIResponse.swift in Sources */,
-				267BBC6323D9CC11000EF9AB /* TickerEmptyList.swift in Sources */,
-				8C1F1D6A23A658A100D25D99 /* AdaptsToSoftwareKeyboard.swift in Sources */,
-				8C8CC5B123DDFBE5001CF17F /* AppConfiguration.swift in Sources */,
-				8CCA6F2E23A38EB60048B1B8 /* UserData.swift in Sources */,
-				8CEB402523A94D75000928CE /* ReviewPopUpController.swift in Sources */,
-				8C1F1D6023A62C5D00D25D99 /* PrettyValueFormatter.swift in Sources */,
-				8CEB402723A95DC0000928CE /* UserDefaultsManager.swift in Sources */,
-				8C0688B323A53D4F003C45A3 /* SupportedTickersAPIResponse.swift in Sources */,
-				8CF387A823ED705D00BE9349 /* TickerAdderEmpty.swift in Sources */,
-				8CEB402923A962C5000928CE /* ErrorBanner.swift in Sources */,
-				8C01930323E3711E008693D8 /* DetailRow.swift in Sources */,
+				8CAD2B9C2613BB120055A58C /* ClearButton.swift in Sources */,
+				8CAD2B7E2613BB120055A58C /* TickerV1.swift in Sources */,
+				8CAD2B832613BB120055A58C /* TickersListDataRepository.swift in Sources */,
+				8CAD2B692613BB120055A58C /* TickerStatistics.swift in Sources */,
+				8CAD2B6E2613BB120055A58C /* SupportedTickersAndCurrenciesNamesFetcher.swift in Sources */,
+				8CAD2B8A2613BB120055A58C /* TickersListEmptyListView.swift in Sources */,
+				8CAD2BA82613BB120055A58C /* TickerDetailsView.swift in Sources */,
+				8CAD2B852613BB120055A58C /* TickersListViewModel.swift in Sources */,
+				8CAD2BA92613BB120055A58C /* TickerDetailsRowView.swift in Sources */,
+				8CAD2B9D2613BB120055A58C /* PrettyValueFormatter.swift in Sources */,
+				8CAD2B932613BB120055A58C /* TickersAdderEmptyRowView.swift in Sources */,
+				8CAD2B9F2613BB120055A58C /* ApplicationConfiguration.swift in Sources */,
+				8CAD2B6D2613BB120055A58C /* TickerFetcher.swift in Sources */,
+				8CAD2B892613BB120055A58C /* TickersListFilledListView.swift in Sources */,
+				8CAD2B7A2613BB120055A58C /* Migrator.swift in Sources */,
+				8CAD2B702613BB120055A58C /* SupportedTickersAndCurrenciesNamesFetcherModel.swift in Sources */,
+				8CAD2B7C2613BB120055A58C /* MigratorController.swift in Sources */,
+				8CAD2B762613BB120055A58C /* MainLocalDataRepository.swift in Sources */,
+				8CAD2BA72613BB120055A58C /* TickerDetailsViewController.swift in Sources */,
+				8CAD2BAA2613BB120055A58C /* TickerDetailsDataRepository.swift in Sources */,
+				8CAD2B722613BB120055A58C /* Endpoint.swift in Sources */,
+				8CAD2B902613BB120055A58C /* TickersAdderViewModel.swift in Sources */,
+				8CAD2B672613BB120055A58C /* TickersFetcher.swift in Sources */,
+				8CAD2B812613BB120055A58C /* TickersListViewController.swift in Sources */,
+				8CAD2B6C2613BB120055A58C /* TickerValues.swift in Sources */,
+				8CAD2B802613BB120055A58C /* MainDataRepository.swift in Sources */,
+				8CAD2B8F2613BB120055A58C /* TickersAdderModel.swift in Sources */,
+				8CAD2B742613BB120055A58C /* Currency.swift in Sources */,
+				8CAD2B792613BB120055A58C /* MigratorFromV0ToV1.swift in Sources */,
+				8CAD2B8E2613BB120055A58C /* TickersAdderView.swift in Sources */,
+				8CAD2BA32613BB120055A58C /* UserDefaults+Shared.swift in Sources */,
+				8CAD2B682613BB120055A58C /* TickerStatisticsAPIResponse.swift in Sources */,
+				8CAD2B712613BB120055A58C /* NetworkingService.swift in Sources */,
+				8CAD2B942613BB120055A58C /* AnalyticsParameterValue.swift in Sources */,
+				8CAD2B8D2613BB120055A58C /* TickersAdderDataRepository.swift in Sources */,
+				8CAD2B9E2613BB120055A58C /* UIViewController+PrepareMainView.swift in Sources */,
+				8CAD2B952613BB120055A58C /* ConsoleAnalytics.swift in Sources */,
+				8CAD2B882613BB120055A58C /* ErrorBannerView.swift in Sources */,
+				8CAD2B752613BB120055A58C /* Ticker.swift in Sources */,
+				8CAD2B912613BB120055A58C /* TickersAdderViewController.swift in Sources */,
+				8CAD2B7B2613BB120055A58C /* MigratorFromV1ToV2.swift in Sources */,
+				8CAD2BA62613BB120055A58C /* TickerDetailsViewModel.swift in Sources */,
 				8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */,
-				8C3EA62E23A6888000A501CD /* MimimumTouchTargetSize.swift in Sources */,
-				8C01930123E36238008693D8 /* AdderRow.swift in Sources */,
+				8CAD2B632613BB120055A58C /* MainCoordinator.swift in Sources */,
+				8CAD2B782613BB120055A58C /* MainLocalDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -973,11 +1043,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8C9BA35F23E597FF00ADA235 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8C9BA35423E597FF00ADA235 /* BitBay-Ticker-Widget */;
-			targetProxy = 8C9BA35E23E597FF00ADA235 /* PBXContainerItemProxy */;
-		};
 		8CC1850E1EFE4CAC0083DA30 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8CC184F71EFE4CAC0083DA30 /* BitBay-Ticker */;
@@ -991,14 +1056,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8C9BA35A23E597FF00ADA235 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8C9BA35B23E597FF00ADA235 /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
 		8CBD947C1F0D7D1400CA4250 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1020,67 +1077,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		8C9BA36123E597FF00ADA235 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "BitBay-Ticker-Widget/BitBay-Ticker-Widget.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2001;
-				DEVELOPMENT_TEAM = AXTXBRU9S7;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/BitBay-Ticker/Frameworks/Firebase/Analytics",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "BitBay-Ticker-Widget/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 2.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-Ticker.BitBay-Ticker-Widget";
-				PRODUCT_NAME = "BitBay-Ticker-Widget";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/BitBay-Ticker/Supporting\\ Files/Headers/";
-			};
-			name = Debug;
-		};
-		8C9BA36223E597FF00ADA235 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "BitBay-Ticker-Widget/BitBay-Ticker-Widget.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2001;
-				DEVELOPMENT_TEAM = AXTXBRU9S7;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/BitBay-Ticker/Frameworks/Firebase/Analytics",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "BitBay-Ticker-Widget/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 2.0;
-				MTL_FAST_MATH = YES;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.albinek.ios.BitBay-Ticker.BitBay-Ticker-Widget";
-				PRODUCT_NAME = "BitBay-Ticker-Widget";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/BitBay-Ticker/Supporting\\ Files/Headers/";
-			};
-			name = Release;
-		};
 		8CC185131EFE4CAC0083DA30 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1326,15 +1322,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8C9BA36323E597FF00ADA235 /* Build configuration list for PBXNativeTarget "BitBay-Ticker-Widget" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8C9BA36123E597FF00ADA235 /* Debug */,
-				8C9BA36223E597FF00ADA235 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		8CC184F31EFE4CAC0083DA30 /* Build configuration list for PBXProject "BitBay-Ticker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

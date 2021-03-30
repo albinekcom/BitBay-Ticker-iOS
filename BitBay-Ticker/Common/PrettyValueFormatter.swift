@@ -2,17 +2,17 @@ import Foundation
 
 struct PrettyValueFormatter {
     
-    private static var numberFormatter: NumberFormatter = {
-        let numberFormatter = NumberFormatter()
+    private let numberFormatter: NumberFormatter
+    
+    init(locale: Locale = .current) {
+        numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         numberFormatter.usesGroupingSeparator = true
-        numberFormatter.roundingMode = .down
-        numberFormatter.locale = Locale.current
-        
-        return numberFormatter
-    }()
+        numberFormatter.roundingMode = .halfUp
+        numberFormatter.locale = locale
+    }
     
-    static func makePrettyString(value: Double?, scale: Int?, currency: String?) -> String {
+    func prettyString(value: Double?, scale: Int?, currencyCode: String?) -> String {
         if let scale = scale {
             numberFormatter.minimumFractionDigits = scale
             numberFormatter.maximumFractionDigits = scale
@@ -28,8 +28,8 @@ struct PrettyValueFormatter {
             output = "-"
         }
         
-        if let currency = currency {
-            output += " \(currency)"
+        if let currencyCode = currencyCode {
+            output += " \(currencyCode)"
         }
         
         return output

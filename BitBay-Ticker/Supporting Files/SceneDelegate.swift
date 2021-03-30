@@ -1,31 +1,45 @@
-import SwiftUI
+import UIKit
 
 final class SceneDelegate: UIResponder {
-    
+
     var window: UIWindow?
     
-    private let userData: UserData = UserData()
-    private let dataStorage: DataStorage = DataStorage()
+    private let sceneCoordinator: SceneCoordinator
+    
+    // MARK: - Initializers
+    
+    init(sceneCoordinator: SceneCoordinator) {
+        self.sceneCoordinator = sceneCoordinator
+        
+        super.init()
+    }
+    
+    override convenience init() {
+        self.init(sceneCoordinator: MainCoordinator())
+    }
     
 }
 
 extension SceneDelegate: UIWindowSceneDelegate {
     
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+    func scene(_ scene: UIScene,
+               willConnectTo session: UISceneSession,
+               options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
         
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = UIHostingController(rootView: Main().environmentObject(userData))
+        window?.rootViewController = sceneCoordinator.navigationController
         window?.makeKeyAndVisible()
         
-        dataStorage.userData = userData
-        dataStorage.loadUserData()
-        
-        UserDefaultsManager().incrementApplicationLaunchCounter()
+        sceneCoordinator.start()
+    }
+    
+    func sceneDidBecomeActive(_ scene: UIScene) {
+        sceneCoordinator.sceneDidBecomeActive()
     }
     
     func sceneWillResignActive(_ scene: UIScene) {
-        dataStorage.saveUserData()
+        sceneCoordinator.sceneWillResignActive()
     }
     
 }
