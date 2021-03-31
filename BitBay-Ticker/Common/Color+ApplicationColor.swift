@@ -2,11 +2,9 @@ import SwiftUI
 
 extension Color {
     
-    private static let applicationPrimary: Color = Color("Primary Color")
-    
     // TickersAdderRowView
     
-    static let tickersAdderRowViewImage: Color = .applicationPrimary
+    static let tickersAdderRowViewImage: Color = .accentColor
     
     // TickerListRowView
     

@@ -1,7 +1,5 @@
 enum AnalyticsFetchingSource {
     
-    case automatic
-    case automaticAfterAddingTicker
-    case widget
+    case automatic, automaticAfterAddingTicker, widget
     
 }
