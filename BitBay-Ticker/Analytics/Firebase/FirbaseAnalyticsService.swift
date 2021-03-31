@@ -21,7 +21,7 @@ final class FirbaseAnalyticsService: AnalyticsService {
     
     init(firebaseApp: FirebaseApp.Type = FirebaseApp.self,
          firebaseAnalytics: Analytics.Type = Analytics.self) {
-        self.firebaseAnalytics = LocalConsoleAnalytics.self // NOTE: Change it to "analytics" before shipping
+        self.firebaseAnalytics = LocalConsoleAnalytics.self // NOTE: Change it to "firebaseAnalytics" before shipping
         
         firebaseApp.configure()
     }

@@ -42,7 +42,7 @@ final class TickersListViewModel: ObservableObject {
         self.dataRepository = dataRepository
         self.dataRepository.delegate = self
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.tickerListError = TickersListError.fetchingError
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -93,7 +93,6 @@ final class TickersListViewModel: ObservableObject {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // NOTE: This is a hack for nice animation because "updateOutputProperties()" is invoked too fast and the deleting animation is not visible, use "diff in "updateOutputProperties"
             self.delegate?.didRemoveTicker(tickerIdentifier: self.dataRepository.model.tickers[index].tickerIdentifier)
             self.dataRepository.removeTicker(at: index)
-            
         }
     }
     
