@@ -6,7 +6,7 @@ struct TickersListFilledListView: View {
     
     var body: some View {
         if let tickerListError = viewModel.tickerListError {
-            ErrorBannerView(text: tickerListError.localizedDescription)
+            ErrorBannerView(text: "\("Error".localized): \(tickerListError.localizedDescription)")
         }
         
         List {

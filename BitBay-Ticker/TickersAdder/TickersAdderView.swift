@@ -6,7 +6,7 @@ struct TickersAdderView: View {
     
     var body: some View {
         List {
-            TextField(NSLocalizedString("Search", comment: ""),
+            TextField(LocalizedStringKey("Search"),
                       text: $viewModel.searchTerm)
                 .modifier(ClearButton(text: $viewModel.searchTerm))
                 .textFieldStyle(RoundedBorderTextFieldStyle())

@@ -21,7 +21,7 @@ final class TickersAdderViewController: UIViewController, TickersAdderProtocol {
         super.init(nibName: nil, bundle: nil)
         
         viewModel.delegate = self
-        title = viewModel.title
+        title = viewModel.title.localized
     }
     
     required init?(coder: NSCoder) {

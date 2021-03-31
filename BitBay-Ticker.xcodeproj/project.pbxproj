@@ -101,6 +101,7 @@
 		8CC185061EFE4CAC0083DA30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185041EFE4CAC0083DA30 /* LaunchScreen.storyboard */; };
 		8CCA6F3523A3A9AC0048B1B8 /* TickerIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F3423A3A9AC0048B1B8 /* TickerIdentifierTests.swift */; };
 		8CDFD47D1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDFD47C1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift */; };
+		8CE817422615042F0058067F /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE817412615042F0058067F /* String+Localized.swift */; };
 		8CED93092083C4EA00A068BD /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED93082083C4EA00A068BD /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -271,6 +272,7 @@
 		8CDFD47C1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerDetailsViewControllerUITests.swift; sourceTree = "<group>"; };
 		8CDFD47E1F084106009F1E19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CE06BD61F061D1400EBD7B9 /* BitBay-Ticker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BitBay-Ticker.entitlements"; sourceTree = "<group>"; };
+		8CE817412615042F0058067F /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		8CED93082083C4EA00A068BD /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		8CF438AF23DCDCCF00496367 /* FirebaseInstallations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstallations.framework; path = "BitBay-Ticker/Frameworks/Firebase/Analytics/FirebaseInstallations.framework"; sourceTree = "<group>"; };
 		8CF438B023DCDCCF00496367 /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromisesObjC.framework; path = "BitBay-Ticker/Frameworks/Firebase/Analytics/PromisesObjC.framework"; sourceTree = "<group>"; };
@@ -577,6 +579,7 @@
 				8CAD2B542613BB120055A58C /* Views */,
 				8CAD2B582613BB120055A58C /* UserDefaults+Shared.swift */,
 				8CAD2B592613BB120055A58C /* Double+OptionalString.swift */,
+				8CE817412615042F0058067F /* String+Localized.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -957,6 +960,7 @@
 				8CAD2B6F2613BB120055A58C /* SupportedTickersAndCurrenciesNamesFetcherAPIResponse.swift in Sources */,
 				8CAD2B862613BB120055A58C /* TickersListView.swift in Sources */,
 				8CAD2BA22613BB120055A58C /* CurrencyTemplateIconView.swift in Sources */,
+				8CE817422615042F0058067F /* String+Localized.swift in Sources */,
 				8CAD2B772613BB120055A58C /* MainLocalDataSaver.swift in Sources */,
 				8CAD2BA42613BB120055A58C /* Double+OptionalString.swift in Sources */,
 				8CAD2B732613BB120055A58C /* SupportedTicker.swift in Sources */,

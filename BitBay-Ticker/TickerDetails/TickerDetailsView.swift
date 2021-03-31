@@ -6,7 +6,7 @@ struct TickerDetailsView: View {
     
     var body: some View {
         List(viewModel.rowsData) { rowData in
-            TickerDetailsRowView(title: Text(rowData.title),
+            TickerDetailsRowView(title: Text(LocalizedStringKey(rowData.title)),
                                  value: Text(rowData.value))
         }
         .environment(\.defaultMinListRowHeight, ApplicationConfiguration.Style.rowHeight)
