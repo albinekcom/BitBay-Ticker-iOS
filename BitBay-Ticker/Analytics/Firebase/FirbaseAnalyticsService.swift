@@ -17,11 +17,11 @@ enum FirbaseAnalyticsTrackName: String {
 
 final class FirbaseAnalyticsService: AnalyticsService {
     
-    private let analytics: Analytics.Type
+    private let firebaseAnalytics: Analytics.Type
     
     init(firebaseApp: FirebaseApp.Type = FirebaseApp.self,
-         analytics: Analytics.Type = Analytics.self) {
-        self.analytics = ConsoleAnalytics.self // NOTE: Change it to "analytics" before shipping
+         firebaseAnalytics: Analytics.Type = Analytics.self) {
+        self.firebaseAnalytics = LocalConsoleAnalytics.self // NOTE: Change it to "analytics" before shipping
         
         firebaseApp.configure()
     }
@@ -95,8 +95,8 @@ final class FirbaseAnalyticsService: AnalyticsService {
     // MARK: - Track
     
     private func track(trackName: FirbaseAnalyticsTrackName, parameters: [AnalyticsParameterValue]? = nil) {
-        analytics.logEvent(trackName.rawValue,
-                           parameters: parameters?.dictionary)
+        firebaseAnalytics.logEvent(trackName.rawValue,
+                                   parameters: parameters?.dictionary)
     }
     
 }

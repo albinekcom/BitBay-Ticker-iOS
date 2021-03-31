@@ -1,6 +1,6 @@
 import Firebase
 
-final class ConsoleAnalytics: Analytics {
+final class LocalConsoleAnalytics: Analytics {
     
     static private(set) var basicLoggerLastLoggedName: String?
     static private(set) var basicLoggerLastLoggedParameters: [String: Any]?

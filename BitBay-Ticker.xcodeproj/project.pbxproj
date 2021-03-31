@@ -73,7 +73,7 @@
 		8CAD2B922613BB120055A58C /* TickersAdderRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B412613BB110055A58C /* TickersAdderRowView.swift */; };
 		8CAD2B932613BB120055A58C /* TickersAdderEmptyRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B422613BB110055A58C /* TickersAdderEmptyRowView.swift */; };
 		8CAD2B942613BB120055A58C /* AnalyticsParameterValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B442613BB120055A58C /* AnalyticsParameterValue.swift */; };
-		8CAD2B952613BB120055A58C /* ConsoleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B462613BB120055A58C /* ConsoleAnalytics.swift */; };
+		8CAD2B952613BB120055A58C /* LocalConsoleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B462613BB120055A58C /* LocalConsoleAnalytics.swift */; };
 		8CAD2B962613BB120055A58C /* AnalyticsParameterValue+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B482613BB120055A58C /* AnalyticsParameterValue+Firebase.swift */; };
 		8CAD2B972613BB120055A58C /* FirbaseAnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B492613BB120055A58C /* FirbaseAnalyticsService.swift */; };
 		8CAD2B992613BB120055A58C /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B4B2613BB120055A58C /* AnalyticsService.swift */; };
@@ -219,7 +219,7 @@
 		8CAD2B412613BB110055A58C /* TickersAdderRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersAdderRowView.swift; sourceTree = "<group>"; };
 		8CAD2B422613BB110055A58C /* TickersAdderEmptyRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersAdderEmptyRowView.swift; sourceTree = "<group>"; };
 		8CAD2B442613BB120055A58C /* AnalyticsParameterValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsParameterValue.swift; sourceTree = "<group>"; };
-		8CAD2B462613BB120055A58C /* ConsoleAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleAnalytics.swift; sourceTree = "<group>"; };
+		8CAD2B462613BB120055A58C /* LocalConsoleAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalConsoleAnalytics.swift; sourceTree = "<group>"; };
 		8CAD2B482613BB120055A58C /* AnalyticsParameterValue+Firebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnalyticsParameterValue+Firebase.swift"; sourceTree = "<group>"; };
 		8CAD2B492613BB120055A58C /* FirbaseAnalyticsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirbaseAnalyticsService.swift; sourceTree = "<group>"; };
 		8CAD2B4B2613BB120055A58C /* AnalyticsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
@@ -541,7 +541,6 @@
 			isa = PBXGroup;
 			children = (
 				8CAD2B442613BB120055A58C /* AnalyticsParameterValue.swift */,
-				8CAD2B452613BB120055A58C /* ConsoleAnalytics */,
 				8CAD2B472613BB120055A58C /* Firebase */,
 				8CAD2B4B2613BB120055A58C /* AnalyticsService.swift */,
 				8CAD2B4C2613BB120055A58C /* AnalyticsFetchingSource.swift */,
@@ -549,17 +548,18 @@
 			path = Analytics;
 			sourceTree = "<group>";
 		};
-		8CAD2B452613BB120055A58C /* ConsoleAnalytics */ = {
+		8CAD2B452613BB120055A58C /* LocalConsoleAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				8CAD2B462613BB120055A58C /* ConsoleAnalytics.swift */,
+				8CAD2B462613BB120055A58C /* LocalConsoleAnalytics.swift */,
 			);
-			path = ConsoleAnalytics;
+			path = LocalConsoleAnalytics;
 			sourceTree = "<group>";
 		};
 		8CAD2B472613BB120055A58C /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				8CAD2B452613BB120055A58C /* LocalConsoleAnalytics */,
 				8CAD2B482613BB120055A58C /* AnalyticsParameterValue+Firebase.swift */,
 				8CAD2B492613BB120055A58C /* FirbaseAnalyticsService.swift */,
 			);
@@ -1009,7 +1009,7 @@
 				8CAD2B942613BB120055A58C /* AnalyticsParameterValue.swift in Sources */,
 				8CAD2B8D2613BB120055A58C /* TickersAdderDataRepository.swift in Sources */,
 				8CAD2B9E2613BB120055A58C /* UIViewController+PrepareMainView.swift in Sources */,
-				8CAD2B952613BB120055A58C /* ConsoleAnalytics.swift in Sources */,
+				8CAD2B952613BB120055A58C /* LocalConsoleAnalytics.swift in Sources */,
 				8CAD2B882613BB120055A58C /* ErrorBannerView.swift in Sources */,
 				8CAD2B752613BB120055A58C /* Ticker.swift in Sources */,
 				8CAD2B912613BB120055A58C /* TickersAdderViewController.swift in Sources */,
