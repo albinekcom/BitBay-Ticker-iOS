@@ -1,5 +1,0 @@
-framework module PromisesObjC {
-umbrella header "PromisesObjC.h"
-export *
-module * { export * }
-}
