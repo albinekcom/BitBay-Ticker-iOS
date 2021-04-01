@@ -12,13 +12,27 @@ final class SupportedTickersAndCurrenciesNamesFetcher {
     private let networkingService: NetworkingService
     private let jsonDecoder: JSONDecoder
     
+    private var lastSuccesfullyTickersIdentifiersFetchedDate: Date? {
+        didSet {
+            userDefaults?.setValue(lastSuccesfullyTickersIdentifiersFetchedDate, forKey: ApplicationConfiguration.Storing.lastRefreshingSupportedTickersDateKey)
+        }
+    }
+    
+    private let userDefaults: UserDefaults?
+    
     init(networkingService: NetworkingService = NetworkingService(),
-         jsonDecoder: JSONDecoder = JSONDecoder()) {
+         jsonDecoder: JSONDecoder = JSONDecoder(),
+         userDefaults: UserDefaults? = UserDefaults.shared) {
         self.networkingService = networkingService
         self.jsonDecoder = jsonDecoder
+        self.userDefaults = userDefaults
+        
+        lastSuccesfullyTickersIdentifiersFetchedDate = userDefaults?.object(forKey: ApplicationConfiguration.Storing.lastRefreshingSupportedTickersDateKey) as? Date
     }
     
     func fetchSupportedTickersAndCurrenciesNames(completion: @escaping ((Result<SupportedTickersAndCurrenciesNamesFetcherModel, TickerPropertiesFetcherError>) -> Void)) {
+        guard shouldRefreshSupportedTickersAndCurrenciesNames() else { return }
+        
         networkingService.request(.supportedTickersAndCurrenciesNames) { [weak self] result in
             switch result {
             case .success(let data):
@@ -29,6 +43,9 @@ final class SupportedTickersAndCurrenciesNamesFetcher {
                 }
                 
                 let supportedTickersRemoteDataRepositoryModel = SupportedTickersAndCurrenciesNamesFetcherModel(supportedTickersAPIResponse: supportedTickersAPIResponse)
+                
+                self?.lastSuccesfullyTickersIdentifiersFetchedDate = Date()
+                
                 completion(.success(supportedTickersRemoteDataRepositoryModel))
                 
             case .failure:
@@ -39,6 +56,12 @@ final class SupportedTickersAndCurrenciesNamesFetcher {
     
     func cancelFetching() {
         networkingService.cancelRequest()
+    }
+    
+    private func shouldRefreshSupportedTickersAndCurrenciesNames() -> Bool {
+        guard let lastSuccesfullyTickersIdentifiersFetchedDate = lastSuccesfullyTickersIdentifiersFetchedDate else { return true }
+        
+        return Date().timeIntervalSince(lastSuccesfullyTickersIdentifiersFetchedDate) > ApplicationConfiguration.UserData.minimumTimeSpanBetweenTickerIndentifiersRefreshes
     }
     
 }

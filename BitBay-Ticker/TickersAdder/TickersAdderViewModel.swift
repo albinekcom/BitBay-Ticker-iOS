@@ -9,10 +9,17 @@ protocol TickersAdderViewModelDelegate: AnyObject {
 
 final class TickersAdderViewModel: ObservableObject {
     
+    private var searchTimer: Timer?
+    
     @Published var searchTerm: String = "" {
         didSet {
-            print("TickersAdderViewModel - searchTerm: \(searchTerm)")
-            updateOutputProperties()
+            searchTimer?.invalidate()
+            
+            searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [weak self] _ in
+                DispatchQueue.main.async {
+                    self?.updateOutputProperties()
+                }
+            }
         }
     }
     

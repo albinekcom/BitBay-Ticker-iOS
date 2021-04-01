@@ -5,11 +5,10 @@ struct TickersListFilledListView: View {
     @ObservedObject var viewModel: TickersListViewModel
     
     var body: some View {
-        if let tickerListError = viewModel.tickerListError {
-            ErrorBannerView(text: "\("Error".localized): \(tickerListError.localizedDescription)")
-        }
-        
         List {
+            if let tickerListError = viewModel.tickerListError {
+                ErrorBannerView(text: "\("Error".localized): \(tickerListError.localizedDescription)")
+            }
             ForEach(viewModel.rowsData) { rowData in
                 Button(action: {
                     viewModel.selectRow(row: rowData)

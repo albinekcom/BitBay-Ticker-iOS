@@ -101,6 +101,7 @@
 		8CE817562615072F0058067F /* GoogleDataTransport.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE8174D2615072F0058067F /* GoogleDataTransport.xcframework */; };
 		8CE817572615072F0058067F /* GoogleAppMeasurement.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE8174E2615072F0058067F /* GoogleAppMeasurement.xcframework */; };
 		8CE817582615072F0058067F /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE8174F2615072F0058067F /* GoogleUtilities.xcframework */; };
+		8CECF20E2616451000065EF4 /* Int+TimeIntervalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECF20D2616451000065EF4 /* Int+TimeIntervalExtensions.swift */; };
 		8CED93092083C4EA00A068BD /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED93082083C4EA00A068BD /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -274,6 +275,7 @@
 		8CE8174D2615072F0058067F /* GoogleDataTransport.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleDataTransport.xcframework; sourceTree = "<group>"; };
 		8CE8174E2615072F0058067F /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleAppMeasurement.xcframework; sourceTree = "<group>"; };
 		8CE8174F2615072F0058067F /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleUtilities.xcframework; sourceTree = "<group>"; };
+		8CECF20D2616451000065EF4 /* Int+TimeIntervalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+TimeIntervalExtensions.swift"; sourceTree = "<group>"; };
 		8CED93082083C4EA00A068BD /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		8CF438AF23DCDCCF00496367 /* FirebaseInstallations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstallations.framework; path = "BitBay-Ticker/Frameworks/Firebase/Analytics/FirebaseInstallations.framework"; sourceTree = "<group>"; };
 		8CF438B023DCDCCF00496367 /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromisesObjC.framework; path = "BitBay-Ticker/Frameworks/Firebase/Analytics/PromisesObjC.framework"; sourceTree = "<group>"; };
@@ -588,6 +590,7 @@
 				8CAD2B582613BB120055A58C /* UserDefaults+Shared.swift */,
 				8CAD2B592613BB120055A58C /* Double+OptionalString.swift */,
 				8CE817412615042F0058067F /* String+Localized.swift */,
+				8CECF20D2616451000065EF4 /* Int+TimeIntervalExtensions.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1049,6 +1052,7 @@
 				8CAD2B752613BB120055A58C /* Ticker.swift in Sources */,
 				8CAD2B912613BB120055A58C /* TickersAdderViewController.swift in Sources */,
 				8CAD2B7B2613BB120055A58C /* MigratorFromV1ToV2.swift in Sources */,
+				8CECF20E2616451000065EF4 /* Int+TimeIntervalExtensions.swift in Sources */,
 				8CAD2BA62613BB120055A58C /* TickerDetailsViewModel.swift in Sources */,
 				8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */,
 				8CAD2B632613BB120055A58C /* MainCoordinator.swift in Sources */,

@@ -52,7 +52,7 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
     init(mainLocalDataRepository: MainLocalDataRepository = MainLocalDataRepository(),
          supportedTickersAndCurrenciesNamesFetcher: SupportedTickersAndCurrenciesNamesFetcher = SupportedTickersAndCurrenciesNamesFetcher()) {
         self.mainLocalDataRepository = mainLocalDataRepository
-        self.supportedTickersAndCurrenciesNamesFetcher = supportedTickersAndCurrenciesNamesFetcher // NOTE: Invoke it after loading data
+        self.supportedTickersAndCurrenciesNamesFetcher = supportedTickersAndCurrenciesNamesFetcher
         
         mainLocalDataRepository.load() { [weak self] loadedData in
             self?.currencies = loadedData.currencies
@@ -60,6 +60,7 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
             self?.tickers = loadedData.tickers
             
             self?.isResumeAutomaticRefreshingTickersPossible = true
+            self?.refreshSupportedTickersAndCurrenciesNames()
             self?.resumeAutomaticRefreshingTickers()
         }
     }
@@ -214,7 +215,11 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
         guard isResumeAutomaticRefreshingTickersPossible else { return }
         
         automaticRefreshingTickersTimer?.invalidate()
-        automaticRefreshingTickersTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true) // NOTE: Invoke "refreshTickers" before release
+        automaticRefreshingTickersTimer = Timer.scheduledTimer(timeInterval: ApplicationConfiguration.UserData.timeSpanBetweenAutomaticRefreshingTicker,
+                                                               target: self,
+                                                               selector: #selector(fireTimer),
+                                                               userInfo: nil,
+                                                               repeats: true) // NOTE: Invoke "refreshTickers" before release
         automaticRefreshingTickersTimer?.fire()
     }
     
