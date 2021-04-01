@@ -16,7 +16,9 @@ final class MainLocalDataFetcher {
     
     func loadAsynchronously(completion: @escaping (MainLocalDataModel) -> Void) {
         DispatchQueue.global(qos: .background).async { [weak self] in
-            let mainLocalDataRepositoryModelFromFile = self?.mainLocalDataRepositoryModelFromFile ?? MainLocalDataFetchedModel(supportedTickers: [], currencies: [], tickers: [])
+            guard let self = self else { return }
+            
+            let mainLocalDataRepositoryModelFromFile = self.mainLocalDataRepositoryModelFromFile
             
             DispatchQueue.main.async {
                 completion(mainLocalDataRepositoryModelFromFile)
@@ -25,26 +27,33 @@ final class MainLocalDataFetcher {
     }
     
     func loadSynchronously() -> MainLocalDataModel {
-        mainLocalDataRepositoryModelFromFile ?? MainLocalDataFetchedModel(supportedTickers: [], currencies: [], tickers: [])
+        mainLocalDataRepositoryModelFromFile
     }
     
-    private var mainLocalDataRepositoryModelFromFile: MainLocalDataModel? {
-        let mainLocalDataRepositoryModelFromFile: MainLocalDataModel?
-        
-        guard let userData = userDefaults?.object(forKey: ApplicationConfiguration.Storing.tempUserDataFileName) else {
-//            let migratedTickers = oldTickersMigrator.migrateOldTickersToCurrentTickers()
-            
-//            return MainLocalDataFetchedModel(supportedTickers: [], currencies: [], tickers: migratedTickers ?? [])
-            return DefaultMainLocalDataFetcherModel() // NOTE: Remove it before shipping to the production
-        }
-        
-        if let mainLocalDataModelJSONValue = userData as? Data {
-            mainLocalDataRepositoryModelFromFile = try? jsonDecoder.decode(MainLocalDataFetchedModel.self, from: mainLocalDataModelJSONValue)
+    private var mainLocalDataRepositoryModelFromFile: MainLocalDataModel {
+        if let localData = localData {
+            return localData
+        } else if let migratedData = migratedData {
+            return migratedData
         } else {
-            mainLocalDataRepositoryModelFromFile = nil
+            return DefaultMainLocalDataFetcherModel()
         }
-
-        return mainLocalDataRepositoryModelFromFile
+    }
+    
+    private var localData: MainLocalDataModel? {
+        if let mainLocalDataModelJSONValue = userDefaults?.object(forKey: ApplicationConfiguration.Storing.tempUserDataFileName) as? Data {
+            return try? jsonDecoder.decode(MainLocalDataFetchedModel.self, from: mainLocalDataModelJSONValue)
+        } else {
+            return nil
+        }
+    }
+    
+    private var migratedData: MainLocalDataModel? {
+        if let migratedTickers = oldTickersMigrator.migrateOldTickersToCurrentTickers() {
+            return MainLocalDataFetchedModel(supportedTickers: [], currencies: [], tickers: migratedTickers)
+        } else {
+            return nil
+        }
     }
     
 }

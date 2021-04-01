@@ -25,12 +25,12 @@ struct DefaultMainLocalDataFetcherModel: MainLocalDataModel {
     ]
     
     let currencies: Set<Currency> = [
-        Currency(code: "btc", name: "Bitcoin", minimumOffer: nil, scale: nil),
-        Currency(code: "eth", name: "Ethereum", minimumOffer: nil, scale: nil),
-        Currency(code: "lsk", name: "Lisk", minimumOffer: nil, scale: nil),
-        Currency(code: "usd", name: "Dolar amerykański", minimumOffer: nil, scale: nil),
-        Currency(code: "eur", name: "Euro", minimumOffer: nil, scale: nil),
-        Currency(code: "pln", name: "Polski złoty", minimumOffer: nil, scale: nil)
+        Currency(code: "btc", name: "Bitcoin", minimumOffer: nil, scale: 8),
+        Currency(code: "eth", name: "Ethereum", minimumOffer: nil, scale: 8),
+        Currency(code: "lsk", name: "Lisk", minimumOffer: nil, scale: 8),
+        Currency(code: "usd", name: "Dolar amerykański", minimumOffer: nil, scale: 2),
+        Currency(code: "eur", name: "Euro", minimumOffer: nil, scale: 2),
+        Currency(code: "pln", name: "Polski złoty", minimumOffer: nil, scale: 2)
     ]
     
     let tickers: [Ticker] = [
