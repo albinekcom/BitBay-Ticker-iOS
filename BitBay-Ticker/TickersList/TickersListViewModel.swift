@@ -80,9 +80,9 @@ final class TickersListViewModel: ObservableObject {
                                                                   currencyCode: nil)
             
             return TickersListRowData(id: ticker.tickerIdentifier,
-                                      iconName: ticker.firstCurrencyCode.uppercased(),
-                                      firstCurrencyCode: ticker.firstCurrencyCode.uppercased(),
-                                      secondCurrencyCode: ticker.secondCurrencyCode.uppercased(),
+                                      iconName: ticker.firstCurrencyCode,
+                                      firstCurrencyCode: ticker.firstCurrencyCode,
+                                      secondCurrencyCode: ticker.secondCurrencyCode,
                                       rateValue: rateValue)
         }
         

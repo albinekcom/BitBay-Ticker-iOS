@@ -49,9 +49,9 @@ final class TickersAdderViewModel: ObservableObject {
         
         rowsData = filteredTickers.map { ticker in
             TickersAdderRowData(id: ticker.tickerIdentifier,
-                                iconName: ticker.firstCurrencyCode.uppercased(),
-                                firstCurrencyCode: ticker.firstCurrencyCode.uppercased(),
-                                secondCurrencyCode: ticker.secondCurrencyCode.uppercased())
+                                iconName: ticker.firstCurrencyCode,
+                                firstCurrencyCode: ticker.firstCurrencyCode,
+                                secondCurrencyCode: ticker.secondCurrencyCode)
         }
     }
     

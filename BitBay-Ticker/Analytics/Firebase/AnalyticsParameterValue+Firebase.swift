@@ -1,12 +1,11 @@
 extension AnalyticsParameterValue {
     
     static func firebaseParameterValue(from tickerIdentifier: String) -> AnalyticsParameterValue {
-        AnalyticsParameterValue(key: "Ticker", value: tickerIdentifier.uppercased())
+        AnalyticsParameterValue(key: "Ticker", value: tickerIdentifier)
     }
     
     static func firebaseParameterValue(from tickersIdentifiers: [String]) -> AnalyticsParameterValue {
         let value = tickersIdentifiers
-            .map { $0.uppercased() }
             .joined(separator: ",")
         
         return AnalyticsParameterValue(key: "Tickers", value: value)

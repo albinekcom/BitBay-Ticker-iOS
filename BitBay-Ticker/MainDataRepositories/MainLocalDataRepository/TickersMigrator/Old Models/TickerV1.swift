@@ -52,7 +52,7 @@ struct TickerV1: Codable, Equatable, Identifiable {
 extension TickerV1 {
     
     func convertToCurrentTicker() -> Ticker {
-        Ticker(identifier: id.lowercased(),
+        Ticker(identifier: id,
                highestBid: highestBid,
                lowestAsk: lowestAsk,
                rate: rate,
