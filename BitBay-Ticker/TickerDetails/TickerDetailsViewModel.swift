@@ -70,7 +70,7 @@ final class TickerDetailsViewModel: ObservableObject {
 extension TickerDetailsViewModel: TickerDetailsDataRepositoryDelegate {
     
     func didFetchNewModel(isTickerStillSupported: Bool) {
-        //        if isTickerStillSupported == false { // NOTEc: Add informing about removed ticker
+        //        if isTickerStillSupported == false { // NOTE: Add informing about removed ticker
         //            dismiss(animated: true) // NOTE: Check if this works properly when this ticker is removed from supported tickers
         //        }
         
