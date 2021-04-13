@@ -11,6 +11,11 @@ enum NetworkingServiceError: Error {
 
 final class NetworkingService {
     
+    private struct Configuration {
+        
+        static let timeoutInterval: TimeInterval = 10
+    }
+    
     private let urlSession: URLSession
     
     private var task: URLSessionTask?
@@ -22,7 +27,10 @@ final class NetworkingService {
     func request(_ endpoint: Endpoint, completion: @escaping ((Result<Data, NetworkingServiceError>) -> Void)) {
         guard let url = endpoint.url else { return completion(.failure(.invalidURL)) }
         
-        task = urlSession.dataTask(with: url) { data, _, error in
+        var urlRequest = URLRequest(url: url)
+        urlRequest.timeoutInterval = Configuration.timeoutInterval
+        
+        task = urlSession.dataTask(with: urlRequest) { data, _, error in
             if let error = error {
                 return completion(.failure(.networkError(error)))
             }

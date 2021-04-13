@@ -7,7 +7,7 @@ enum TickerPropertiesFetcherError: Error {
     
 }
 
-final class TickerPropertiesFetcher {
+final class TickerAndExternalCurrenciesPropertiesFetcher {
     
     private let networkingServiceForValues: NetworkingService
     private let networkingServiceForStatistics: NetworkingService
@@ -21,7 +21,12 @@ final class TickerPropertiesFetcher {
         self.jsonDecoder = jsonDecoder
     }
     
-    func fetchValues(tickerIdentifier: String, completion: @escaping ((Result<(TickerValues, ExternalCurrenciesProperties), TickerPropertiesFetcherError>) -> Void)) {
+    func fetchTickersAndExternalCurrenciesProperties(tickerIdentifier: String,
+                                                     completion: @escaping ((Result<String, TickerPropertiesFetcherError>) -> Void)) { // NOTE: Fill this method wihich invokes the methods below
+        
+    }
+    
+    private func fetchValues(tickerIdentifier: String, completion: @escaping ((Result<(TickerValues, ExternalCurrenciesProperties), TickerPropertiesFetcherError>) -> Void)) {
         networkingServiceForValues.request(.tickerValues(tickerIdentifier: tickerIdentifier)) { [weak self] result in
             switch result {
             case .success(let data):
@@ -31,7 +36,7 @@ final class TickerPropertiesFetcher {
                     return
                 }
                 
-                let tickerValues = TickerValues(tickerValuesAPIResponse: tickerValuesAPIResponse)
+                let tickerValues = TickerValues(identifier: tickerIdentifier, tickerValuesAPIResponse: tickerValuesAPIResponse)
                 
                 let firstExtenalCurrencyProperties = ExternalCurrencyProperties(currencyAPIReponse: tickerValuesAPIResponse.ticker?.market?.first)
                 let secondExtenalCurrencyProperties = ExternalCurrencyProperties(currencyAPIReponse: tickerValuesAPIResponse.ticker?.market?.second)
@@ -47,7 +52,7 @@ final class TickerPropertiesFetcher {
         }
     }
     
-    func fetchStatistics(tickerIdentifier: String, completion: @escaping ((Result<TickerStatistics, TickerPropertiesFetcherError>) -> Void)) {
+    private func fetchStatistics(tickerIdentifier: String, completion: @escaping ((Result<TickerStatistics, TickerPropertiesFetcherError>) -> Void)) {
         networkingServiceForStatistics.request(.tickerStatistics(tickerIdentifier: tickerIdentifier)) { [weak self] result in
             switch result {
             case .success(let data):
@@ -57,8 +62,7 @@ final class TickerPropertiesFetcher {
                     return
                 }
                 
-                let tickerStatistics = TickerStatistics(tickerStatisticsAPIResponse: tickerStatisticsAPIResponse)
-                completion(.success(tickerStatistics))
+                completion(.success(TickerStatistics(identifier: tickerIdentifier, tickerStatisticsAPIResponse: tickerStatisticsAPIResponse)))
                 
             case .failure:
                 completion(.failure(.genericError))

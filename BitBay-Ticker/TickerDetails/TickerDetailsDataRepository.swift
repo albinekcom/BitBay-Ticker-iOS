@@ -33,7 +33,7 @@ final class TickerDetailsDataRepository: TickerDetailsDataRepositoryProtocol {
     }
     
     private func updateModel() {
-        guard let updatedTicker = tickersAndCurrenciesDataRepository.tickers.filter({ $0.identifier == tickerIdentifier }).first else {
+        guard let updatedTicker = tickersAndCurrenciesDataRepository.userTickers.filter({ $0.identifier == tickerIdentifier }).first else {
             delegate?.didFetchNewModel(isTickerStillSupported: false)
             
             return

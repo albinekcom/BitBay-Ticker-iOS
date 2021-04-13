@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8C1F1D6323A62F4A00D25D99 /* PrettyValueFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F1D6223A62F4A00D25D99 /* PrettyValueFormatterTests.swift */; };
 		8C3292C7261F16680077E175 /* ExternalCurrencyProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3292C6261F16680077E175 /* ExternalCurrencyProperties.swift */; };
+		8C573B9A261F574F007D4D5E /* MainRemoteDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C573B99261F574F007D4D5E /* MainRemoteDataRepository.swift */; };
 		8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */; };
 		8C71306926150B17007F3A49 /* FirebaseCrashlytics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C71306626150B17007F3A49 /* FirebaseCrashlytics.xcframework */; };
 		8C71306A26150B17007F3A49 /* run in Resources */ = {isa = PBXBuildFile; fileRef = 8C71306726150B17007F3A49 /* run */; };
@@ -160,6 +161,7 @@
 		8C1F1D6223A62F4A00D25D99 /* PrettyValueFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyValueFormatterTests.swift; sourceTree = "<group>"; };
 		8C2F173E1F02A56E006FD66F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		8C3292C6261F16680077E175 /* ExternalCurrencyProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalCurrencyProperties.swift; sourceTree = "<group>"; };
+		8C573B99261F574F007D4D5E /* MainRemoteDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRemoteDataRepository.swift; sourceTree = "<group>"; };
 		8C6FB62923A2CBD400724C86 /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransport.framework; path = Carthage/Build/iOS/GoogleDataTransport.framework; sourceTree = "<group>"; };
 		8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8C71306626150B17007F3A49 /* FirebaseCrashlytics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseCrashlytics.xcframework; sourceTree = "<group>"; };
@@ -330,6 +332,16 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		8C573B98261F573A007D4D5E /* MainRemoteDataRepository */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD2B042613BB110055A58C /* Fetchers */,
+				8CAD2B142613BB110055A58C /* Networking */,
+				8C573B99261F574F007D4D5E /* MainRemoteDataRepository.swift */,
+			);
+			path = MainRemoteDataRepository;
+			sourceTree = "<group>";
+		};
 		8C6FB63223A2CE2200724C86 /* Translations */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,10 +373,9 @@
 		8CAD2B022613BB110055A58C /* MainDataRepositories */ = {
 			isa = PBXGroup;
 			children = (
-				8CAD2B042613BB110055A58C /* Fetchers */,
-				8CAD2B142613BB110055A58C /* Networking */,
-				8CAD2B172613BB110055A58C /* Models */,
 				8CAD2B1B2613BB110055A58C /* MainLocalDataRepository */,
+				8C573B98261F573A007D4D5E /* MainRemoteDataRepository */,
+				8CAD2B172613BB110055A58C /* Models */,
 				8CAD2B2A2613BB110055A58C /* MainDataRepository.swift */,
 			);
 			path = MainDataRepositories;
@@ -1037,6 +1048,7 @@
 				8CAD2BAA2613BB120055A58C /* TickerDetailsDataRepository.swift in Sources */,
 				8CAD2B722613BB120055A58C /* Endpoint.swift in Sources */,
 				8CAD2B902613BB120055A58C /* TickersAdderViewModel.swift in Sources */,
+				8C573B9A261F574F007D4D5E /* MainRemoteDataRepository.swift in Sources */,
 				8CAD2B672613BB120055A58C /* TickersFetcher.swift in Sources */,
 				8CAD2B812613BB120055A58C /* TickersListViewController.swift in Sources */,
 				8CAD2B6C2613BB120055A58C /* TickerValues.swift in Sources */,

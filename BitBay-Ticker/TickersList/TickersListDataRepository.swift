@@ -24,19 +24,19 @@ final class TickersListDataRepository: TickersListDataRepositoryProtocol {
     }
     
     func removeTicker(at index: Int) {
-        tickersAndCurrenciesDataRepository.tickers.remove(at: index)
+        tickersAndCurrenciesDataRepository.userTickers.remove(at: index)
         
         resfreshModel()
     }
     
     func move(from source: IndexSet, to destination: Int) {
-        tickersAndCurrenciesDataRepository.tickers.move(fromOffsets: source, toOffset: destination)
+        tickersAndCurrenciesDataRepository.userTickers.move(fromOffsets: source, toOffset: destination)
         
         resfreshModel()
     }
     
     func resfreshModel() {
-        let tickersOnListData: [TickerOnListData] = tickersAndCurrenciesDataRepository.tickers.map { ticker in
+        let tickersOnListData: [TickerOnListData] = tickersAndCurrenciesDataRepository.userTickers.map { ticker in
             let secondCurrency = Array(tickersAndCurrenciesDataRepository.currencies).filter { currency in
                 currency.code == ticker.secondCurrencyCode }.first
             
@@ -112,7 +112,7 @@ protocol TickersDataRepositoryProtocol: AnyObject {
     
     var tickersDataDelegate: TickersDataRepositoryDelegate? { get set }
     
-    var tickers: [Ticker] { get set }
+    var userTickers: [Ticker] { get set }
 }
 
 protocol TickersDataRepositoryDelegate: AnyObject {

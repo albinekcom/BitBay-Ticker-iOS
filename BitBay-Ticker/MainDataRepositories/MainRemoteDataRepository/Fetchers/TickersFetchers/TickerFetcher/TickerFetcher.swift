@@ -9,15 +9,12 @@ enum TickerFetcherError: Error {
 final class TickerFetcher {
     
     private let tickerPropertiesFetcher: TickerPropertiesFetcher
-    private let tickerIdentifier: String
     
-    init(tickerIdentifier: String,
-        tickerPropertiesFetcher: TickerPropertiesFetcher = TickerPropertiesFetcher()) {
-        self.tickerIdentifier = tickerIdentifier
+    init(tickerPropertiesFetcher: TickerPropertiesFetcher = TickerPropertiesFetcher()) {
         self.tickerPropertiesFetcher = tickerPropertiesFetcher
     }
     
-    func fetchTicker(completion: @escaping ((Result<(Ticker, ExternalCurrenciesProperties), TickerFetcherError>) -> Void)) {
+    func fetchTicker(tickerIdentifier: String, completion: @escaping ((Result<(Ticker, ExternalCurrenciesProperties), TickerFetcherError>) -> Void)) {
         tickerPropertiesFetcher.fetchValues(tickerIdentifier: tickerIdentifier) { [weak self] fetchedValuesResult in
             guard let self = self else {
                 completion(.failure(.genericError))
@@ -27,10 +24,10 @@ final class TickerFetcher {
             
             switch fetchedValuesResult {
             case let .success((tickerValues, externalCurrenciesProperties)):
-                self.tickerPropertiesFetcher.fetchStatistics(tickerIdentifier: self.tickerIdentifier) { fetchedStatisticsResult in
+                self.tickerPropertiesFetcher.fetchStatistics(tickerIdentifier: tickerIdentifier) { fetchedStatisticsResult in
                     switch fetchedStatisticsResult {
                     case .success(let tickerStatistics):
-                        let ticker = Ticker(identifier: self.tickerIdentifier, tickerValues: tickerValues, tickerStatistics: tickerStatistics)
+                        let ticker = Ticker(identifier: tickerIdentifier, tickerValues: tickerValues, tickerStatistics: tickerStatistics)
                         
                         completion(.success((ticker, externalCurrenciesProperties)))
                         

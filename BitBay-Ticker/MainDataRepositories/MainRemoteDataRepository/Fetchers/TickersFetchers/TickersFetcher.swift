@@ -8,21 +8,23 @@ enum FetchingSource {
     
 }
 
-
+struct TickersFetcherModel {
+    
+    let tickers: [Ticker]
+    let externalCurrenciesProperties: [String: ExternalCurrencyProperties]
+    
+}
+/*
 final class TickersFetcher {
     
     private var miltipleTickerFetchers: [TickerFetcher] = []
-    private var singleTickerFetcher: TickerFetcher
+    private var singleTickerFetcher: TickerFetcher = TickerFetcher()
     
     private(set) var dispatchGroup = DispatchGroup()
     
     var isSucessfulyRefreshedMultipleTickers = false
     
-    init() {
-        singleTickerFetcher = TickerFetcher(tickerIdentifier: "")
-    }
-    
-    func fetchTickers(tickerIdentifiers: [String], source: FetchingSource, completion: @escaping ((Result<[(Ticker, ExternalCurrenciesProperties)], TickerPropertiesFetcherError>) -> Void)) {
+    func fetchTickers(tickerIdentifiers: [String], source: FetchingSource, completion: @escaping ((Result<TickersFetcherModel, TickerPropertiesFetcherError>) -> Void)) {
         
         if source == .automatic {
             fetchMultipleTickers(tickersIdentifiers: tickerIdentifiers,
@@ -39,11 +41,11 @@ final class TickersFetcher {
         
     }
     
-    private func fetchMultipleTickers(tickersIdentifiers: [String], source: FetchingSource, completion: @escaping ((Result<[(Ticker, ExternalCurrenciesProperties)], TickerPropertiesFetcherError>) -> Void)) {
+    private func fetchMultipleTickers(tickersIdentifiers: [String], source: FetchingSource, completion: @escaping (Result<([Ticker], Set<ExternalCurrencyProperties>), TickerPropertiesFetcherError>) -> Void) {
         
         miltipleTickerFetchers.forEach { $0.cancelFetchingTicker() }
         
-        miltipleTickerFetchers = tickersIdentifiers.map { TickerFetcher(tickerIdentifier: $0) }
+        miltipleTickerFetchers = tickersIdentifiers.map { _ in TickerFetcher() }
         
         dispatchGroup = DispatchGroup()
         
@@ -59,8 +61,9 @@ final class TickersFetcher {
         
     }
     
-    private func fetchSingleTicker(tickerIdentifier: String, source: FetchingSource, completion: @escaping ((Result<[(Ticker, ExternalCurrenciesProperties)], TickerPropertiesFetcherError>) -> Void)) {
+    private func fetchSingleTicker(tickerIdentifier: String, source: FetchingSource, completion: @escaping ((Result<(Ticker, Set<ExternalCurrencyProperties>), TickerPropertiesFetcherError>) -> Void)) {
         
     }
     
 }
+*/

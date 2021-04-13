@@ -26,7 +26,7 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
         }
     }
     
-    var tickers: [Ticker] = [] {
+    var userTickers: [Ticker] = [] {
         didSet {
             tickersDataDelegate?.didUpdateTickers(error: nil)
         }
@@ -45,7 +45,7 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
     
     private(set) var dispatchGroup = DispatchGroup()
     private(set) var tickerFetchers: [TickerFetcher] = []
-    private(set) var singleTickerFetcher: TickerFetcher = TickerFetcher(tickerIdentifier: "")
+    private(set) var singleTickerFetcher: TickerFetcher = TickerFetcher()
     
     var isSucessfulyRefreshedTickers = false
     
@@ -57,7 +57,7 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
         mainLocalDataRepository.load() { [weak self] loadedData in
             self?.currencies = loadedData.currencies
             self?.supportedTickers = loadedData.supportedTickers
-            self?.tickers = loadedData.tickers
+            self?.userTickers = loadedData.tickers
             
             self?.isResumeAutomaticRefreshingTickersPossible = true
             self?.refreshSupportedTickersAndCurrenciesNames()
@@ -68,9 +68,9 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
     @objc private func refreshTickers() {
         tickerFetchers.forEach { $0.cancelFetchingTicker() }
         
-        let tickersIdentifiers = tickers.map { $0.identifier }
+        let tickersIdentifiers = userTickers.map { $0.identifier }
         
-        tickerFetchers = tickersIdentifiers.map { TickerFetcher(tickerIdentifier: $0) }
+        tickerFetchers = tickersIdentifiers.map { _ in TickerFetcher() }
         
         dispatchGroup = DispatchGroup()
         
@@ -98,15 +98,15 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
     }
     
     private func refreshTicker(tickerFetcher: TickerFetcher, source: AnalyticsFetchingSource) {
-        tickerFetcher.fetchTicker() { [weak self] result in
+        tickerFetcher.fetchTicker(tickerIdentifier: "") { [weak self] result in
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 
                 switch result {
                 case .success(let (refreshedTicker, externalCurrenciesProperties)):
-                    guard let tickerIndex = self.tickers.firstIndex(where: { $0.identifier == refreshedTicker.identifier }) else { return }
+                    guard let tickerIndex = self.userTickers.firstIndex(where: { $0.identifier == refreshedTicker.identifier }) else { return }
                         
-                    self.tickers[tickerIndex] = refreshedTicker
+                    self.userTickers[tickerIndex] = refreshedTicker
                     
                     // NOTE: Simplfy overriding currencies
                     
@@ -159,7 +159,7 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
                 switch result {
                 case .success(let data):
                     self?.supportedTickers = data.supportedTickers
-                    self?.currencies = data.currencies // NOTE: Add updating currencies istead of overwritting them here
+//                    self?.currencies = data.currencies // NOTE: Add updating currencies istead of overwritting them here
                     
                     self?.removeNotSupportedTickers()
                     
@@ -171,36 +171,36 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
     }
     
     private func removeNotSupportedTickers() {
-        let tickersIdentifiers = Set(tickers.map { $0.identifier })
+        let tickersIdentifiers = Set(userTickers.map { $0.identifier })
         let supportedTickersIdentifiers = Set(supportedTickers.map { $0.identifier })
         
         let tickersToRemoveIdentifiers = tickersIdentifiers.subtracting(supportedTickersIdentifiers)
         
-        tickers.removeAll { tickersToRemoveIdentifiers.contains($0.identifier) }
+        userTickers.removeAll { tickersToRemoveIdentifiers.contains($0.identifier) }
         
         tickersDataDelegate?.didUpdateTickers(error: nil)
     }
     
     func saveDataLocally() {
-        mainLocalDataRepository.save(supportedTickers: supportedTickers, currencies: currencies, tickers: tickers)
+        mainLocalDataRepository.save(supportedTickers: supportedTickers, currencies: currencies, tickers: userTickers)
     }
     
     //
     
     func ticker(for identifier: String) -> Ticker? { // NOTE: Use it instead "tickers" in a places which needs just one paricular ticker
-        tickers.filter({ $0.identifier == identifier }).first
+        userTickers.filter({ $0.identifier == identifier }).first
     }
     
     func appendNewTicker(with identifier: String) {
-        if tickers.contains(where: { $0.identifier == identifier}) {
+        if userTickers.contains(where: { $0.identifier == identifier}) {
             return
         }
         
         let ticker = Ticker(identifier: identifier, highestBid: nil, lowestAsk: nil, rate: nil, previousRate: nil, highestRate: nil, lowestRate: nil, volume: nil, average: nil)
         
-        tickers.append(ticker)
+        userTickers.append(ticker)
         
-        let singleTickerFetcher = TickerFetcher(tickerIdentifier: identifier)
+        let singleTickerFetcher = TickerFetcher()
         
         refreshTicker(tickerFetcher: singleTickerFetcher, source: .automaticAfterAddingTicker)
         

@@ -42,11 +42,9 @@ final class SupportedTickersAndCurrenciesNamesFetcher {
                     return
                 }
                 
-                let supportedTickersRemoteDataRepositoryModel = SupportedTickersAndCurrenciesNamesFetcherModel(supportedTickersAPIResponse: supportedTickersAPIResponse)
-                
                 self?.lastSuccesfullyTickersIdentifiersFetchedDate = Date()
                 
-                completion(.success(supportedTickersRemoteDataRepositoryModel))
+                completion(.success(SupportedTickersAndCurrenciesNamesFetcherModel(supportedTickersAPIResponse: supportedTickersAPIResponse)))
                 
             case .failure:
                 completion(.failure(.genericError))

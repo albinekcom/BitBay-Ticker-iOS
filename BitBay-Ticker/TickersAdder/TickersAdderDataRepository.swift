@@ -39,7 +39,7 @@ final class TickersAdderDataRepository: TickersAdderDataRepositoryProtocol {
             
             tags.append(firstCurrencyCode)
             
-            if externalDataRepository.tickers.contains(where: {$0.identifier == supportedTicker.identifier}) == false {
+            if externalDataRepository.userTickers.contains(where: {$0.identifier == supportedTicker.identifier}) == false {
                 let tickerOnAdderData = TickerOnAdderData(tickerIdentifier: supportedTicker.identifier, firstCurrencyCode: firstCurrencyCode, secondCurrencyCode: secondCurrencyCode, tags: tags)
                 
                 tickersOnAdderData.append(tickerOnAdderData)
