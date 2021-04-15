@@ -19,13 +19,11 @@
 		8CAD2B632613BB120055A58C /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2AFF2613BB110055A58C /* MainCoordinator.swift */; };
 		8CAD2B642613BB120055A58C /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B002613BB110055A58C /* SceneCoordinator.swift */; };
 		8CAD2B652613BB120055A58C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B012613BB110055A58C /* Coordinator.swift */; };
-		8CAD2B672613BB120055A58C /* TickersFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B062613BB110055A58C /* TickersFetcher.swift */; };
 		8CAD2B682613BB120055A58C /* TickerStatisticsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B092613BB110055A58C /* TickerStatisticsAPIResponse.swift */; };
 		8CAD2B692613BB120055A58C /* TickerStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B0A2613BB110055A58C /* TickerStatistics.swift */; };
 		8CAD2B6A2613BB120055A58C /* TickerPropertiesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B0B2613BB110055A58C /* TickerPropertiesFetcher.swift */; };
 		8CAD2B6B2613BB120055A58C /* TickerValuesAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B0D2613BB110055A58C /* TickerValuesAPIResponse.swift */; };
 		8CAD2B6C2613BB120055A58C /* TickerValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B0E2613BB110055A58C /* TickerValues.swift */; };
-		8CAD2B6D2613BB120055A58C /* TickerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B0F2613BB110055A58C /* TickerFetcher.swift */; };
 		8CAD2B6E2613BB120055A58C /* SupportedTickersAndCurrenciesNamesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B112613BB110055A58C /* SupportedTickersAndCurrenciesNamesFetcher.swift */; };
 		8CAD2B6F2613BB120055A58C /* SupportedTickersAndCurrenciesNamesFetcherAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B122613BB110055A58C /* SupportedTickersAndCurrenciesNamesFetcherAPIResponse.swift */; };
 		8CAD2B702613BB120055A58C /* SupportedTickersAndCurrenciesNamesFetcherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B132613BB110055A58C /* SupportedTickersAndCurrenciesNamesFetcherModel.swift */; };
@@ -181,13 +179,11 @@
 		8CAD2AFF2613BB110055A58C /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		8CAD2B002613BB110055A58C /* SceneCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
 		8CAD2B012613BB110055A58C /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		8CAD2B062613BB110055A58C /* TickersFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersFetcher.swift; sourceTree = "<group>"; };
 		8CAD2B092613BB110055A58C /* TickerStatisticsAPIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerStatisticsAPIResponse.swift; sourceTree = "<group>"; };
 		8CAD2B0A2613BB110055A58C /* TickerStatistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerStatistics.swift; sourceTree = "<group>"; };
 		8CAD2B0B2613BB110055A58C /* TickerPropertiesFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerPropertiesFetcher.swift; sourceTree = "<group>"; };
 		8CAD2B0D2613BB110055A58C /* TickerValuesAPIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerValuesAPIResponse.swift; sourceTree = "<group>"; };
 		8CAD2B0E2613BB110055A58C /* TickerValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerValues.swift; sourceTree = "<group>"; };
-		8CAD2B0F2613BB110055A58C /* TickerFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerFetcher.swift; sourceTree = "<group>"; };
 		8CAD2B112613BB110055A58C /* SupportedTickersAndCurrenciesNamesFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportedTickersAndCurrenciesNamesFetcher.swift; sourceTree = "<group>"; };
 		8CAD2B122613BB110055A58C /* SupportedTickersAndCurrenciesNamesFetcherAPIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportedTickersAndCurrenciesNamesFetcherAPIResponse.swift; sourceTree = "<group>"; };
 		8CAD2B132613BB110055A58C /* SupportedTickersAndCurrenciesNamesFetcherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportedTickersAndCurrenciesNamesFetcherModel.swift; sourceTree = "<group>"; };
@@ -393,22 +389,12 @@
 		8CAD2B052613BB110055A58C /* TickersFetchers */ = {
 			isa = PBXGroup;
 			children = (
-				8CAD2B062613BB110055A58C /* TickersFetcher.swift */,
-				8CAD2B072613BB110055A58C /* TickerFetcher */,
+				8CAD2B082613BB110055A58C /* Statistics */,
+				8CAD2B0C2613BB110055A58C /* Values */,
+				8C3292C6261F16680077E175 /* ExternalCurrencyProperties.swift */,
+				8CAD2B0B2613BB110055A58C /* TickerPropertiesFetcher.swift */,
 			);
 			path = TickersFetchers;
-			sourceTree = "<group>";
-		};
-		8CAD2B072613BB110055A58C /* TickerFetcher */ = {
-			isa = PBXGroup;
-			children = (
-				8CAD2B082613BB110055A58C /* Statistics */,
-				8CAD2B0B2613BB110055A58C /* TickerPropertiesFetcher.swift */,
-				8CAD2B0C2613BB110055A58C /* Values */,
-				8CAD2B0F2613BB110055A58C /* TickerFetcher.swift */,
-				8C3292C6261F16680077E175 /* ExternalCurrencyProperties.swift */,
-			);
-			path = TickerFetcher;
 			sourceTree = "<group>";
 		};
 		8CAD2B082613BB110055A58C /* Statistics */ = {
@@ -1038,7 +1024,6 @@
 				8CAD2B9D2613BB120055A58C /* PrettyValueFormatter.swift in Sources */,
 				8CAD2B932613BB120055A58C /* TickersAdderEmptyRowView.swift in Sources */,
 				8CAD2B9F2613BB120055A58C /* ApplicationConfiguration.swift in Sources */,
-				8CAD2B6D2613BB120055A58C /* TickerFetcher.swift in Sources */,
 				8CAD2B892613BB120055A58C /* TickersListFilledListView.swift in Sources */,
 				8CAD2B7A2613BB120055A58C /* Migrator.swift in Sources */,
 				8CAD2B702613BB120055A58C /* SupportedTickersAndCurrenciesNamesFetcherModel.swift in Sources */,
@@ -1049,7 +1034,6 @@
 				8CAD2B722613BB120055A58C /* Endpoint.swift in Sources */,
 				8CAD2B902613BB120055A58C /* TickersAdderViewModel.swift in Sources */,
 				8C573B9A261F574F007D4D5E /* MainRemoteDataRepository.swift in Sources */,
-				8CAD2B672613BB120055A58C /* TickersFetcher.swift in Sources */,
 				8CAD2B812613BB120055A58C /* TickersListViewController.swift in Sources */,
 				8CAD2B6C2613BB120055A58C /* TickerValues.swift in Sources */,
 				8CAD2B802613BB120055A58C /* MainDataRepository.swift in Sources */,

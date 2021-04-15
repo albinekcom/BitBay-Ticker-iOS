@@ -15,17 +15,17 @@ struct Ticker: Codable, TickerIdentifierComponents {
 
 extension Ticker {
     
-    init(identifier: String, tickerValues: TickerValues, tickerStatistics: TickerStatistics) {
+    init(identifier: String, tickerValues: TickerValues?, tickerStatistics: TickerStatistics?) {
         self.identifier = identifier
         
-        highestBid = tickerValues.highestBid
-        lowestAsk = tickerValues.lowestAsk
-        rate = tickerValues.rate
-        previousRate = tickerValues.previousRate
-        highestRate = tickerStatistics.highestRate
-        lowestRate = tickerStatistics.lowestRate
-        volume = tickerStatistics.volume
-        average = tickerStatistics.average
+        highestBid = tickerValues?.highestBid
+        lowestAsk = tickerValues?.lowestAsk
+        rate = tickerValues?.rate
+        previousRate = tickerValues?.previousRate
+        highestRate = tickerStatistics?.highestRate
+        lowestRate = tickerStatistics?.lowestRate
+        volume = tickerStatistics?.volume
+        average = tickerStatistics?.average
     }
     
 }

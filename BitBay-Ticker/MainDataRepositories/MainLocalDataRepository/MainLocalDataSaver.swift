@@ -11,11 +11,11 @@ final class MainLocalDataSaver {
         self.jsonEncoder = jsonEncoder
     }
     
-    func save(supportedTickers: [SupportedTicker], currencies: Set<Currency>, tickers: [Ticker]) {
+    func save(supportedTickers: [SupportedTicker], currencies: Set<Currency>, userTickers: [Ticker]) {
         DispatchQueue.global(qos: .background).async {
             let mainLocalDataRepositoryModel = MainLocalDataFetchedModel(supportedTickers: supportedTickers,
                                                                          currencies: currencies,
-                                                                         tickers: tickers)
+                                                                         userTickers: userTickers)
             
             self.userDefaults?.set(try? self.jsonEncoder.encode(mainLocalDataRepositoryModel), forKey: ApplicationConfiguration.Storing.tempUserDataFileName)
         }

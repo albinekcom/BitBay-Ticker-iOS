@@ -2,7 +2,7 @@ protocol MainLocalDataModel {
     
     var supportedTickers: [SupportedTicker] { get }
     var currencies: Set<Currency> { get }
-    var tickers: [Ticker] { get }
+    var userTickers: [Ticker] { get }
     
 }
 
@@ -10,54 +10,54 @@ struct MainLocalDataFetchedModel: MainLocalDataModel, Codable {
     
     let supportedTickers: [SupportedTicker]
     let currencies: Set<Currency>
-    let tickers: [Ticker]
+    let userTickers: [Ticker]
     
 }
 
 struct DefaultMainLocalDataFetcherModel: MainLocalDataModel {
     
     let supportedTickers: [SupportedTicker] = [
-        SupportedTicker(identifier: "btc-pln"),
-        SupportedTicker(identifier: "eth-pln"),
-        SupportedTicker(identifier: "lsk-usd"),
-        SupportedTicker(identifier: "btc-eur"),
-        SupportedTicker(identifier: "lsk-pln")
+        SupportedTicker(identifier: "BTC-PLM"),
+        SupportedTicker(identifier: "ETH-PLN"),
+        SupportedTicker(identifier: "LSK-USD"),
+        SupportedTicker(identifier: "BTC-EUR"),
+        SupportedTicker(identifier: "LSK-PLN")
     ]
     
     let currencies: Set<Currency> = [
-        Currency(code: "btc", name: "Bitcoin", minimumOffer: nil, scale: 8),
-        Currency(code: "eth", name: "Ethereum", minimumOffer: nil, scale: 8),
-        Currency(code: "lsk", name: "Lisk", minimumOffer: nil, scale: 8),
-        Currency(code: "usd", name: "Dolar amerykański", minimumOffer: nil, scale: 2),
-        Currency(code: "eur", name: "Euro", minimumOffer: nil, scale: 2),
-        Currency(code: "pln", name: "Polski złoty", minimumOffer: nil, scale: 2)
+        Currency(code: "BTC", name: "Bitcoin", scale: 8),
+        Currency(code: "ETH", name: "Ethereum", scale: 8),
+        Currency(code: "LSK", name: "Lisk", scale: 8),
+        Currency(code: "USD", name: "Dolar amerykański", scale: 2),
+        Currency(code: "EUR", name: "Euro", scale: 2),
+        Currency(code: "PLN", name: "Polski złoty", scale: 2)
     ]
     
-    let tickers: [Ticker] = [
-        Ticker(identifier: "btc-pln",
+    let userTickers: [Ticker] = [
+        Ticker(identifier: "BTC-PLN",
                highestBid: nil,
                lowestAsk: nil,
-               rate: 111222333.11,
+               rate: nil,
                previousRate: nil,
                highestRate: nil,
                lowestRate: nil,
                volume: nil,
                average: nil),
-        Ticker(identifier: "eth-pln",
+        Ticker(identifier: "ETH-PLN",
                highestBid: nil,
                lowestAsk: nil,
-               rate: 222333.44,
+               rate: nil,
                previousRate: nil,
                highestRate: nil,
                lowestRate: nil,
                volume: nil,
                average: nil),
-        Ticker(identifier: "lsk-usd",
+        Ticker(identifier: "LSK-USD",
                highestBid: nil,
                lowestAsk: nil,
-               rate: 3334.55,
+               rate: nil,
                previousRate: nil,
-               highestRate: 2233.44,
+               highestRate: nil,
                lowestRate: nil,
                volume: nil,
                average: nil)

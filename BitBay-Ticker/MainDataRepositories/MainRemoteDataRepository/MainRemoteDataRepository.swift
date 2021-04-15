@@ -8,94 +8,156 @@ struct MainRemoteDataModel {
     
 }
 
+enum MainRemoteDataRepositoryError: Error {
+    
+    case generic
+    case canceled
+}
+
 final class MainRemoteDataRepository {
     
+    var isSucessfulyRefreshedTickers: Bool { isSucessfulyRefreshedMultipleTickerFetchers.contains(false) == false }
+    private(set) var isSucessfulyRefreshedSupportedTickers = false
+    
     private let supportedTickersAndCurrenciesNamesFetcher: SupportedTickersAndCurrenciesNamesFetcher
-    private let tickerAndExternalCurrenciesPropertiesFetcher: TickerAndExternalCurrenciesPropertiesFetcher
+    
+    private var multipleTickerFetchers: [TickerAndExternalCurrenciesPropertiesFetcher] = []
+    private var isSucessfulyRefreshedMultipleTickerFetchers: [Bool] = []
+    
+    private var fetchedTickersResults: [String: Result<Ticker, MainRemoteDataRepositoryError>] = [:]
+    private var fetchedExternalCurrenciesPropertiesResults: [String: Result<String, MainRemoteDataRepositoryError>] = [:]
+    
+    private var dispatchGroup: DispatchGroup = DispatchGroup()
+    private var shouldFetchSupportedTickers: Bool { true } // NOTE: Compare date
+    private var completion: ((Result<MainRemoteDataModel, MainRemoteDataRepositoryError>) -> Void)?
+    private let userDefaults: UserDefaults?
     
     init(supportedTickersAndCurrenciesNamesFetcher: SupportedTickersAndCurrenciesNamesFetcher = SupportedTickersAndCurrenciesNamesFetcher(),
-         tickerAndExternalCurrenciesPropertiesFetcher: TickerAndExternalCurrenciesPropertiesFetcher = TickerAndExternalCurrenciesPropertiesFetcher()) {
+         userDefaults: UserDefaults? = UserDefaults.shared) {
         self.supportedTickersAndCurrenciesNamesFetcher = supportedTickersAndCurrenciesNamesFetcher
-        self.tickerAndExternalCurrenciesPropertiesFetcher = tickerAndExternalCurrenciesPropertiesFetcher
+        self.userDefaults = userDefaults
+        
+        lastSuccesfullyTickersIdentifiersFetchedDate = userDefaults?.object(forKey: ApplicationConfiguration.Storing.lastRefreshingSupportedTickersDateKey) as? Date
     }
     
-    func fetchRemoteData(tickerIdentifiers: [String], completion: @escaping (MainRemoteDataModel) -> Void) {
-        // NOTE: Finish combining values into "MainRemoteDataModel"
+    private var lastSuccesfullyTickersIdentifiersFetchedDate: Date? {
+        didSet {
+            userDefaults?.setValue(lastSuccesfullyTickersIdentifiersFetchedDate, forKey: ApplicationConfiguration.Storing.lastRefreshingSupportedTickersDateKey)
+        }
+    }
+    
+    private func shouldRefreshSupportedTickersAndCurrenciesNames() -> Bool {
+        guard let lastSuccesfullyTickersIdentifiersFetchedDate = lastSuccesfullyTickersIdentifiersFetchedDate else { return true }
+        
+        return Date().timeIntervalSince(lastSuccesfullyTickersIdentifiersFetchedDate) > ApplicationConfiguration.UserData.minimumTimeSpanBetweenTickerIndentifiersRefreshes
+    }
+    
+    func fetchRemoteData(tickersIdentifiers: [String], completion: ((Result<MainRemoteDataModel, MainRemoteDataRepositoryError>) -> Void)?) {
+        self.completion = completion
         
         var supportedTickers: [SupportedTicker]?
         var currenciesNames: [String: String] = [:]
+        var externalCurrenciesProperties: [String: ExternalCurrencyProperties] = [:]
+        var tickers: [String: Ticker] = [:]
         
-        fetchRemoteSupportedTickersAndCurrenciesNames() { result in
-            supportedTickers = result.0
-            currenciesNames = result.1
-        }
+        dispatchGroup = DispatchGroup()
         
-        let mainRemoteDataModel = MainRemoteDataModel(supportedTickers: supportedTickers,
-                                                      currencies: [:],
-                                                      tickers: [:])
+        isSucessfulyRefreshedSupportedTickers = false
         
-        DispatchQueue.main.async {
-            completion(mainRemoteDataModel)
-        }
-    }
-    
-    private func fetchRemoteSupportedTickersAndCurrenciesNames(completion: @escaping (([SupportedTicker]?, [String: String])) -> Void) {
-        var supportedTickers: [SupportedTicker]?
-        var names: [String: String] = [:]
-        
-        supportedTickersAndCurrenciesNamesFetcher.fetchSupportedTickersAndCurrenciesNames() { result in
-            switch result {
-            case .success(let values):
-                supportedTickers = values.supportedTickers
-                names = values.currenciesNames
-                
-            case .failure:
-                break
-            }
-        }
-        
-        completion((supportedTickers, names))
-    }
-    
-    private func fetchRemoteTickerValues(tickerIdentifier: String, completion: @escaping ((TickerValues?, [String: ExternalCurrencyProperties])) -> Void) {
-        var tickerValues: TickerValues?
-        var externalCurrencyPropertiesResults: [String: ExternalCurrencyProperties] = [:]
-        
-        tickerPropertiesFetcher.fetchValues(tickerIdentifier: tickerIdentifier) { result in
-            switch result {
-            case .success(let values):
-                tickerValues = values.0
-                
-                if let firstExternalCurrencyProperties = values.1.firstExternalCurrencyProperties {
-                    externalCurrencyPropertiesResults[firstExternalCurrencyProperties.currencyCode] = firstExternalCurrencyProperties
+        if shouldFetchSupportedTickers {
+            dispatchGroup.enter()
+            
+            supportedTickersAndCurrenciesNamesFetcher.fetchSupportedTickersAndCurrenciesNames() { [weak self] result in
+                switch result {
+                case .success(let values):
+                    supportedTickers = values.supportedTickers
+                    currenciesNames = values.currenciesNames
+                    
+                    self?.isSucessfulyRefreshedSupportedTickers = true
+                    self?.lastSuccesfullyTickersIdentifiersFetchedDate = Date()
+                    
+                case .failure(let error):
+                    switch error {
+                    case .parsingError, .genericError:
+                        self?.isSucessfulyRefreshedSupportedTickers = false
+                        
+                    case .canceled:
+                        break
+                    }
+                    
                 }
                 
-                if let secondExternalCurrencyProperties = values.1.secondExternalCurrencyProperties {
-                    externalCurrencyPropertiesResults[secondExternalCurrencyProperties.currencyCode] = secondExternalCurrencyProperties
+                self?.dispatchGroup.leave()
+            }
+        }
+        
+        multipleTickerFetchers = tickersIdentifiers.map { TickerAndExternalCurrenciesPropertiesFetcher(tickerIdentifier: $0) }
+        isSucessfulyRefreshedMultipleTickerFetchers = []
+        
+        multipleTickerFetchers.forEach {
+            dispatchGroup.enter()
+            
+            $0.fetchTickersAndExternalCurrenciesProperties { [weak self] result in
+                switch result {
+                case .success(let values):
+                    tickers[values.ticker.identifier] = values.ticker
+                    
+                    values.externalCurrenciesProperties.forEach {
+                       externalCurrenciesProperties[$0.key] = $0.value
+                    }
+                    
+                    self?.isSucessfulyRefreshedMultipleTickerFetchers.append(true)
+                    
+                case .failure(let error):
+                    switch error {
+                    case .genericError, .parsingError:
+                        self?.isSucessfulyRefreshedMultipleTickerFetchers.append(false)
+                    
+                    case .canceled:
+                        break
+                    }
+                    
                 }
                 
-            case .failure:
-                print("failure")
+                self?.dispatchGroup.leave()
             }
         }
         
-        completion((tickerValues, externalCurrencyPropertiesResults))
+        dispatchGroup.notify(queue: .main) { [weak self] in
+            let currenciesNamesKeys = Set(currenciesNames.map { $0.key })
+            let externalCurrenciesPropertiesKeys = Set(externalCurrenciesProperties.map { $0.key })
+            
+            let currenciesKeys = Set(currenciesNamesKeys.union(externalCurrenciesPropertiesKeys))
+            
+            var currencies: [String: Currency] = [:]
+            
+            for currencyKey in currenciesKeys {
+                currencies[currencyKey] = Currency(code: currencyKey,
+                                                   name: currenciesNames[currencyKey],
+                                                   scale: externalCurrenciesProperties[currencyKey]?.scale)
+            }
+            
+            let mainRemoteDataModel = MainRemoteDataModel(supportedTickers: supportedTickers,
+                                                          currencies: currencies,
+                                                          tickers: tickers)
+            
+            self?.completion?(.success(mainRemoteDataModel))
+            self?.completion = nil
+        }
     }
     
-    private func fetchRemoteTickerStatistics(tickerIdentifier: String, completion: @escaping (TickerStatistics?) -> Void) {
-        var tickerStatistics: TickerStatistics?
+    func cancelFetching() {
+        dispatchGroup = DispatchGroup()
         
-        tickerPropertiesFetcher.fetchStatistics(tickerIdentifier: tickerIdentifier) { result in
-            switch result {
-            case .success(let values):
-                tickerStatistics = values
-                
-            case .failure:
-                print("failure")
-            }
+        supportedTickersAndCurrenciesNamesFetcher.cancelFetching()
+        
+        multipleTickerFetchers.forEach { $0.cancelFetching() }
+        multipleTickerFetchers = []
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.completion?(.failure(.canceled))
+            self?.completion = nil
         }
-        
-        completion(tickerStatistics)
     }
     
 }

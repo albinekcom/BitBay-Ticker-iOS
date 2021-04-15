@@ -32,7 +32,7 @@ final class TickerDetailsViewModel: ObservableObject {
     }
     
     private func updateTitle() {
-        title = "\(dataRepository.model.firstCurrencyCode))\\\(dataRepository.model.secondCurrencyCode)"
+        title = "\(dataRepository.model.firstCurrencyCode)\\\(dataRepository.model.secondCurrencyCode)"
     }
     
     private func updateRowsData() {
