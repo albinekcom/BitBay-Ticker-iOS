@@ -19,8 +19,12 @@ final class TickersListDataRepository: TickersListDataRepositoryProtocol {
     init(tickersAndCurrenciesDataRepository: (TickersDataRepositoryProtocol & AutomaticTickersRefreshingProtocol & CurrenciesDataRepositoryProtocol)) {
         self.tickersAndCurrenciesDataRepository = tickersAndCurrenciesDataRepository
         
-        tickersAndCurrenciesDataRepository.tickersDataDelegate = self
-        tickersAndCurrenciesDataRepository.currenciesDataDelegate = self
+        connectDelegates()
+    }
+    
+    func connectDelegates() {
+        tickersAndCurrenciesDataRepository.tickersDataDelegate = self // NOTE: It needs to be connected once againg after "viewDidAppear"
+        tickersAndCurrenciesDataRepository.currenciesDataDelegate = self // NOTE: It needs to be connected once againg after "viewDidAppear"
     }
     
     func removeTicker(at index: Int) {
@@ -37,8 +41,7 @@ final class TickersListDataRepository: TickersListDataRepositoryProtocol {
     
     func resfreshModel() {
         let tickersOnListData: [TickerOnListData] = tickersAndCurrenciesDataRepository.userTickers.map { ticker in
-            let secondCurrency = Array(tickersAndCurrenciesDataRepository.currencies).filter { currency in
-                currency.code == ticker.secondCurrencyCode }.first
+            let secondCurrency = tickersAndCurrenciesDataRepository.currencies[ticker.secondCurrencyCode ?? ""]
             
             return TickerOnListData(tickerIdentifier: ticker.identifier,
                              firstCurrencyCode: ticker.firstCurrencyCode ?? "-",
@@ -92,6 +95,8 @@ protocol TickersListDataRepositoryProtocol: AutomaticTickersRefreshingProtocol {
     func move(from source: IndexSet, to destination: Int)
     
     func resfreshModel()
+    
+    func connectDelegates()
 }
 
 protocol TickersListDataRepositoryDelegate: AnyObject {
@@ -127,7 +132,7 @@ protocol CurrenciesDataRepositoryProtocol: AnyObject {
     
     var currenciesDataDelegate: CurrenciesDataRepositoryDelegate? { get set }
     
-    var currencies: Set<Currency> { get }
+    var currencies: [String: Currency] { get }
 }
 
 protocol CurrenciesDataRepositoryDelegate: AnyObject {

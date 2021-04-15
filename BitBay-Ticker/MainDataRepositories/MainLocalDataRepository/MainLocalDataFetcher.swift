@@ -50,7 +50,7 @@ final class MainLocalDataFetcher {
     
     private var migratedData: MainLocalDataModel? {
         if let migratedTickers = oldTickersMigrator.migrateOldTickersToCurrentTickers() {
-            return MainLocalDataFetchedModel(supportedTickers: [], currencies: [], userTickers: migratedTickers)
+            return MainLocalDataFetchedModel(supportedTickers: [], currencies: [:], userTickers: migratedTickers)
         } else {
             return nil
         }

@@ -69,6 +69,10 @@ final class TickersListViewModel: ObservableObject {
         }
     }
     
+    func reconnectDataRepositoryDelegates() {
+        dataRepository.connectDelegates()
+    }
+    
     // MARK: - Output
     
     @Published private(set) var rowsData: [TickersListRowData] = []

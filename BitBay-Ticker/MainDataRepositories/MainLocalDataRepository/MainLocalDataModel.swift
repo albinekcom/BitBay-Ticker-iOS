@@ -1,7 +1,7 @@
 protocol MainLocalDataModel {
     
     var supportedTickers: [SupportedTicker] { get }
-    var currencies: Set<Currency> { get }
+    var currencies: [String: Currency] { get }
     var userTickers: [Ticker] { get }
     
 }
@@ -9,7 +9,7 @@ protocol MainLocalDataModel {
 struct MainLocalDataFetchedModel: MainLocalDataModel, Codable {
     
     let supportedTickers: [SupportedTicker]
-    let currencies: Set<Currency>
+    let currencies: [String: Currency]
     let userTickers: [Ticker]
     
 }
@@ -24,13 +24,13 @@ struct DefaultMainLocalDataFetcherModel: MainLocalDataModel {
         SupportedTicker(identifier: "LSK-PLN")
     ]
     
-    let currencies: Set<Currency> = [
-        Currency(code: "BTC", name: "Bitcoin", scale: 8),
-        Currency(code: "ETH", name: "Ethereum", scale: 8),
-        Currency(code: "LSK", name: "Lisk", scale: 8),
-        Currency(code: "USD", name: "Dolar amerykański", scale: 2),
-        Currency(code: "EUR", name: "Euro", scale: 2),
-        Currency(code: "PLN", name: "Polski złoty", scale: 2)
+    let currencies: [String: Currency] = [
+        "BTC": Currency(code: "BTC", name: "Bitcoin", scale: 8),
+        "ETH": Currency(code: "ETH", name: "Ethereum", scale: 8),
+        "LSK": Currency(code: "LSK", name: "Lisk", scale: 8),
+        "USD": Currency(code: "USD", name: "Dolar amerykański", scale: 2),
+        "EUR": Currency(code: "EUR", name: "Euro", scale: 2),
+        "PLN": Currency(code: "PLN", name: "Polski złoty", scale: 2)
     ]
     
     let userTickers: [Ticker] = [

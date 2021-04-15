@@ -100,10 +100,10 @@ final class MainRemoteDataRepository {
             $0.fetchTickersAndExternalCurrenciesProperties { [weak self] result in
                 switch result {
                 case .success(let values):
-                    tickers[values.ticker.identifier] = values.ticker
+                    tickers[values.ticker.identifier] = values.ticker // NOTE: Application sometimes crashes here (after working long)
                     
                     values.externalCurrenciesProperties.forEach {
-                       externalCurrenciesProperties[$0.key] = $0.value
+                       externalCurrenciesProperties[$0.key] = $0.value // NOTE: Application sometimes crashes here (after working long)
                     }
                     
                     self?.isSucessfulyRefreshedMultipleTickerFetchers.append(true)

@@ -11,7 +11,7 @@ final class MainLocalDataSaver {
         self.jsonEncoder = jsonEncoder
     }
     
-    func save(supportedTickers: [SupportedTicker], currencies: Set<Currency>, userTickers: [Ticker]) {
+    func save(supportedTickers: [SupportedTicker], currencies: [String: Currency], userTickers: [Ticker]) {
         DispatchQueue.global(qos: .background).async {
             let mainLocalDataRepositoryModel = MainLocalDataFetchedModel(supportedTickers: supportedTickers,
                                                                          currencies: currencies,

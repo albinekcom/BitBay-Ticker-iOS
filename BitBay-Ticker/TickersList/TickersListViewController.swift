@@ -39,6 +39,7 @@ final class TickersListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        viewModel.reconnectDataRepositoryDelegates()
         viewModel.resfreshModel()
     }
     
@@ -86,6 +87,8 @@ extension TickersListViewController: TickersAdderDelegate {
     }
     
     func tickersAdderDidDismiss() {
+        viewModel.reconnectDataRepositoryDelegates()
+        
         analyticsService?.trackDisplayedTickersListView()
         
         viewModel.tickersAdderVisible = false

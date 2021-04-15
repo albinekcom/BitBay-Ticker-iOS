@@ -15,7 +15,7 @@ final class MainLocalDataRepository {
         }
     }
     
-    func save(supportedTickers: [SupportedTicker], currencies: Set<Currency>, userTickers: [Ticker]) {
+    func save(supportedTickers: [SupportedTicker], currencies: [String: Currency], userTickers: [Ticker]) {
 //        mainLocalDataSaver.save(supportedTickers: supportedTickers, currencies: currencies, userTickers: userTickers) // NOTE: Uncomment it
     }
     

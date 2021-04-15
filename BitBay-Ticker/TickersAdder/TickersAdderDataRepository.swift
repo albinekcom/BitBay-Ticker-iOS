@@ -29,11 +29,11 @@ final class TickersAdderDataRepository: TickersAdderDataRepositoryProtocol {
             
             var tags: [String] = [firstCurrencyCode, secondCurrencyCode]
             
-            if let firstCurrency = Array(externalDataRepository.currencies).filter({ $0.code == firstCurrencyCode }).first, let firstCurrencyName = firstCurrency.name {
+            if let firstCurrency = externalDataRepository.currencies[firstCurrencyCode], let firstCurrencyName = firstCurrency.name {
                 tags.append(firstCurrencyName)
             }
             
-            if let secondCurrency = Array(externalDataRepository.currencies).filter({ $0.code == secondCurrencyCode }).first, let secondCurrencyName = secondCurrency.name {
+            if let secondCurrency = externalDataRepository.currencies[secondCurrencyCode], let secondCurrencyName = secondCurrency.name {
                 tags.append(secondCurrencyName)
             }
             

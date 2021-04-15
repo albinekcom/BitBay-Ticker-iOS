@@ -8,7 +8,7 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
     
     var isResumeAutomaticRefreshingTickersPossible: Bool = false
     
-    private(set) var currencies: Set<Currency> = [] {
+    private(set) var currencies: [String: Currency] = [:] {
         didSet {
             currenciesDataDelegate?.didUpdateCurrencies()
         }
@@ -66,9 +66,31 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
                 
                 // Currencies
                 
-                
-                
-                // NOTE: Add proper assigning "currencies" here
+                for remoteModelCurrencyKey in remoteModel.currencies {
+                    let remoteCurrency = remoteModelCurrencyKey.value
+                    
+                    if let localCurrency = self.currencies[remoteCurrency.code] {
+                        let newName: String?
+                        
+                        if let remoteCurrencyName = remoteCurrency.name {
+                            newName = remoteCurrencyName
+                        } else {
+                            newName = localCurrency.name
+                        }
+                        
+                        let newScale: Int?
+                        
+                        if let remoteCurrencyScale = remoteCurrency.scale {
+                            newScale = remoteCurrencyScale
+                        } else {
+                            newScale = localCurrency.scale
+                        }
+                        
+                        self.currencies[remoteCurrency.code] = Currency(code: remoteCurrency.code, name: newName, scale: newScale)
+                    } else {
+                        self.currencies[remoteCurrency.code] = remoteCurrency
+                    }
+                }
                 
                 // Tickers
                 
@@ -119,7 +141,9 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
     }
     
     func currency(for identifier: String) -> Currency? { // NOTE: Use it instead "tickers" in a places which needs just one paricular ticker
-        Array(currencies).filter { $0.code == identifier }.first
+//        Array(currencies).filter { $0.code == identifier }.first
+        
+        currencies[identifier]
     }
     
     func resumeAutomaticRefreshingTickers() {

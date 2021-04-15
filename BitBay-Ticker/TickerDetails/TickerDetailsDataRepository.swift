@@ -39,8 +39,8 @@ final class TickerDetailsDataRepository: TickerDetailsDataRepositoryProtocol {
             return
         }
         
-        let firstCurrency = Array(tickersAndCurrenciesDataRepository.currencies).filter { $0.code == updatedTicker.firstCurrencyCode }.first
-        let secondCurrency = Array(tickersAndCurrenciesDataRepository.currencies).filter { $0.code == updatedTicker.secondCurrencyCode }.first
+        let firstCurrency = tickersAndCurrenciesDataRepository.currencies[updatedTicker.firstCurrencyCode ?? ""]
+        let secondCurrency = tickersAndCurrenciesDataRepository.currencies[updatedTicker.secondCurrencyCode ?? ""]
         
         let newModel = TickerDetailsModel(firstCurrencyCode: updatedTicker.firstCurrencyCode ?? "-",
                                           firstCurrencyName: firstCurrency?.name ?? "-",
