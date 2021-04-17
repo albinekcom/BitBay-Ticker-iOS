@@ -6,7 +6,7 @@ enum FirbaseAnalyticsTrackName: String {
     case tickersView = "Tickers_View"
     case tickerDetailsView = "Ticker_Details_View"
     case editTickersView = "Edit_Tickers_View"
-    case requestedRatingView = "Requested_Rating_View"
+    case requestedReviewView = "Requested_Review_View"
     
     case addedTicker = "Added_Ticker"
     case removedTicker = "Removed_Ticker"
@@ -54,8 +54,8 @@ final class FirbaseAnalyticsService: AnalyticsService {
         track(trackName: .editTickersView)
     }
     
-    func trackRequstedRatingView() {
-        track(trackName: .requestedRatingView)
+    func trackRequstedReviewView() {
+        track(trackName: .requestedReviewView)
     }
     
     // MARK: - Actions

@@ -3,17 +3,24 @@ import UIKit
 final class TickersListViewController: UIViewController {
     
     weak var coordinator: MainCoordinator?
-    weak var analyticsService: (TickersListAnalyticsService & RatingViewAnalyticsService)?
+    weak var analyticsService: (TickersListAnalyticsService & ReviewViewAnalyticsService)? {
+        didSet {
+            reviewController.analyticsService = analyticsService
+        }
+    }
     
     private let viewModel: TickersListViewModel
     private let tickersListView: TickersListView
+    private let reviewController: ReviewController
     
     // MARK: - Initializers
 
-    init(tickersAndCurrenciesDataRepository: (TickersDataRepositoryProtocol & CurrenciesDataRepositoryProtocol & AutomaticTickersRefreshingProtocol & MainDataRepositoryProtocol)) {
+    init(tickersAndCurrenciesDataRepository: (TickersDataRepositoryProtocol & CurrenciesDataRepositoryProtocol & AutomaticTickersRefreshingProtocol & MainDataRepositoryProtocol),
+         reviewController: ReviewController = NativeReviewController()) {
         let dataRepository = TickersListDataRepository(tickersAndCurrenciesDataRepository: tickersAndCurrenciesDataRepository)
         viewModel = TickersListViewModel(dataRepository: dataRepository)
         tickersListView = TickersListView(viewModel: viewModel)
+        self.reviewController = reviewController
         
         super.init(nibName: nil, bundle: nil)
         
@@ -33,7 +40,7 @@ final class TickersListViewController: UIViewController {
         prepareMainView(swiftUIView: tickersListView)
         preparePlusButton()
         
-        displayReviewPopUpIfNeeded()
+        reviewController.requestReview(in: navigationController?.view.window?.windowScene)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,13 +64,6 @@ final class TickersListViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = editButtonItem
         navigationItem.rightBarButtonItem?.isEnabled = false
-    }
-    
-    private func displayReviewPopUpIfNeeded() { // NOTE: Uncomment it before shipping - DO IT
-//        guard let windowScene = navigationController?.view.window?.windowScene else { return }
-        
-//        let reviewPopUpController = ReviewPopUpController(analyticsService: analyticsService)
-//        reviewPopUpController.displayReviewPopUpIfNeeded(in: windowScene)
     }
     
     @objc private func showTickersAdder() {

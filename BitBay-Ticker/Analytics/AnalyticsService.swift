@@ -1,6 +1,6 @@
 protocol AnalyticsService: TickersListAnalyticsService,
                            TickerDetailsAnalyticsService,
-                           RatingViewAnalyticsService,
+                           ReviewViewAnalyticsService,
                            TickersAdderAnalyticsService,
                            TickersFetcherAnalyticsService {}
 
@@ -16,9 +16,9 @@ protocol TickerDetailsAnalyticsService: AnyObject {
     func trackDisplayedTickerDetailsView(tickerIdentifier: String)
 }
 
-protocol RatingViewAnalyticsService: AnyObject {
+protocol ReviewViewAnalyticsService: AnyObject {
     
-    func trackRequstedRatingView()
+    func trackRequstedReviewView()
 }
 
 protocol TickersAdderAnalyticsService: AnyObject {

@@ -54,7 +54,7 @@
 		8CAD2B882613BB120055A58C /* ErrorBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B342613BB110055A58C /* ErrorBannerView.swift */; };
 		8CAD2B892613BB120055A58C /* TickersListFilledListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B352613BB110055A58C /* TickersListFilledListView.swift */; };
 		8CAD2B8A2613BB120055A58C /* TickersListEmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B362613BB110055A58C /* TickersListEmptyListView.swift */; };
-		8CAD2B8B2613BB120055A58C /* ReviewPopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B382613BB110055A58C /* ReviewPopUpController.swift */; };
+		8CAD2B8B2613BB120055A58C /* NativeReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B382613BB110055A58C /* NativeReviewController.swift */; };
 		8CAD2B8C2613BB120055A58C /* TickersAdderRowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B3A2613BB110055A58C /* TickersAdderRowData.swift */; };
 		8CAD2B8D2613BB120055A58C /* TickersAdderDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B3B2613BB110055A58C /* TickersAdderDataRepository.swift */; };
 		8CAD2B8E2613BB120055A58C /* TickersAdderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B3C2613BB110055A58C /* TickersAdderView.swift */; };
@@ -86,12 +86,17 @@
 		8CAD2BA92613BB120055A58C /* TickerDetailsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B602613BB120055A58C /* TickerDetailsRowView.swift */; };
 		8CAD2BAA2613BB120055A58C /* TickerDetailsDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B612613BB120055A58C /* TickerDetailsDataRepository.swift */; };
 		8CAD2BAB2613BB120055A58C /* TickerDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD2B622613BB120055A58C /* TickerDetailsModel.swift */; };
+		8CBC7357262B20B4004C94F4 /* NativeStoreReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC7356262B20B4004C94F4 /* NativeStoreReviewController.swift */; };
+		8CBC735F262B21AC004C94F4 /* StoreReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC735E262B21AC004C94F4 /* StoreReviewController.swift */; };
 		8CBD947A1F0D7D1400CA4250 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD947C1F0D7D1400CA4250 /* Localizable.strings */; };
 		8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC184FB1EFE4CAC0083DA30 /* AppDelegate.swift */; };
 		8CC185031EFE4CAC0083DA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185021EFE4CAC0083DA30 /* Assets.xcassets */; };
 		8CC185061EFE4CAC0083DA30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC185041EFE4CAC0083DA30 /* LaunchScreen.storyboard */; };
 		8CCA6F3523A3A9AC0048B1B8 /* TickerIdentifierComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA6F3423A3A9AC0048B1B8 /* TickerIdentifierComponentsTests.swift */; };
 		8CDFD47D1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDFD47C1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift */; };
+		8CE33C96262B264C0096BCBE /* StoreReviewPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE33C95262B264C0096BCBE /* StoreReviewPolicy.swift */; };
+		8CE33C9B262B26840096BCBE /* ApplicationLaunchStoreReviewPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE33C9A262B26840096BCBE /* ApplicationLaunchStoreReviewPolicy.swift */; };
+		8CE33CA6262B2AA70096BCBE /* ReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE33CA5262B2AA70096BCBE /* ReviewController.swift */; };
 		8CE817422615042F0058067F /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE817412615042F0058067F /* String+Localized.swift */; };
 		8CE817502615072F0058067F /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE817472615072E0058067F /* nanopb.xcframework */; };
 		8CE817512615072F0058067F /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE817482615072E0058067F /* PromisesObjC.xcframework */; };
@@ -215,7 +220,7 @@
 		8CAD2B342613BB110055A58C /* ErrorBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorBannerView.swift; sourceTree = "<group>"; };
 		8CAD2B352613BB110055A58C /* TickersListFilledListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersListFilledListView.swift; sourceTree = "<group>"; };
 		8CAD2B362613BB110055A58C /* TickersListEmptyListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersListEmptyListView.swift; sourceTree = "<group>"; };
-		8CAD2B382613BB110055A58C /* ReviewPopUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewPopUpController.swift; sourceTree = "<group>"; };
+		8CAD2B382613BB110055A58C /* NativeReviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeReviewController.swift; sourceTree = "<group>"; };
 		8CAD2B3A2613BB110055A58C /* TickersAdderRowData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersAdderRowData.swift; sourceTree = "<group>"; };
 		8CAD2B3B2613BB110055A58C /* TickersAdderDataRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersAdderDataRepository.swift; sourceTree = "<group>"; };
 		8CAD2B3C2613BB110055A58C /* TickersAdderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickersAdderView.swift; sourceTree = "<group>"; };
@@ -249,6 +254,8 @@
 		8CAD2B622613BB120055A58C /* TickerDetailsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerDetailsModel.swift; sourceTree = "<group>"; };
 		8CAE92A523DDC6150025539D /* Firebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
 		8CAE92A623DDC6150025539D /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		8CBC7356262B20B4004C94F4 /* NativeStoreReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeStoreReviewController.swift; sourceTree = "<group>"; };
+		8CBC735E262B21AC004C94F4 /* StoreReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewController.swift; sourceTree = "<group>"; };
 		8CBD947B1F0D7D1400CA4250 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CBD947D1F0D7D2500CA4250 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CC184F81EFE4CAC0083DA30 /* BitBay-Ticker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BitBay-Ticker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -267,6 +274,9 @@
 		8CDFD47C1F084106009F1E19 /* TickerDetailsViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerDetailsViewControllerUITests.swift; sourceTree = "<group>"; };
 		8CDFD47E1F084106009F1E19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CE06BD61F061D1400EBD7B9 /* BitBay-Ticker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BitBay-Ticker.entitlements"; sourceTree = "<group>"; };
+		8CE33C95262B264C0096BCBE /* StoreReviewPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewPolicy.swift; sourceTree = "<group>"; };
+		8CE33C9A262B26840096BCBE /* ApplicationLaunchStoreReviewPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationLaunchStoreReviewPolicy.swift; sourceTree = "<group>"; };
+		8CE33CA5262B2AA70096BCBE /* ReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewController.swift; sourceTree = "<group>"; };
 		8CE817412615042F0058067F /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		8CE817472615072E0058067F /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = nanopb.xcframework; sourceTree = "<group>"; };
 		8CE817482615072E0058067F /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PromisesObjC.xcframework; sourceTree = "<group>"; };
@@ -524,7 +534,10 @@
 		8CAD2B372613BB110055A58C /* Review */ = {
 			isa = PBXGroup;
 			children = (
-				8CAD2B382613BB110055A58C /* ReviewPopUpController.swift */,
+				8CE33C94262B26180096BCBE /* Policy */,
+				8CBC7363262B21CB004C94F4 /* StoreReviewController */,
+				8CE33CA5262B2AA70096BCBE /* ReviewController.swift */,
+				8CAD2B382613BB110055A58C /* NativeReviewController.swift */,
 			);
 			path = Review;
 			sourceTree = "<group>";
@@ -647,6 +660,15 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
+		8CBC7363262B21CB004C94F4 /* StoreReviewController */ = {
+			isa = PBXGroup;
+			children = (
+				8CBC735E262B21AC004C94F4 /* StoreReviewController.swift */,
+				8CBC7356262B20B4004C94F4 /* NativeStoreReviewController.swift */,
+			);
+			path = StoreReviewController;
+			sourceTree = "<group>";
+		};
 		8CC184EF1EFE4CAC0083DA30 = {
 			isa = PBXGroup;
 			children = (
@@ -744,6 +766,15 @@
 				8CDFD47E1F084106009F1E19 /* Info.plist */,
 			);
 			path = "BitBay-TickerUITests";
+			sourceTree = "<group>";
+		};
+		8CE33C94262B26180096BCBE /* Policy */ = {
+			isa = PBXGroup;
+			children = (
+				8CE33C95262B264C0096BCBE /* StoreReviewPolicy.swift */,
+				8CE33C9A262B26840096BCBE /* ApplicationLaunchStoreReviewPolicy.swift */,
+			);
+			path = Policy;
 			sourceTree = "<group>";
 		};
 		8CE817462615072E0058067F /* FirebaseAnalytics */ = {
@@ -1011,13 +1042,15 @@
 				8CAD2B6A2613BB120055A58C /* TickerPropertiesFetcher.swift in Sources */,
 				8CAD2BA12613BB120055A58C /* CurrencyIconView.swift in Sources */,
 				8CAD2B992613BB120055A58C /* AnalyticsService.swift in Sources */,
-				8CAD2B8B2613BB120055A58C /* ReviewPopUpController.swift in Sources */,
+				8CAD2B8B2613BB120055A58C /* NativeReviewController.swift in Sources */,
 				8CAD2B9B2613BB120055A58C /* Color+ApplicationColor.swift in Sources */,
 				8CAD2BA52613BB120055A58C /* TickerDetailsRowData.swift in Sources */,
 				8CC184FC1EFE4CAC0083DA30 /* AppDelegate.swift in Sources */,
 				8CAD2B9C2613BB120055A58C /* ClearButton.swift in Sources */,
+				8CE33CA6262B2AA70096BCBE /* ReviewController.swift in Sources */,
 				8CAD2B7E2613BB120055A58C /* TickerV1.swift in Sources */,
 				8CAD2B832613BB120055A58C /* TickersListDataRepository.swift in Sources */,
+				8CE33C9B262B26840096BCBE /* ApplicationLaunchStoreReviewPolicy.swift in Sources */,
 				8CAD2B692613BB120055A58C /* TickerStatistics.swift in Sources */,
 				8CAD2B6E2613BB120055A58C /* SupportedTickersAndCurrenciesNamesFetcher.swift in Sources */,
 				8CAD2B8A2613BB120055A58C /* TickersListEmptyListView.swift in Sources */,
@@ -1040,6 +1073,7 @@
 				8CAD2B812613BB120055A58C /* TickersListViewController.swift in Sources */,
 				8CAD2B6C2613BB120055A58C /* TickerValues.swift in Sources */,
 				8CAD2B802613BB120055A58C /* MainDataRepository.swift in Sources */,
+				8CBC7357262B20B4004C94F4 /* NativeStoreReviewController.swift in Sources */,
 				8CAD2B8F2613BB120055A58C /* TickersAdderModel.swift in Sources */,
 				8CAD2B742613BB120055A58C /* Currency.swift in Sources */,
 				8CAD2B792613BB120055A58C /* MigratorFromV0ToV1.swift in Sources */,
@@ -1053,9 +1087,11 @@
 				8CAD2B952613BB120055A58C /* LocalConsoleAnalytics.swift in Sources */,
 				8C3561E7262A18A3009A1A3D /* TickersListInitialLoadingView.swift in Sources */,
 				8CAD2B882613BB120055A58C /* ErrorBannerView.swift in Sources */,
+				8CBC735F262B21AC004C94F4 /* StoreReviewController.swift in Sources */,
 				8CAD2B752613BB120055A58C /* Ticker.swift in Sources */,
 				8CAD2B912613BB120055A58C /* TickersAdderViewController.swift in Sources */,
 				8CAD2B7B2613BB120055A58C /* MigratorFromV1ToV2.swift in Sources */,
+				8CE33C96262B264C0096BCBE /* StoreReviewPolicy.swift in Sources */,
 				8CECF20E2616451000065EF4 /* Int+TimeIntervalExtensions.swift in Sources */,
 				8CAD2BA62613BB120055A58C /* TickerDetailsViewModel.swift in Sources */,
 				8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */,
