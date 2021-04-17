@@ -77,16 +77,12 @@ final class MainRemoteDataRepository {
                                                        scale: externalCurrenciesProperties[currencyKey]?.scale)
                 }
                 
-                DispatchQueue.main.async {
-                    completion?(.success(MainRemoteDataModel(supportedTickers: nil,
-                                                             currencies: currencies,
-                                                             tickers: tickers)))
-                }
+                completion?(.success(MainRemoteDataModel(supportedTickers: nil,
+                                                         currencies: currencies,
+                                                         tickers: tickers)))
                 
             case .failure:
-                DispatchQueue.main.async {
-                    completion?(.failure(.generic))
-                }
+                completion?(.failure(.generic))
             }
         }
     }

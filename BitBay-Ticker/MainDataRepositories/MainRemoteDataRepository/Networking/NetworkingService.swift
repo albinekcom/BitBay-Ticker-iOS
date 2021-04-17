@@ -49,21 +49,20 @@ final class NetworkingService {
         urlRequest.timeoutInterval = configuration.timeoutInterval
         
         task = urlSession.dataTask(with: urlRequest) { [weak self] data, _, error in
-            defer {
-                self?.completion = nil
-            }
+            let result: Result<Data, NetworkingServiceError>
             
             if let error = error {
-                self?.completion?(.failure(.networkError(error)))
-                return
+                result = .failure(.networkError(error))
+            } else if let data = data {
+                result = .success(data)
+            } else {
+                result = .failure(.lackOfData)
             }
             
-            guard let data = data else {
-                self?.completion?(.failure(.lackOfData))
-                return
+            DispatchQueue.main.async {
+                completion?(result)
+                self?.completion = nil
             }
-            
-            self?.completion?(.success(data))
         }
         
         task?.resume()

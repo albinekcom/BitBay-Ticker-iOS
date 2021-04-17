@@ -98,7 +98,7 @@ final class TickerAndExternalCurrenciesPropertiesFetcher {
             self?.dispatchGroup?.leave()
         }
         
-        dispatchGroup?.notify(queue: .global(qos: .utility)) { [weak self] in
+        dispatchGroup?.notify(queue: .main) { [weak self] in
             let ticker = Ticker(identifier: tickerIdentifier, tickerValues: tickerValues, tickerStatistics: tickerStatistics)
             
             self?.completion?(.success(TickerAndExternalCurrenciesPropertiesModel(ticker: ticker,
