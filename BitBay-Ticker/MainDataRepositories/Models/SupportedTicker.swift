@@ -18,15 +18,21 @@ protocol TickerIdentifierComponents {
 extension TickerIdentifierComponents {
     
     var firstCurrencyCode: String? {
-        currencyIdentifiers.first
+        currencyIdentifiers?.first
     }
     
     var secondCurrencyCode: String? {
-        currencyIdentifiers.last
+        currencyIdentifiers?.last
     }
     
-    private var currencyIdentifiers: [String] {
-        identifier.components(separatedBy: "-")
+    private var currencyIdentifiers: [String]? {
+        let seperatedComponents = identifier.components(separatedBy: "-")
+        
+        if seperatedComponents.count == 2 {
+            return seperatedComponents
+        } else {
+            return nil
+        }
     }
     
 }

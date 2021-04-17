@@ -8,7 +8,7 @@ struct PrettyValueFormatter {
         numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         numberFormatter.usesGroupingSeparator = true
-        numberFormatter.roundingMode = .halfUp
+        numberFormatter.roundingMode = .floor
         numberFormatter.locale = locale
     }
     

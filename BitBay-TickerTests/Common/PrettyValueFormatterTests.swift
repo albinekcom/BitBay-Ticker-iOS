@@ -3,24 +3,32 @@ import XCTest
 
 final class PrettyValueFormatterTests: XCTestCase {
     
-    func testNilValue() {
-        XCTAssertEqual(PrettyValueFormatter.makePrettyString(value: nil, scale: 2, currency: nil), "-")
-        XCTAssertEqual(PrettyValueFormatter.makePrettyString(value: nil, scale: 2, currency: "PLN"), "- PLN")
+    private var sut: PrettyValueFormatter!
+    
+    override func setUp() {
+        super.setUp()
+        
+        sut = PrettyValueFormatter(locale: Locale(identifier: "en-US"))
     }
     
-    func testScales() {
-        XCTAssertEqual(PrettyValueFormatter.makePrettyString(value: 1234.5678, scale: nil, currency: nil), "1,234.5678")
-        XCTAssertEqual(PrettyValueFormatter.makePrettyString(value: 1234.5678, scale: 0, currency: nil), "1,234")
-        XCTAssertEqual(PrettyValueFormatter.makePrettyString(value: 1234.5678, scale: 1, currency: nil), "1,234.5")
-        XCTAssertEqual(PrettyValueFormatter.makePrettyString(value: 1234.5678, scale: 2, currency: nil), "1,234.56")
-        XCTAssertEqual(PrettyValueFormatter.makePrettyString(value: 1234.5678, scale: 3, currency: nil), "1,234.567")
-        XCTAssertEqual(PrettyValueFormatter.makePrettyString(value: 1234.5678, scale: 4, currency: nil), "1,234.5678")
-        XCTAssertEqual(PrettyValueFormatter.makePrettyString(value: 1234.5678, scale: 5, currency: nil), "1,234.56780")
+    func test_NilValue() {
+        XCTAssertEqual(sut.prettyString(value: nil, scale: 2, currencyCode: nil), "-")
+        XCTAssertEqual(sut.prettyString(value: nil, scale: 2, currencyCode: "PLN"), "- PLN")
     }
     
-    func testAppendingCurrency() {
-        XCTAssertEqual(PrettyValueFormatter.makePrettyString(value: 1234.5678, scale: nil, currency: nil), "1,234.5678")
-        XCTAssertEqual(PrettyValueFormatter.makePrettyString(value: 1234.5678, scale: nil, currency: "BTC"), "1,234.5678 BTC")
+    func test_Scales() {
+        XCTAssertEqual(sut.prettyString(value: 1234.5678, scale: nil, currencyCode: nil), "1,234.5678")
+        XCTAssertEqual(sut.prettyString(value: 1234.5678, scale: 0, currencyCode: nil), "1,234")
+        XCTAssertEqual(sut.prettyString(value: 1234.5678, scale: 1, currencyCode: nil), "1,234.5")
+        XCTAssertEqual(sut.prettyString(value: 1234.5678, scale: 2, currencyCode: nil), "1,234.56")
+        XCTAssertEqual(sut.prettyString(value: 1234.5678, scale: 3, currencyCode: nil), "1,234.567")
+        XCTAssertEqual(sut.prettyString(value: 1234.5678, scale: 4, currencyCode: nil), "1,234.5678")
+        XCTAssertEqual(sut.prettyString(value: 1234.5678, scale: 5, currencyCode: nil), "1,234.56780")
+    }
+    
+    func test_AppendingCurrency() {
+        XCTAssertEqual(sut.prettyString(value: 1234.5678, scale: nil, currencyCode: nil), "1,234.5678")
+        XCTAssertEqual(sut.prettyString(value: 1234.5678, scale: nil, currencyCode: "BTC"), "1,234.5678 BTC")
     }
     
 }

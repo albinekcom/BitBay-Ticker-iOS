@@ -27,7 +27,7 @@ final class MainRemoteDataRepository {
     private var fetchedTickersResults: [String: Result<Ticker, MainRemoteDataRepositoryError>] = [:]
     private var fetchedExternalCurrenciesPropertiesResults: [String: Result<String, MainRemoteDataRepositoryError>] = [:]
     
-    private var dispatchGroup: DispatchGroup = DispatchGroup()
+    private var dispatchGroup: DispatchGroup?
     private var completion: ((Result<MainRemoteDataModel, MainRemoteDataRepositoryError>) -> Void)?
     private let userDefaults: UserDefaults?
     
@@ -84,7 +84,9 @@ final class MainRemoteDataRepository {
                 }
                 
             case .failure:
-                break
+                DispatchQueue.main.async {
+                    completion?(.failure(.generic))
+                }
             }
         }
     }
@@ -97,12 +99,12 @@ final class MainRemoteDataRepository {
         var externalCurrenciesProperties: [String: ExternalCurrencyProperties] = [:]
         var tickers: [String: Ticker] = [:]
         
-        dispatchGroup = DispatchGroup() // NOTE: This is problematic (should be everything cancelled before it)
+        dispatchGroup = DispatchGroup()
         
         isSucessfulyRefreshedSupportedTickers = false
         
         if shouldRefreshSupportedTickersAndCurrenciesNames {
-            dispatchGroup.enter()
+            dispatchGroup?.enter()
             
             supportedTickersAndCurrenciesNamesFetcher.fetchSupportedTickersAndCurrenciesNames() { [weak self] result in
                 switch result {
@@ -124,7 +126,7 @@ final class MainRemoteDataRepository {
                     
                 }
                 
-                self?.dispatchGroup.leave()
+                self?.dispatchGroup?.leave()
             }
         }
         
@@ -132,7 +134,7 @@ final class MainRemoteDataRepository {
         isSucessfulyRefreshedMultipleTickerFetchers = []
         
         multipleTickerFetchers.forEach {
-            dispatchGroup.enter()
+            dispatchGroup?.enter()
             
             $0.fetchTickersAndExternalCurrenciesProperties { [weak self] result in
                 switch result {
@@ -156,11 +158,11 @@ final class MainRemoteDataRepository {
                     
                 }
                 
-                self?.dispatchGroup.leave()
+                self?.dispatchGroup?.leave()
             }
         }
         
-        dispatchGroup.notify(queue: .main) { [weak self] in
+        dispatchGroup?.notify(queue: .main) { [weak self] in
             let currenciesNamesKeys = Set(currenciesNames.map { $0.key })
             let externalCurrenciesPropertiesKeys = Set(externalCurrenciesProperties.map { $0.key })
             
@@ -188,7 +190,7 @@ final class MainRemoteDataRepository {
         
         multipleTickerFetchers.forEach { $0.cancelFetching() }
         multipleTickerFetchers = []
-        dispatchGroup = DispatchGroup()
+        dispatchGroup = nil
         
         DispatchQueue.main.async { [weak self] in
             self?.completion?(.failure(.canceled))

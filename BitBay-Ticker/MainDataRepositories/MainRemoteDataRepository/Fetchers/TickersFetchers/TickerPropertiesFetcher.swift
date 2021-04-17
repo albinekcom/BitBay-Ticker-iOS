@@ -23,7 +23,7 @@ final class TickerAndExternalCurrenciesPropertiesFetcher {
     private let networkingServiceForStatistics: NetworkingService
     private let jsonDecoder: JSONDecoder
     
-    private var dispatchGroup: DispatchGroup = DispatchGroup()
+    private var dispatchGroup: DispatchGroup?
     
     private var completion: ((Result<TickerAndExternalCurrenciesPropertiesModel, TickerPropertiesFetcherError>) -> Void)?
     
@@ -47,7 +47,7 @@ final class TickerAndExternalCurrenciesPropertiesFetcher {
         
         dispatchGroup = DispatchGroup()
         
-        dispatchGroup.enter()
+        dispatchGroup?.enter()
         
         networkingServiceForValues.request(.tickerValues(tickerIdentifier: tickerIdentifier)) { [weak self] result in
             switch result {
@@ -73,10 +73,10 @@ final class TickerAndExternalCurrenciesPropertiesFetcher {
                 self?.completion = nil
             }
             
-            self?.dispatchGroup.leave()
+            self?.dispatchGroup?.leave()
         }
         
-        dispatchGroup.enter()
+        dispatchGroup?.enter()
         
         networkingServiceForStatistics.request(.tickerStatistics(tickerIdentifier: tickerIdentifier)) { [weak self] result in
             switch result {
@@ -95,10 +95,10 @@ final class TickerAndExternalCurrenciesPropertiesFetcher {
                 self?.completion = nil
             }
             
-            self?.dispatchGroup.leave()
+            self?.dispatchGroup?.leave()
         }
         
-        dispatchGroup.notify(queue: .global(qos: .utility)) { [weak self] in
+        dispatchGroup?.notify(queue: .global(qos: .utility)) { [weak self] in
             let ticker = Ticker(identifier: tickerIdentifier, tickerValues: tickerValues, tickerStatistics: tickerStatistics)
             
             self?.completion?(.success(TickerAndExternalCurrenciesPropertiesModel(ticker: ticker,
@@ -111,6 +111,7 @@ final class TickerAndExternalCurrenciesPropertiesFetcher {
         networkingServiceForValues.cancelRequest()
         networkingServiceForStatistics.cancelRequest()
         
+        dispatchGroup = nil
         completion?(.failure(.canceled))
         completion = nil
     }
