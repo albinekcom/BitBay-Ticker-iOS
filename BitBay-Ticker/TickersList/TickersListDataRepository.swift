@@ -14,17 +14,18 @@ final class TickersListDataRepository: TickersListDataRepositoryProtocol {
     
     private(set) var fetchingError: Error? = nil
     
-    private let tickersAndCurrenciesDataRepository: (TickersDataRepositoryProtocol & AutomaticTickersRefreshingProtocol & CurrenciesDataRepositoryProtocol)
+    private let tickersAndCurrenciesDataRepository: (TickersDataRepositoryProtocol & AutomaticTickersRefreshingProtocol & CurrenciesDataRepositoryProtocol & MainDataRepositoryProtocol)
     
-    init(tickersAndCurrenciesDataRepository: (TickersDataRepositoryProtocol & AutomaticTickersRefreshingProtocol & CurrenciesDataRepositoryProtocol)) {
+    init(tickersAndCurrenciesDataRepository: (TickersDataRepositoryProtocol & AutomaticTickersRefreshingProtocol & CurrenciesDataRepositoryProtocol & MainDataRepositoryProtocol)) {
         self.tickersAndCurrenciesDataRepository = tickersAndCurrenciesDataRepository
         
         connectDelegates()
     }
     
     func connectDelegates() {
-        tickersAndCurrenciesDataRepository.tickersDataDelegate = self // NOTE: It needs to be connected once againg after "viewDidAppear"
-        tickersAndCurrenciesDataRepository.currenciesDataDelegate = self // NOTE: It needs to be connected once againg after "viewDidAppear"
+        tickersAndCurrenciesDataRepository.tickersDataDelegate = self
+        tickersAndCurrenciesDataRepository.currenciesDataDelegate = self
+        tickersAndCurrenciesDataRepository.mainDataRepositoryDelegate = self
     }
     
     func removeTicker(at index: Int) {
@@ -83,6 +84,14 @@ extension TickersListDataRepository: CurrenciesDataRepositoryDelegate {
     
 }
 
+extension TickersListDataRepository: MainDataRepositoryDelegate {
+    
+    func didLoadLocalData() {
+        delegate?.didLoadInitialModel()
+    }
+    
+}
+
 //
 
 protocol TickersListDataRepositoryProtocol: AutomaticTickersRefreshingProtocol {
@@ -102,6 +111,7 @@ protocol TickersListDataRepositoryProtocol: AutomaticTickersRefreshingProtocol {
 protocol TickersListDataRepositoryDelegate: AnyObject {
     
     func didFetchNewModel(error: Error?)
+    func didLoadInitialModel()
     
 }
 
@@ -165,3 +175,18 @@ protocol AutomaticTickersRefreshingProtocol: AnyObject {
     func resumeAutomaticRefreshingTickers()
     func pauseAutomaticRefreshingTickers()
 }
+
+//
+
+protocol MainDataRepositoryProtocol: AnyObject {
+    
+    var mainDataRepositoryDelegate: MainDataRepositoryDelegate? { get set }
+}
+
+//
+
+protocol MainDataRepositoryDelegate: AnyObject {
+    
+    func didLoadLocalData()
+}
+

@@ -111,8 +111,6 @@ final class TickerAndExternalCurrenciesPropertiesFetcher {
         networkingServiceForValues.cancelRequest()
         networkingServiceForStatistics.cancelRequest()
         
-        dispatchGroup = DispatchGroup()
-        
         completion?(.failure(.canceled))
         completion = nil
     }

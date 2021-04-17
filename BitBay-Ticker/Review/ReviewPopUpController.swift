@@ -1,6 +1,6 @@
 import StoreKit
 
-final class ReviewPopUpController { // NOTE: I think that it could be divided into ReviewPopUpPolicy and ReviewPopUpController
+final class ReviewPopUpController { // NOTE: I think that it could be divided into ReviewPopUpPolicy and ReviewPopUpController - DO IT
     
     private let applicationLaunchCounter: Int
     private let displayRatingPopUpEveryXApplicationLaunchTimes: Int
@@ -8,7 +8,7 @@ final class ReviewPopUpController { // NOTE: I think that it could be divided in
     private let storeReviewController: SKStoreReviewController.Type
     
     init(applicationLaunchCounter: Int = 1,
-         displayRatingPopUpEveryXApplicationLaunchTimes: Int = 1, // NOTE: Improve getting this parameters
+         displayRatingPopUpEveryXApplicationLaunchTimes: Int = 1, // NOTE: Improve getting this parameters - DO IT
          analyticsService: RatingViewAnalyticsService?,
          storeReviewController: SKStoreReviewController.Type = SKStoreReviewController.self) {
         self.applicationLaunchCounter = applicationLaunchCounter

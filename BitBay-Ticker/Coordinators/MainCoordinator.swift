@@ -11,8 +11,8 @@ final class MainCoordinator: SceneCoordinator {
     
     // MARK: - Initializer
 
-    init(mainDataRepository: MainDataRepository = MainDataRepository(),
-         analyticsService: AnalyticsService = FirbaseAnalyticsService(),
+    init(analyticsService: AnalyticsService = FirbaseAnalyticsService.shared,
+         mainDataRepository: MainDataRepository = MainDataRepository(),
          navigationController: UINavigationController = UINavigationController()) {
         self.analyticsService = analyticsService
         self.mainDataRepository = mainDataRepository
@@ -30,12 +30,12 @@ final class MainCoordinator: SceneCoordinator {
     
     // MARK: - Flows
     
-    func showTickersList(isAnimated: Bool = false) {
+    func showTickersList() {
         let tickersListViewController = TickersListViewController(tickersAndCurrenciesDataRepository: mainDataRepository)
         tickersListViewController.coordinator = self
         tickersListViewController.analyticsService = analyticsService
         
-        navigationController.pushViewController(tickersListViewController, animated: isAnimated)
+        navigationController.pushViewController(tickersListViewController, animated: false)
     }
     
     func showTickersAdder(tickersAdderDelegate: TickersAdderDelegate?) {

@@ -10,7 +10,7 @@ final class TickersListViewController: UIViewController {
     
     // MARK: - Initializers
 
-    init(tickersAndCurrenciesDataRepository: (TickersDataRepositoryProtocol & CurrenciesDataRepositoryProtocol & AutomaticTickersRefreshingProtocol)) {
+    init(tickersAndCurrenciesDataRepository: (TickersDataRepositoryProtocol & CurrenciesDataRepositoryProtocol & AutomaticTickersRefreshingProtocol & MainDataRepositoryProtocol)) {
         let dataRepository = TickersListDataRepository(tickersAndCurrenciesDataRepository: tickersAndCurrenciesDataRepository)
         viewModel = TickersListViewModel(dataRepository: dataRepository)
         tickersListView = TickersListView(viewModel: viewModel)
@@ -53,11 +53,13 @@ final class TickersListViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                            target: self,
                                                            action: #selector(showTickersAdder))
+        navigationItem.leftBarButtonItem?.isEnabled = false
         
         navigationItem.rightBarButtonItem = editButtonItem
+        navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
-    private func displayReviewPopUpIfNeeded() { // NOTE: Uncomment it before shipping
+    private func displayReviewPopUpIfNeeded() { // NOTE: Uncomment it before shipping - DO IT
 //        guard let windowScene = navigationController?.view.window?.windowScene else { return }
         
 //        let reviewPopUpController = ReviewPopUpController(analyticsService: analyticsService)
@@ -108,6 +110,11 @@ extension TickersListViewController: TickersListViewModelDelegate {
     
     func didRemoveTicker(tickerIdentifier: String) {
         analyticsService?.trackRemovedTicker(tickerIdentifier: tickerIdentifier)
+    }
+    
+    func didChangeUsInitialModelLoaded() {
+        navigationItem.leftBarButtonItem?.isEnabled = viewModel.isInitialModelLoaded
+        navigationItem.rightBarButtonItem?.isEnabled = viewModel.isInitialModelLoaded
     }
     
 }

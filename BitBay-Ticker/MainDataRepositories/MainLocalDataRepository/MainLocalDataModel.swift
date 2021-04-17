@@ -34,33 +34,9 @@ struct DefaultMainLocalDataFetcherModel: MainLocalDataModel {
     ]
     
     let userTickers: [Ticker] = [
-        Ticker(identifier: "BTC-PLN",
-               highestBid: nil,
-               lowestAsk: nil,
-               rate: nil,
-               previousRate: nil,
-               highestRate: nil,
-               lowestRate: nil,
-               volume: nil,
-               average: nil),
-        Ticker(identifier: "ETH-PLN",
-               highestBid: nil,
-               lowestAsk: nil,
-               rate: nil,
-               previousRate: nil,
-               highestRate: nil,
-               lowestRate: nil,
-               volume: nil,
-               average: nil),
-        Ticker(identifier: "LSK-USD",
-               highestBid: nil,
-               lowestAsk: nil,
-               rate: nil,
-               previousRate: nil,
-               highestRate: nil,
-               lowestRate: nil,
-               volume: nil,
-               average: nil)
+        Ticker(identifier: "BTC-PLN"),
+        Ticker(identifier: "ETH-PLN"),
+        Ticker(identifier: "LSK-USD")
     ]
     
 }

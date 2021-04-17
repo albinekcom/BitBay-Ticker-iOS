@@ -20,7 +20,7 @@ struct ApplicationConfiguration {
     
     struct UserData {
           
-          static let timeSpanBetweenAutomaticRefreshingTicker: TimeInterval = 10.seconds
+          static let timeSpanBetweenAutomaticRefreshingTicker: TimeInterval = 15.seconds
           static let minimumTimeSpanBetweenTickerIndentifiersRefreshes: TimeInterval = 3.days
           
       }

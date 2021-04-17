@@ -26,10 +26,6 @@ final class MainLocalDataFetcher {
         }
     }
     
-    func loadSynchronously() -> MainLocalDataModel {
-        mainLocalDataRepositoryModelFromFile
-    }
-    
     private var mainLocalDataRepositoryModelFromFile: MainLocalDataModel {
         if let localData = localData {
             return localData

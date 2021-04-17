@@ -15,7 +15,7 @@ struct Ticker: Codable, TickerIdentifierComponents {
 
 extension Ticker {
     
-    init(identifier: String, tickerValues: TickerValues?, tickerStatistics: TickerStatistics?) {
+    init(identifier: String, tickerValues: TickerValues? = nil, tickerStatistics: TickerStatistics? = nil) {
         self.identifier = identifier
         
         highestBid = tickerValues?.highestBid
@@ -27,14 +27,5 @@ extension Ticker {
         volume = tickerStatistics?.volume
         average = tickerStatistics?.average
     }
-    
-}
-
-//
-
-struct ExternalCurrenciesProperties {
-    
-    let firstExternalCurrencyProperties: ExternalCurrencyProperties?
-    let secondExternalCurrencyProperties: ExternalCurrencyProperties?
     
 }

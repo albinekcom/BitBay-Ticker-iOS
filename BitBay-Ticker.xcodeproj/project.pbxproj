@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8C1F1D6323A62F4A00D25D99 /* PrettyValueFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F1D6223A62F4A00D25D99 /* PrettyValueFormatterTests.swift */; };
 		8C3292C7261F16680077E175 /* ExternalCurrencyProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3292C6261F16680077E175 /* ExternalCurrencyProperties.swift */; };
+		8C3561E7262A18A3009A1A3D /* TickersListInitialLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3561E6262A18A3009A1A3D /* TickersListInitialLoadingView.swift */; };
 		8C573B9A261F574F007D4D5E /* MainRemoteDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C573B99261F574F007D4D5E /* MainRemoteDataRepository.swift */; };
 		8C6FB63123A2CD3B00724C86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */; };
 		8C71306926150B17007F3A49 /* FirebaseCrashlytics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C71306626150B17007F3A49 /* FirebaseCrashlytics.xcframework */; };
@@ -159,6 +160,7 @@
 		8C1F1D6223A62F4A00D25D99 /* PrettyValueFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyValueFormatterTests.swift; sourceTree = "<group>"; };
 		8C2F173E1F02A56E006FD66F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		8C3292C6261F16680077E175 /* ExternalCurrencyProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalCurrencyProperties.swift; sourceTree = "<group>"; };
+		8C3561E6262A18A3009A1A3D /* TickersListInitialLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersListInitialLoadingView.swift; sourceTree = "<group>"; };
 		8C573B99261F574F007D4D5E /* MainRemoteDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRemoteDataRepository.swift; sourceTree = "<group>"; };
 		8C6FB62923A2CBD400724C86 /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransport.framework; path = Carthage/Build/iOS/GoogleDataTransport.framework; sourceTree = "<group>"; };
 		8C6FB63023A2CD3B00724C86 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 				8CAD2B342613BB110055A58C /* ErrorBannerView.swift */,
 				8CAD2B352613BB110055A58C /* TickersListFilledListView.swift */,
 				8CAD2B362613BB110055A58C /* TickersListEmptyListView.swift */,
+				8C3561E6262A18A3009A1A3D /* TickersListInitialLoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1048,6 +1051,7 @@
 				8CAD2B8D2613BB120055A58C /* TickersAdderDataRepository.swift in Sources */,
 				8CAD2B9E2613BB120055A58C /* UIViewController+PrepareMainView.swift in Sources */,
 				8CAD2B952613BB120055A58C /* LocalConsoleAnalytics.swift in Sources */,
+				8C3561E7262A18A3009A1A3D /* TickersListInitialLoadingView.swift in Sources */,
 				8CAD2B882613BB120055A58C /* ErrorBannerView.swift in Sources */,
 				8CAD2B752613BB120055A58C /* Ticker.swift in Sources */,
 				8CAD2B912613BB120055A58C /* TickersAdderViewController.swift in Sources */,

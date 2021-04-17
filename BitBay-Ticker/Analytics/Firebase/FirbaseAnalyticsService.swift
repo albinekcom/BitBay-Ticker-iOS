@@ -17,13 +17,18 @@ enum FirbaseAnalyticsTrackName: String {
 
 final class FirbaseAnalyticsService: AnalyticsService {
     
-    private let firebaseAnalytics: Analytics.Type
+    static let shared = FirbaseAnalyticsService()
     
-    init(firebaseApp: FirebaseApp.Type = FirebaseApp.self,
-         firebaseAnalytics: Analytics.Type = Analytics.self) {
-        self.firebaseAnalytics = LocalConsoleAnalytics.self // NOTE: Change it to "firebaseAnalytics" before shipping
+    init(firebaseApp: FirebaseApp.Type, firebaseAnalytics: Analytics.Type) {
+        self.firebaseAnalytics = LocalConsoleAnalytics.self
         
         firebaseApp.configure()
+    }
+    
+    private let firebaseAnalytics: Analytics.Type
+    
+    private convenience init() {
+        self.init(firebaseApp: FirebaseApp.self, firebaseAnalytics: Analytics.self)
     }
     
     // MARK: - Views

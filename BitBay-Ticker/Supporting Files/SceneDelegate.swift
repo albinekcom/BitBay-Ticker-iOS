@@ -14,7 +14,7 @@ final class SceneDelegate: UIResponder {
         super.init()
     }
     
-    override convenience init() {
+    private override convenience init() {
         self.init(sceneCoordinator: MainCoordinator())
     }
     

@@ -5,8 +5,10 @@ struct TickersListView: View {
     @ObservedObject var viewModel: TickersListViewModel
     
     var body: some View {
-        if viewModel.rowsData.isEmpty {
-            TickersListEmptyListView()
+        if viewModel.isInitialModelLoaded == false {
+            TickersListInitialLoadingView() // NOTE: Edit and Plus button should be disabled
+        } else if viewModel.rowsData.isEmpty {
+            TickersListEmptyListView() // NOTE: Add displaying "TickersListInitialLoadingView"
         } else {
             TickersListFilledListView(viewModel: viewModel)
         }

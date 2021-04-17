@@ -4,7 +4,8 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
                                 CurrenciesDataRepositoryProtocol,
                                 SupportedTickersDataRepositoryProtocol,
                                 TickersAppendableDataRepositoryProtocol,
-                                AutomaticTickersRefreshingProtocol {
+                                AutomaticTickersRefreshingProtocol,
+                                MainDataRepositoryProtocol {
     
     var isResumeAutomaticRefreshingTickersPossible: Bool = false
     
@@ -36,6 +37,7 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
     weak var tickersDataDelegate: TickersDataRepositoryDelegate?
     weak var currenciesDataDelegate: CurrenciesDataRepositoryDelegate?
     weak var supportedTickersDataDelegate: SupportedTickersDataRepositoryDelegate?
+    weak var mainDataRepositoryDelegate: MainDataRepositoryDelegate?
     
     init(mainLocalDataRepository: MainLocalDataRepository = MainLocalDataRepository(),
          mainRemoteDataRepository: MainRemoteDataRepository = MainRemoteDataRepository()) {
@@ -49,72 +51,7 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
             
             self?.isResumeAutomaticRefreshingTickersPossible = true
             self?.refreshRemoteData()
-        }
-    }
-    
-    @objc private func refreshRemoteData() {
-        mainRemoteDataRepository.fetchRemoteData(tickersIdentifiers: userTickers.map { $0.identifier }) { [weak self] result in
-            guard let self = self else { return }
-            
-            switch result {
-            case .success(let remoteModel):
-                // Supported tickers
-                
-                if let remoteModelSupportedTickers = remoteModel.supportedTickers {
-                    self.supportedTickers = remoteModelSupportedTickers
-                }
-                
-                // Currencies
-                
-                for remoteModelCurrencyKey in remoteModel.currencies {
-                    let remoteCurrency = remoteModelCurrencyKey.value
-                    
-                    if let localCurrency = self.currencies[remoteCurrency.code] {
-                        let newName: String?
-                        
-                        if let remoteCurrencyName = remoteCurrency.name {
-                            newName = remoteCurrencyName
-                        } else {
-                            newName = localCurrency.name
-                        }
-                        
-                        let newScale: Int?
-                        
-                        if let remoteCurrencyScale = remoteCurrency.scale {
-                            newScale = remoteCurrencyScale
-                        } else {
-                            newScale = localCurrency.scale
-                        }
-                        
-                        self.currencies[remoteCurrency.code] = Currency(code: remoteCurrency.code, name: newName, scale: newScale)
-                    } else {
-                        self.currencies[remoteCurrency.code] = remoteCurrency
-                    }
-                }
-                
-                // Tickers
-                
-                let supportedTickersIdentifiers = self.supportedTickers.map { $0.identifier }
-                let filteredUserTickersBasedOnSupportedTickers = self.userTickers.filter { supportedTickersIdentifiers.contains($0.identifier) }
-                let tickerIdentifiers = filteredUserTickersBasedOnSupportedTickers.map { $0.identifier }
-                
-                var newUserTickers: [Ticker] = []
-                
-                for tickerIdentifier in tickerIdentifiers {
-                    if let tickerFromRemoteModel = remoteModel.tickers[tickerIdentifier] {
-                        newUserTickers.append(tickerFromRemoteModel)
-                    } else if let old = filteredUserTickersBasedOnSupportedTickers.first(where: { $0.identifier == tickerIdentifier} ) {
-                        newUserTickers.append(old)
-                    }
-                }
-                
-                self.userTickers = newUserTickers
-                
-            case .failure(let error):
-                print("Error: \(error)")
-            }
-            
-            self.resumeAutomaticRefreshingTickers()
+            self?.mainDataRepositoryDelegate?.didLoadLocalData()
         }
     }
     
@@ -131,27 +68,33 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
             return
         }
         
-        let ticker = Ticker(identifier: identifier, highestBid: nil, lowestAsk: nil, rate: nil, previousRate: nil, highestRate: nil, lowestRate: nil, volume: nil, average: nil)
+        let ticker = Ticker(identifier: identifier)
         
         userTickers.append(ticker)
-        
-        // NOTE: Invoke refreshing just appended ticker here
-        
         tickersDataDelegate?.didUpdateTickers(error: nil)
+        
+        mainRemoteDataRepository.fetchRemoteData(tickerIdentifier: identifier) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let remoteModel):
+                self.updateValues(remoteModel: remoteModel)
+                
+            case .failure:
+                break
+            }
+        }
     }
     
-    func currency(for identifier: String) -> Currency? { // NOTE: Use it instead "tickers" in a places which needs just one paricular ticker
-//        Array(currencies).filter { $0.code == identifier }.first
-        
+    func currency(for identifier: String) -> Currency? {
         currencies[identifier]
     }
     
     func resumeAutomaticRefreshingTickers() {
-        guard isResumeAutomaticRefreshingTickersPossible else { return }
+        guard isResumeAutomaticRefreshingTickersPossible, automaticRefreshingTickersTimer == nil else { return }
         
         mainRemoteDataRepository.cancelFetching()
         
-        automaticRefreshingTickersTimer?.invalidate()
         automaticRefreshingTickersTimer = Timer.scheduledTimer(timeInterval: ApplicationConfiguration.UserData.timeSpanBetweenAutomaticRefreshingTicker,
                                                                target: self,
                                                                selector: #selector(refreshRemoteData),
@@ -163,6 +106,78 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
         mainRemoteDataRepository.cancelFetching()
         
         automaticRefreshingTickersTimer?.invalidate()
+        automaticRefreshingTickersTimer = nil
+    }
+    
+    @objc private func refreshRemoteData() {
+        mainRemoteDataRepository.fetchRemoteData(tickersIdentifiers: userTickers.map { $0.identifier }) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let remoteModel):
+                self.updateValues(remoteModel: remoteModel)
+                
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+            
+            self.automaticRefreshingTickersTimer = nil
+            self.resumeAutomaticRefreshingTickers()
+        }
+    }
+    
+    private func updateValues(remoteModel: MainRemoteDataModel) {
+        // Supported tickers
+        
+        if let remoteModelSupportedTickers = remoteModel.supportedTickers {
+            self.supportedTickers = remoteModelSupportedTickers
+        }
+        
+        // Currencies
+        
+        for remoteModelCurrencyKey in remoteModel.currencies {
+            let remoteCurrency = remoteModelCurrencyKey.value
+            
+            if let localCurrency = self.currencies[remoteCurrency.code] {
+                let newName: String?
+                
+                if let remoteCurrencyName = remoteCurrency.name {
+                    newName = remoteCurrencyName
+                } else {
+                    newName = localCurrency.name
+                }
+                
+                let newScale: Int?
+                
+                if let remoteCurrencyScale = remoteCurrency.scale {
+                    newScale = remoteCurrencyScale
+                } else {
+                    newScale = localCurrency.scale
+                }
+                
+                self.currencies[remoteCurrency.code] = Currency(code: remoteCurrency.code, name: newName, scale: newScale)
+            } else {
+                self.currencies[remoteCurrency.code] = remoteCurrency
+            }
+        }
+        
+        // Tickers
+        
+        let supportedTickersIdentifiers = self.supportedTickers.map { $0.identifier }
+        let filteredUserTickersBasedOnSupportedTickers = self.userTickers.filter { supportedTickersIdentifiers.contains($0.identifier) }
+        let tickerIdentifiers = filteredUserTickersBasedOnSupportedTickers.map { $0.identifier }
+        
+        var newUserTickers: [Ticker] = []
+        
+        for tickerIdentifier in tickerIdentifiers {
+            if let tickerFromRemoteModel = remoteModel.tickers[tickerIdentifier] {
+                newUserTickers.append(tickerFromRemoteModel)
+            } else if let old = filteredUserTickersBasedOnSupportedTickers.first(where: { $0.identifier == tickerIdentifier} ) {
+                newUserTickers.append(old)
+            }
+        }
+        
+        self.userTickers = newUserTickers
     }
     
 }

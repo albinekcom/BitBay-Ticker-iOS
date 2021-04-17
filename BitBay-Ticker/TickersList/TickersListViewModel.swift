@@ -4,6 +4,7 @@ protocol TickersListViewModelDelegate: AnyObject {
     
     func didSelectTicker(tickerIdentifier: String)
     func didRemoveTicker(tickerIdentifier: String)
+    func didChangeUsInitialModelLoaded()
     
 }
 
@@ -27,6 +28,12 @@ final class TickersListViewModel: ObservableObject {
     
     @Published private(set) var tickerListError: Error?
     
+    @Published private(set) var isInitialModelLoaded: Bool = false {
+        didSet {
+            delegate?.didChangeUsInitialModelLoaded()
+        }
+    }
+    
     var tickersAdderVisible: Bool = false {
         didSet {
             refreshigResumeAutomaticRefreshingTickersPossible()
@@ -41,14 +48,6 @@ final class TickersListViewModel: ObservableObject {
     init(dataRepository: TickersListDataRepositoryProtocol) {
         self.dataRepository = dataRepository
         self.dataRepository.delegate = self
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.tickerListError = TickersListError.fetchingError
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.tickerListError = nil
-            }
-        }
     }
     
     weak var delegate: TickersListViewModelDelegate?
@@ -124,6 +123,10 @@ extension TickersListViewModel: TickersListDataRepositoryDelegate {
         tickerListError = error
         
         updateOutputProperties()
+    }
+    
+    func didLoadInitialModel() {
+        isInitialModelLoaded = true
     }
     
 }
