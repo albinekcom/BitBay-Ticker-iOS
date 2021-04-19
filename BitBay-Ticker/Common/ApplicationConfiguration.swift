@@ -25,6 +25,6 @@ struct ApplicationConfiguration {
           
       }
     
-    static let displayRatingPopUpEveryXApplicationLaunchTimes: Int = 10
+    static let displayReviewViewEveryXApplicationLaunchTimes: Int = 10
     
 }

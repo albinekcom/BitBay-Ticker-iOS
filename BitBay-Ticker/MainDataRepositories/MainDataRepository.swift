@@ -32,7 +32,7 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
     private let mainLocalDataRepository: MainLocalDataRepository
     private let mainRemoteDataRepository: MainRemoteDataRepository
     
-    private var automaticRefreshingTickersTimer: Timer?
+    private var refreshingTickersTimer: ResumableTimer?
     
     weak var tickersDataDelegate: TickersDataRepositoryDelegate?
     weak var currenciesDataDelegate: CurrenciesDataRepositoryDelegate?
@@ -91,26 +91,23 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
     }
     
     func resumeAutomaticRefreshingTickers() {
-        guard isResumeAutomaticRefreshingTickersPossible, automaticRefreshingTickersTimer == nil else { return }
+        guard isResumeAutomaticRefreshingTickersPossible else { return }
         
         mainRemoteDataRepository.cancelFetching()
         
-        automaticRefreshingTickersTimer = Timer.scheduledTimer(timeInterval: ApplicationConfiguration.UserData.timeSpanBetweenAutomaticRefreshingTicker,
-                                                               target: self,
-                                                               selector: #selector(refreshRemoteData),
-                                                               userInfo: nil,
-                                                               repeats: false)
+        refreshingTickersTimer?.resume()
     }
     
     func pauseAutomaticRefreshingTickers() {
         mainRemoteDataRepository.cancelFetching()
         
-        automaticRefreshingTickersTimer?.invalidate()
-        automaticRefreshingTickersTimer = nil
+        refreshingTickersTimer?.pause()
     }
     
     @objc private func refreshRemoteData() {
-        mainRemoteDataRepository.fetchRemoteData(tickersIdentifiers: userTickers.map { $0.identifier }) { [weak self] result in
+        let identifiers = userTickers.map { $0.identifier }
+        
+        mainRemoteDataRepository.fetchRemoteData(tickersIdentifiers: identifiers) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
@@ -121,8 +118,13 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
                 print("Error: \(error)")
             }
             
-            self.automaticRefreshingTickersTimer = nil
-            self.resumeAutomaticRefreshingTickers()
+            self.setUpTimer()
+        }
+    }
+    
+    private func setUpTimer() {
+        self.refreshingTickersTimer = ResumableTimer(fireDate: Date(timeIntervalSinceNow: ApplicationConfiguration.UserData.timeSpanBetweenAutomaticRefreshingTicker)) {
+            self.refreshRemoteData()
         }
     }
     

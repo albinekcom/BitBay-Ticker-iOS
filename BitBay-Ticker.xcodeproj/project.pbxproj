@@ -109,6 +109,7 @@
 		8CE817582615072F0058067F /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE8174F2615072F0058067F /* GoogleUtilities.xcframework */; };
 		8CECF20E2616451000065EF4 /* Int+TimeIntervalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECF20D2616451000065EF4 /* Int+TimeIntervalExtensions.swift */; };
 		8CED93092083C4EA00A068BD /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED93082083C4EA00A068BD /* SnapshotHelper.swift */; };
+		8CF2C232262D66ED004C60F4 /* ResumableTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF2C231262D66ED004C60F4 /* ResumableTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -289,6 +290,7 @@
 		8CE8174F2615072F0058067F /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleUtilities.xcframework; sourceTree = "<group>"; };
 		8CECF20D2616451000065EF4 /* Int+TimeIntervalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+TimeIntervalExtensions.swift"; sourceTree = "<group>"; };
 		8CED93082083C4EA00A068BD /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		8CF2C231262D66ED004C60F4 /* ResumableTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumableTimer.swift; sourceTree = "<group>"; };
 		8CF438AF23DCDCCF00496367 /* FirebaseInstallations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstallations.framework; path = "BitBay-Ticker/Frameworks/Firebase/Analytics/FirebaseInstallations.framework"; sourceTree = "<group>"; };
 		8CF438B023DCDCCF00496367 /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromisesObjC.framework; path = "BitBay-Ticker/Frameworks/Firebase/Analytics/PromisesObjC.framework"; sourceTree = "<group>"; };
 		8CFB35111F1808F900475DC1 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -607,6 +609,7 @@
 				8CAD2B592613BB120055A58C /* Double+OptionalString.swift */,
 				8CE817412615042F0058067F /* String+Localized.swift */,
 				8CECF20D2616451000065EF4 /* Int+TimeIntervalExtensions.swift */,
+				8CF2C231262D66ED004C60F4 /* ResumableTimer.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1090,6 +1093,7 @@
 				8CBC735F262B21AC004C94F4 /* StoreReviewController.swift in Sources */,
 				8CAD2B752613BB120055A58C /* Ticker.swift in Sources */,
 				8CAD2B912613BB120055A58C /* TickersAdderViewController.swift in Sources */,
+				8CF2C232262D66ED004C60F4 /* ResumableTimer.swift in Sources */,
 				8CAD2B7B2613BB120055A58C /* MigratorFromV1ToV2.swift in Sources */,
 				8CE33C96262B264C0096BCBE /* StoreReviewPolicy.swift in Sources */,
 				8CECF20E2616451000065EF4 /* Int+TimeIntervalExtensions.swift in Sources */,
