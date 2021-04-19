@@ -121,7 +121,7 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
     }
     
     private func setUpTimer() {
-        let fireDate = Date(timeIntervalSinceNow: ApplicationConfiguration.UserData.timeSpanBetweenAutomaticRefreshingTicker)
+        let fireDate = Date(timeIntervalSinceNow: ApplicationConfiguration.User.timeSpanBetweenAutomaticRefreshingTicker)
         
         self.refreshingTickersTimer = ResumableTimer(fireDate: fireDate) { [weak self] in
             self?.refreshRemoteData()

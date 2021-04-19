@@ -38,19 +38,19 @@ final class MainRemoteDataRepository {
         self.supportedTickersAndCurrenciesNamesFetcher = supportedTickersAndCurrenciesNamesFetcher
         self.userDefaults = userDefaults
         
-        lastSuccesfullyTickersIdentifiersFetchedDate = userDefaults?.object(forKey: ApplicationConfiguration.Storing.lastRefreshingSupportedTickersDateKey) as? Date
+        lastSupportedTickersSuccessfulFetchedDate = userDefaults?.object(forKey: ApplicationConfiguration.Storage.lastSupportedTickersSuccessfulRefreshDateKey) as? Date
     }
     
-    private var lastSuccesfullyTickersIdentifiersFetchedDate: Date? {
+    private var lastSupportedTickersSuccessfulFetchedDate: Date? {
         didSet {
-            userDefaults?.setValue(lastSuccesfullyTickersIdentifiersFetchedDate, forKey: ApplicationConfiguration.Storing.lastRefreshingSupportedTickersDateKey)
+            userDefaults?.setValue(lastSupportedTickersSuccessfulFetchedDate, forKey: ApplicationConfiguration.Storage.lastSupportedTickersSuccessfulRefreshDateKey)
         }
     }
     
     private var shouldRefreshSupportedTickersAndCurrenciesNames: Bool {
-        guard let lastSuccesfullyTickersIdentifiersFetchedDate = lastSuccesfullyTickersIdentifiersFetchedDate else { return true }
+        guard let lastSuccesfullyTickersIdentifiersFetchedDate = lastSupportedTickersSuccessfulFetchedDate else { return true }
         
-        return Date().timeIntervalSince(lastSuccesfullyTickersIdentifiersFetchedDate) > ApplicationConfiguration.UserData.minimumTimeSpanBetweenTickerIndentifiersRefreshes
+        return Date().timeIntervalSince(lastSuccesfullyTickersIdentifiersFetchedDate) > ApplicationConfiguration.User.minimumTimeSpanBetweenSupportedTickersRefreshes
     }
     
     func fetchRemoteData(tickerIdentifier: String, completion: ((Result<MainRemoteDataModel, MainRemoteDataRepositoryError>) -> Void)?) {
@@ -109,7 +109,7 @@ final class MainRemoteDataRepository {
                     currenciesNames = values.currenciesNames
                     
                     self?.isSucessfulyRefreshedSupportedTickers = true
-                    self?.lastSuccesfullyTickersIdentifiersFetchedDate = Date()
+                    self?.lastSupportedTickersSuccessfulFetchedDate = Date()
                     
                 case .failure(let error):
                     switch error {

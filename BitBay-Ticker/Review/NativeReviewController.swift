@@ -14,13 +14,13 @@ final class NativeReviewController: ReviewController {
     }
     
     func requestReview(in windowScene: UIWindowScene?) {
-        storeReviewPolicy.updatePolicyBeforeRequestingReview()
+        storeReviewPolicy.updatePolicyBeforeTryingToRequestReview()
         
         guard storeReviewPolicy.shouldDisplayReview else { return }
         
-        storeReviewPolicy.updatePolicyAfterRequestingReview()
-        
         storeReviewController.requestReview(in: windowScene)
+        
+        storeReviewPolicy.updatePolicyAfterReviewWasRequested()
         
         analyticsService?.trackRequstedReviewView()
     }

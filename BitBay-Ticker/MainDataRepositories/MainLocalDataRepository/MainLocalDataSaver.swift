@@ -17,7 +17,7 @@ final class MainLocalDataSaver {
                                                                          currencies: currencies,
                                                                          userTickers: userTickers)
             
-            self.userDefaults?.set(try? self.jsonEncoder.encode(mainLocalDataRepositoryModel), forKey: ApplicationConfiguration.Storing.tempUserDataFileName)
+            self.userDefaults?.set(try? self.jsonEncoder.encode(mainLocalDataRepositoryModel), forKey: ApplicationConfiguration.Storage.userDataKey)
         }
         
         print("MainLocalDataSaver.save()")

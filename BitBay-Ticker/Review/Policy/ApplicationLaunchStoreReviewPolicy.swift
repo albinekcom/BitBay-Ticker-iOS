@@ -1,30 +1,24 @@
 final class ApplicationLaunchStoreReviewPolicy: StoreReviewPolicy {
     
-    private var applicationLaunchCountSinceLastRequstingReview: Int = 1 // TODO: Improve this property by getting "applicationLaunchCount" from "UserDefaults" (use wrapping class for it)
+    private let applicationLaunchCounter: ApplicationLaunchCounter
     private let displayReviewViewEveryXApplicationLaunchTimes: Int
     
-    init(displayReviewViewEveryXApplicationLaunchTimes: Int = ApplicationConfiguration.displayReviewViewEveryXApplicationLaunchTimes) {
+    init(applicationLaunchCounter: ApplicationLaunchCounter = ApplicationLaunchCounter(),
+         displayReviewViewEveryXApplicationLaunchTimes: Int = ApplicationConfiguration.User.displayReviewViewEveryXApplicationLaunchTimes) {
+        self.applicationLaunchCounter = applicationLaunchCounter
         self.displayReviewViewEveryXApplicationLaunchTimes = displayReviewViewEveryXApplicationLaunchTimes
     }
     
     var shouldDisplayReview: Bool {
-        applicationLaunchCountSinceLastRequstingReview >= displayReviewViewEveryXApplicationLaunchTimes
+        applicationLaunchCounter.applicationLaunchCountSinceLastRequestedReview >= displayReviewViewEveryXApplicationLaunchTimes
     }
     
-    func updatePolicyBeforeRequestingReview() {
-        // TODO: Increase / decrease "applicationLaunchCountSinceLastRequstingReview" property here
+    func updatePolicyBeforeTryingToRequestReview() {
+        applicationLaunchCounter.applicationLaunchCountSinceLastRequestedReview += 1
     }
     
-    func updatePolicyAfterRequestingReview() {
-        // TODO: Increase / decrease "applicationLaunchCountSinceLastRequstingReview" property here
-    }
-    
-}
-
-final class ApplicationLaunchCounter {
-    
-    var applicationLaunchCountSinceLastRequstingReview: Int {
-        -1 // TODO: Use "UserDefaults" here
+    func updatePolicyAfterReviewWasRequested() {
+        applicationLaunchCounter.applicationLaunchCountSinceLastRequestedReview = 0
     }
     
 }

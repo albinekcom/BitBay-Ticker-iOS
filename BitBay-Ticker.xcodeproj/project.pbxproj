@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8C1F1D6323A62F4A00D25D99 /* PrettyValueFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F1D6223A62F4A00D25D99 /* PrettyValueFormatterTests.swift */; };
+		8C24731C262E0F2100D3EFF0 /* ApplicationLaunchCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C24731B262E0F2100D3EFF0 /* ApplicationLaunchCounter.swift */; };
 		8C3292C7261F16680077E175 /* ExternalCurrencyProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3292C6261F16680077E175 /* ExternalCurrencyProperties.swift */; };
 		8C3561E7262A18A3009A1A3D /* TickersListInitialLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3561E6262A18A3009A1A3D /* TickersListInitialLoadingView.swift */; };
 		8C573B9A261F574F007D4D5E /* MainRemoteDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C573B99261F574F007D4D5E /* MainRemoteDataRepository.swift */; };
@@ -164,6 +165,7 @@
 		8C1512AF23DDAFCB000CC2CE /* GoogleDataTransportCCTSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransportCCTSupport.framework; path = ../../../Downloads/Firebase/FirebaseAnalytics/GoogleDataTransportCCTSupport.framework; sourceTree = "<group>"; };
 		8C1CF6EA1F04275E00E6F0D4 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		8C1F1D6223A62F4A00D25D99 /* PrettyValueFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyValueFormatterTests.swift; sourceTree = "<group>"; };
+		8C24731B262E0F2100D3EFF0 /* ApplicationLaunchCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationLaunchCounter.swift; sourceTree = "<group>"; };
 		8C2F173E1F02A56E006FD66F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		8C3292C6261F16680077E175 /* ExternalCurrencyProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalCurrencyProperties.swift; sourceTree = "<group>"; };
 		8C3561E6262A18A3009A1A3D /* TickersListInitialLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersListInitialLoadingView.swift; sourceTree = "<group>"; };
@@ -776,6 +778,7 @@
 			children = (
 				8CE33C95262B264C0096BCBE /* StoreReviewPolicy.swift */,
 				8CE33C9A262B26840096BCBE /* ApplicationLaunchStoreReviewPolicy.swift */,
+				8C24731B262E0F2100D3EFF0 /* ApplicationLaunchCounter.swift */,
 			);
 			path = Policy;
 			sourceTree = "<group>";
@@ -1036,6 +1039,7 @@
 				8CAD2B772613BB120055A58C /* MainLocalDataSaver.swift in Sources */,
 				8CAD2BA42613BB120055A58C /* Double+OptionalString.swift in Sources */,
 				8CAD2B732613BB120055A58C /* SupportedTicker.swift in Sources */,
+				8C24731C262E0F2100D3EFF0 /* ApplicationLaunchCounter.swift in Sources */,
 				8CAD2B972613BB120055A58C /* FirbaseAnalyticsService.swift in Sources */,
 				8CAD2B7F2613BB120055A58C /* MainLocalDataFetcher.swift in Sources */,
 				8CAD2BA02613BB120055A58C /* TitleView.swift in Sources */,

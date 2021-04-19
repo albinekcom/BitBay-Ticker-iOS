@@ -37,7 +37,7 @@ final class MainLocalDataFetcher {
     }
     
     private var localData: MainLocalDataModel? {
-        if let mainLocalDataModelJSONValue = userDefaults?.object(forKey: ApplicationConfiguration.Storing.tempUserDataFileName) as? Data {
+        if let mainLocalDataModelJSONValue = userDefaults?.object(forKey: ApplicationConfiguration.Storage.userDataKey) as? Data {
             return try? jsonDecoder.decode(MainLocalDataFetchedModel.self, from: mainLocalDataModelJSONValue)
         } else {
             return nil
