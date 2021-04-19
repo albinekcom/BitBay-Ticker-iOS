@@ -40,7 +40,7 @@ final class TickersListViewController: UIViewController {
         prepareMainView(swiftUIView: tickersListView)
         preparePlusButton()
         
-        reviewController.requestReview(in: navigationController?.view.window?.windowScene)
+//        reviewController.requestReview(in: navigationController?.view.window?.windowScene) // NOTE: Uncomment this line before shipping the application
     }
     
     override func viewWillAppear(_ animated: Bool) {
