@@ -104,10 +104,8 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
         refreshingTickersTimer?.pause()
     }
     
-    @objc private func refreshRemoteData() {
-        let identifiers = userTickers.map { $0.identifier }
-        
-        mainRemoteDataRepository.fetchRemoteData(tickersIdentifiers: identifiers) { [weak self] result in
+    private func refreshRemoteData() {
+        mainRemoteDataRepository.fetchRemoteData(tickersIdentifiers: userTickers.map { $0.identifier }) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
@@ -123,8 +121,10 @@ final class MainDataRepository: TickersDataRepositoryProtocol,
     }
     
     private func setUpTimer() {
-        self.refreshingTickersTimer = ResumableTimer(fireDate: Date(timeIntervalSinceNow: ApplicationConfiguration.UserData.timeSpanBetweenAutomaticRefreshingTicker)) {
-            self.refreshRemoteData()
+        let fireDate = Date(timeIntervalSinceNow: ApplicationConfiguration.UserData.timeSpanBetweenAutomaticRefreshingTicker)
+        
+        self.refreshingTickersTimer = ResumableTimer(fireDate: fireDate) { [weak self] in
+            self?.refreshRemoteData()
         }
     }
     
