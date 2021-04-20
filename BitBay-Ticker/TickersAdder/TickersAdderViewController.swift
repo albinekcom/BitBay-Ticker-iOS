@@ -24,6 +24,7 @@ final class TickersAdderViewController: UIViewController, TickersAdderProtocol {
         title = viewModel.title.localized
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -37,12 +38,12 @@ final class TickersAdderViewController: UIViewController, TickersAdderProtocol {
         prepareDoneButton()
         
         navigationController?.presentationController?.delegate = self
+        
+        analyticsService?.trackDisplayedTickersAdderView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        analyticsService?.trackDisplayedTickersAdderView()
         
         delegate?.tickersAdderDidAppear()
     }
