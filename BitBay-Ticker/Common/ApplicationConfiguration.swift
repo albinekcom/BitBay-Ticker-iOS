@@ -6,6 +6,12 @@ struct ApplicationConfiguration {
         
         static let rowHeight: CGFloat = 64
         
+        struct TickerAdderView {
+            
+            static let searchBottomPadding: CGFloat = 8
+            
+        }
+        
     }
     
     struct Storage {
