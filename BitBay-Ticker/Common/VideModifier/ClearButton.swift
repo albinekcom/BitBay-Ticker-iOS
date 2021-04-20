@@ -10,7 +10,7 @@ struct ClearButton: ViewModifier {
 
             if text.isEmpty == false {
                 Button(action: {
-                    self.text = ""
+                    text = ""
                 }) {
                     Image(systemName: "multiply.circle.fill")
                         .foregroundColor(.clearButtonImage)

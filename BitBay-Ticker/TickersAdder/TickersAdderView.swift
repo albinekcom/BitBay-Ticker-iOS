@@ -11,6 +11,7 @@ struct TickersAdderView: View {
                 .modifier(ClearButton(text: $viewModel.searchTerm))
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .disableAutocorrection(true)
+                .buttonStyle(PlainButtonStyle())
             
             if (viewModel.rowsData.isEmpty) {
                 TickersAdderEmptyRowView()
@@ -26,7 +27,6 @@ struct TickersAdderView: View {
             }
         }
         .environment(\.defaultMinListRowHeight, ApplicationConfiguration.Style.rowHeight)
-        .animation(.default)
     }
     
 }
